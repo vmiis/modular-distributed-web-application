@@ -30,7 +30,11 @@
 		"room-booking_monthly":			{"url":"/templates/room-booking/modules/dynamic/monthly.html","table_id":"20003813","prefix":"dynamic-group-001_room-booking_","name_for_search":"Room booking calendar"},
 		"room-booking_daily":			{"url":"/templates/room-booking/modules/dynamic/daily.html","table_id":"20003813","prefix":"dynamic-group-001_room-booking_","name_for_search":"Booking a room"},
 		"room-booking_booking_record":	{"url":"/templates/room-booking/modules/dynamic/booking_record.html","table_id":"20003813","name_for_search":"Room booking records (admin)"},
-		"room-booking_room":			{"url":"/templates/room-booking/modules/dynamic/room.html","table_id":"20003812","name_for_search":"Add or remove a room"}
+		"room-booking_room":			{"url":"/templates/room-booking/modules/dynamic/room.html","table_id":"20003812","name_for_search":"Add/Remove rooms"},
 
+        "car-booking_monthly":          {"url":"/templates/car-booking/modules/dynamic/monthly.html","table_id":"20000908","name_for_search":"Car booking calendar","prefix":"dynamic-group-001_car-booking_"},
+        "car-booking_daily":            {"url":"/templates/car-booking/modules/dynamic/daily.html","table_id":"20000908","name_for_search":"Booking a car","prefix":"dynamic-group-001_car-booking_"},
+        "car-booking_booking_record":   {"url":"/templates/car-booking/modules/dynamic/booking_record.html","table_id":"20000908","name_for_search":"Car booking records (admin)"},
+        "car-booking_car":              {"url":"/templates/car-booking/modules/dynamic/car.html","table_id":"20000906","name_for_search":"Add/Remove cars"}
 	}
 }

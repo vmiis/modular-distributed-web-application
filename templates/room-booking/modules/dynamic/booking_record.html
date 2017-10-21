@@ -1,26 +1,26 @@
 <section>
-    VmInclude:__PARTS__/grid/grid.v3.html
+    VmInclude:__COMPONENT__/grid/grid.v3.html
 </section>
 <script>
     function F__ID(){
  		$('#back__ID').hide();
        //-------------------------------------
-        VmInclude:__PARTS__/grid/grid.v3.js
+        VmInclude:__COMPONENT__/grid/grid.v3.js
+        $('#new__ID').hide();
         //-------------------------------------
         _fields="_Form,Room_Number,Room_Name,Date,Time,Duration,Color,Description,Contact_Name,Contact_Phone,Contact_Email";
         _fields+=",Submit Date|DateTime,Submitted by|Author,_Delete";
         //-------------------------------------
-        $('#new__ID').hide(); //always hide
         //-------------------------------------
         $('#D__ID').on('load',function(){  _set_req(); _request_data();  })
         //-------------------------------------
         _cell_render=function(records,I,field,td,set_value,source){
             switch(field){
                 case 'Date':
-                    VmInclude:__PARTS__/grid/field_date.js
+                    VmInclude:__COMPONENT__/grid/field_date.js
                     break;
                 case 'Time':
-                    VmInclude:__PARTS__/grid/field_time.js
+                    VmInclude:__COMPONENT__/grid/field_time.js
                     break;
                 case 'Duration':
                     var html="<select style='border:0;''>\
@@ -46,10 +46,10 @@
                             <option>10.0</option>\
                         </select>\
                     ";
-                    VmInclude:__PARTS__/grid/field_select.js
+                    VmInclude:__COMPONENT__/grid/field_select.js
                     break;
                 case 'Color':
-                    VmInclude:__PARTS__/grid/field_color.js
+                    VmInclude:__COMPONENT__/grid/field_color.js
                     break;
             }
         }
@@ -120,5 +120,5 @@
     }
 </script>
 <style>
-    VmInclude:__PARTS__/grid/grid.v3.css
+    VmInclude:__COMPONENT__/grid/grid.v3.css
 </style>

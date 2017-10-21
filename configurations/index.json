@@ -6,7 +6,7 @@
 	"additional_groups":["static-group-001.json","dynamic-group-001.json"],
 	"modules":
 	{
-		"home":			{"url":"/modules/static/home.html"},
+		"home":			{"url":"/modules/static/home.html","name_for_search":"Home page"},
 		"about":		{"url":"/modules/static/about/panel.html"},
 
 		"static-wind-farm":	           	{"url":"/modules/static/wind-farm/panel.html"},

@@ -1,10 +1,10 @@
 <section>
-    VmInclude:__PARTS__/calendar/month.v3.html
+    VmInclude:__COMPONENT__/calendar/month.v3.html
 </section>
 <script>
 function F__ID(){
 	//--------------------------------------------------------
-    VmInclude:__PARTS__/calendar/month.v3.js
+    VmInclude:__COMPONENT__/calendar/month.v3.js
 	//--------------------------------------------------------
 	var prefix=_mlist[$vm.vm['__ID'].name].prefix; if(prefix==undefined) prefix="";
 	var daily_module=prefix+'daily';
@@ -36,9 +36,6 @@ function F__ID(){
 				var d=res.records[i].Date;
 	            cell_render(res.records[i]);
 			}
-	        //var top1=$('#calendar__ID').offset().top;
-            //var height=$(window).height()-top1-$('#'+$vm.root_layout_footer).outerHeight();
-            //$('#calendar__ID').css("height",$(window).height()-top1-$('#'+$vm.root_layout_footer).outerHeight());
 	    }});
 	}
 	//--------------------------------------------------------
@@ -51,7 +48,7 @@ function F__ID(){
 		var author=record.Author;
 	    var d=record.Date;
 	    var $div=_get_cell_div(d);
-	    var info="<span  style=color:"+color+">"+room+" "+name+" <br>"+record.Description+"</span><br>"+time+' '+record.Duration+" hours";
+	    var info="<span  style=color:"+color+">"+room+" "+name+" <br>"+$vm.text(record.Description)+"</span><br>"+time+' '+$vm.text(record.Duration)+" hours";
 	    var event="<div class=event__ID data-author="+author+" id=event__ID"+id+">"+info+"</div>";
 		$div.append(event);
 		$('#event__ID'+id).on('click',function(){

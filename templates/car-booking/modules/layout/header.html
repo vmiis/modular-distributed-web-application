@@ -1,100 +1,93 @@
-<div header>
-	<div id=header__ID top-navigation class="w3-top">
-		<div id=small__ID class='w3-hide-large'><a onclick="$vm.nav_click_process('home')">Business Portal</a></div>
-		<div id=large__ID class="w3-hide-small w3-hide-medium">
-			<a onclick="$vm.nav_click_process('home')">
-				<span class=h2__ID>Business Portal</span><br>
-				<span class=h3__ID>on-demand cloud based
-				<br>software for business
-				<br>data collaboration</span>
-			</a>
-		</div>
-		<div id=topbar__ID class="w3-right w3-hide-small w3-hide-medium">
-			<a onclick="$vm.nav_click_process('home')" class="w3-bar-item w3-button"><i class="fa fa-home"></i> Home</a>
-			<a onclick="$vm.nav_click_process('portal');" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Portal</a>
-			<a name=signinout onclick="$vm.nav_click_process('vm_signinout')" class="w3-bar-item w3-button"></a>
-		</div>
-		<a  id=small_btn__ID href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-	</div>
-	<div id="sidebar__ID" side-navigation class="w3-sidebar w3-bar-block w3-black w3-card-2 w3-animate-left w3-hide-large">
-		<a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-		<a onclick="$vm.nav_click_process('home');w3_close()" class="w3-bar-item w3-button"><i class="fa fa-home"></i> Home</a>
-		<a onclick="$vm.nav_click_process('portal');w3_close()" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Portal</a>
-		<a name=signinout onclick="$vm.nav_click_process('vm_signinout');w3_close()" class="w3-bar-item w3-button"></a>
-	</div>
-	<script navigation-processing>
-		//-----------------------------------------
-		setTimeout(function (){
-			var header_height=$('#header__ID').outerHeight();
-			$('#sidebar__ID').css({'margin-top':header_height+'px'});
-		},1000);
-		//------------------------------------
-		var sidebar = document.getElementById("sidebar__ID");
-		function w3_open() {
-			if (sidebar.style.display === 'block') sidebar.style.display = 'none';
-			else 								   sidebar.style.display = 'block';
+<div header id=header__ID>
+    <nav id=nav__ID class="navbar navbar-expand-md navbar-dark" style='z-index:99999'>
+        <a class="navbar-brand d-none d-lg-block" onclick="$vm.nav_load_module('monthly');">
+            <div class=large_logo__ID>
+                <div class=large_logo_large_label__ID>
+                    Business Portal
+                </div>
+                <div class=large_logo_small_label__ID>
+                    on-demand business applications
+                </div>
+            </div>
+        </a>
+        <a class="navbar-brand d-lg-none" onclick="$vm.nav_load_module('monthly');">
+            <div class=small_logo__ID>Business Portal</div>
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbars__ID" aria-controls="navbars__ID" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbars__ID" class="navbar-collapse collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('home');"><i class="fa fa-home"></i> Home</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('monthly');">Calendar</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('daily');">Booking</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="nav_dropdown__ID" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administrator</a>
+                    <div class="dropdown-menu" aria-labelledby="nav_dropdown__ID">
+                        <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('booking_record');">Booking Records</a>
+                        <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('car');">Add/Remove Cars</a>
+                    </div>
+                </li>
+                <li><a class="nav-link" onclick="$vm.nav_click_process('vm_signinout');" name=signinout><i class="fa fa-user"></i> Sign In/Out</a></li>
+            </ul>
+			<form id=form__ID class="form-inline my-2 my-lg-0">
+				<input id=vm_system_search class="form-control mr-sm-2" type="text" placeholder="Search modules..." aria-label="Search modules..." />
+			</form>
+        </div>
+    </nav>
+    <script>
+        //---------------------------------------------
+        if($vm.user=='guest'){
+            $('a[name=signinout]').html('<i class="fa fa-user"></i> Sign In')
+            $('#username__ID').text('');
+        }
+        else{
+            $('a[name=signinout]').html('<i class="fa fa-user"></i> Sign Out')
+            $('#username__ID').text('Signed in as '+ $vm.user);
+        }
+        //---------------------------------------------
+    </script>
+    <style>
+        #header__ID{
+            background: rgba(50,60,70,0.9);
+        }
+        #header__ID a{
+            cursor:pointer;
+        }
+        #navbars__ID{
+	        padding-top:30px;
+        }
+        .large_logo__ID{
+            color:#fff;
+            padding-left:30px;
+        }
+        .large_logo_large_label__ID{
+            font-size:140%;
+        }
+        .large_logo_small_label__ID{
+            font-size:64%;
+        }
+        #navbars__ID{
+            padding-left:50px;
+        }
+        #form__ID{
+	        padding-right:80px;
+        }
+		@media screen and (max-width:768px){
+            #navbars__ID{
+    	        padding-top:0px;
+            }
+            .small_logo__ID{
+                color:#fff;
+                font-size: 140%;
+            }
+			#nav__ID{
+                background: rgba(50,60,70,1);
+                padding: 3px 15px;
+			}
+	        #form__ID{
+		        padding-right:0px;
+	        }
 		}
-		function w3_close() {
-			sidebar.style.display = "none";
-		}
-		//-----------------------------------------
-		if($vm.user=='guest'){
-			$('a[name=signinout]').html('<i class="fa fa-user"></i> Sign In')
-			$('#username__ID').text('');
-		}
-		else{
-			$('a[name=signinout]').html('<i class="fa fa-user"></i> Sign Out')
-			$('#username__ID').text('Signed in as '+ $vm.user);
-		}
-		//---------------------------------------------
-	</script>
-	<style>
-		#header__ID{
-			background: rgba(128,128,128,0.5);
-		}
-		#header__ID a{
-		  	cursor:pointer;
-		}
-		#large__ID{
-			padding-left:90px;
-			display:inline-block;
-		}
-		.h2__ID{
-			color:#fff;
-			font: 180% Arial;
-			display: inline-block;
-			margin: 10px 0 5px 10px;
-		}
-		.h3__ID{
-			color:#fff;
-			font: 90% Arial;
-			display: inline-block;
-			margin: 0 0 8px 10px;
-		}
-		#small__ID{
-			font: 180% Arial;
-			font-weight: bold;
-			color:#fff;
-			display: inline-block;
-			margin: 10px 0 5px 10px;
-			padding:3px 0 0 20px;
-		}
-		#large__ID a:hover,#small__ID a:hover{
-			color:#fff;
-			text-decoration:none;
-		}
-		#small_btn__ID{
-			color:#fff;
-			font-size:26px;
-		}
-		#topbar__ID{
-			font-family: Helvetica,Arial,sans-serif;
-			color:#fff;
-			padding-top:55px;
-			padding-right:250px;
-		}
-		#sidebar__ID{
-			display:none;
-		}
-	</style>
+    </style>
 </div>

@@ -24,6 +24,9 @@
 		"home-snapshot":	   	{"url":"/modules/static/group-001/snapshot/home.html","name_for_search":"Home page (snapshot)"},
 		"gallery-snapshot":	    {"url":"/modules/static/group-001/snapshot/gallery.html","name_for_search":"Gallery (snapshot)"},
 		"about-snapshot":	    {"url":"/modules/static/group-001/snapshot/about.html","name_for_search":"About (snapshot)"},
-		"contact-snapshot":     {"url":"/modules/static/group-001/snapshot/contact.html","name_for_search":"Contact us (snapshot)"}
+		"contact-snapshot":     {"url":"/modules/static/group-001/snapshot/contact.html","name_for_search":"Contact us (snapshot)"},
+
+        "home-big_city":	   	{"url":"/modules/static/group-001/big_city/home.html","name_for_search":"Home page (big city)"},
+        "about-big_city":	   	{"url":"/modules/static/group-001/big_city/about.html","name_for_search":"About (big city)"}
 	}
 }

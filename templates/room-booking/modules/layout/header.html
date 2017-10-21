@@ -1,4 +1,4 @@
-<div header id=header__ID> <!-- bg-dark-->
+<div header id=header__ID>
     <nav id=nav__ID class="navbar navbar-expand-md navbar-dark" style='z-index:99999'>
         <a class="navbar-brand d-none d-lg-block" onclick="$vm.nav_load_module('monthly');">
             <div class=large_logo__ID>
@@ -49,7 +49,7 @@
     </script>
     <style>
         #header__ID{
-            background: rgba(128,128,128,0.8);
+            background: rgba(50,60,70,0.8);
         }
         #header__ID a{
             cursor:pointer;
@@ -67,9 +67,6 @@
         .large_logo_small_label__ID{
             font-size:64%;
         }
-        .small_logo__ID{
-            color:#fff;
-        }
         #navbars__ID{
             padding-left:50px;
         }
@@ -77,8 +74,16 @@
 	        padding-right:80px;
         }
 		@media screen and (max-width:768px){
+            #navbars__ID{
+    	        padding-top:0px;
+            }
+            .small_logo__ID{
+                color:#fff;
+                font-size: 140%;
+            }
 			#nav__ID{
-				background-color:#555;
+                background: rgba(50,60,70,1);
+                padding: 3px 15px;
 			}
 	        #form__ID{
 		        padding-right:0px;
