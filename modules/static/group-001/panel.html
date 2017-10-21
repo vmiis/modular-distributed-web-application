@@ -1,0 +1,92 @@
+<div id=panel__ID>
+    <div style='width:100%;overflow:auto'>
+        <div id=info__ID>
+            <i>We can build a web application with unlimited number of modules distributed on different static web servers around the world and maintained by different people.</i>
+        </div>
+    </div>
+	<div class='nav__ID'>
+	    <span>Home page</span>
+	    <ul>
+            <li module=home-page-who-am-i>Who am i</li>
+			<li module=home-page-company>Company</li>
+			<li module=home-page-creative>Creative</li>
+			<li module=home-page-studio>Studio</li>
+			<li module=home-page-lumino>Lumino</li>
+			<li module=home-page-lexis>Lexis</li>
+	</div>
+	<div class='nav__ID'>
+	    <span>Contact us</span>
+        <ul>
+            <li module=contact-us-sydney>Sydney</li>
+			<li module=contact-us-creative>Creative</li>
+        </ul>
+		<span>Ocean</span>
+        <ul>
+            <li module=home-page-ocean>Home page</li>
+			<li module=info-ocean>Information</li>
+			<li module=about-ocean>About</li>
+			<li module=contactus-ocean>Contact us</li>
+        </ul>
+		<span>Snapshot</span>
+        <ul>
+            <li module=home-snapshot>Home page</li>
+			<li module=gallery-snapshot>Gallery</li>
+			<li module=about-snapshot>About</li>
+			<li module=contact-snapshot>Contact us</li>
+        </ul>
+	</div>
+</div>
+<script>
+      function F__ID(){
+		  //--------------------------------------------------------
+		  var group="";
+		  $vm.load_config_and_init("/configurations/static-group-001.json",function(config){
+			  group=config.group; if(group!="") group=group+"_";
+		  });
+		  //--------------------------------------------------------
+		  $('#panel__ID li').on('click',function(){
+			  var m=group+$(this).attr('module');
+			  $vm.nav_load_module(m);
+		  })
+		  //--------------------------------------------------------
+      }
+</script>
+<style>
+	VmInclude:__PARTS__/navigation/navigation.css
+	#D__ID{
+		background: url("__PARTS__/image/texture.png");
+		height:100%;
+		overflow: auto;
+		animation: vm_module_fadein 1.0s;
+	}
+    #info__ID{
+        font-size: 9px;
+        padding:5px 10px 0 10px;
+        color:#222;
+        float:right;
+    }
+	#D__ID li {
+		color:#666;
+	}
+	li::before{
+		font-size: 20px!Important;
+	}
+	#D__ID li:hover {
+		color:#fff;
+	}
+	#D__ID a {
+		text-decoration: none;
+	}
+	#D__ID a:link {
+		color:#666;
+	}
+	#D__ID a:visited {
+		color:#666;
+	}
+	#D__ID a:hover {
+		color:#fff;
+	}
+	#D__ID a:active {
+		color:#666;
+	}
+</style>

@@ -1,0 +1,96 @@
+{
+	"parts_path":"https://vmiis.github.io/component",
+	"api_path_development":"https://cbs.wappsystem.com/dev/",
+	"api_path_production":"https://cbs.wappsystem.com/dev/",
+	"default_production":"No",
+	"additional_groups":["static-group-001.json","dynamic-group-001.json"],
+	"modules":
+	{
+		"home":			{"url":"/modules/static/home.html"},
+		"about":		{"url":"/modules/static/about/panel.html"},
+
+		"static-wind-farm":	           	{"url":"/modules/static/wind-farm/panel.html"},
+		"static-group-001":	           	{"url":"/modules/static/group-001/panel.html"},
+		"dynamic-group-001":	        {"url":"/modules/dynamic/group-001/panel.html"},
+        "dynamic-equipment-booking":	{"url":"/modules/dynamic/equipment-booking/panel.html"},
+
+
+		"enquiry-0003":					{"url":"/modules/dynamic/group-001/enquiry.0003.html","table_id":"20009702","name_for_search":"Enquiry"},
+		"enquiry-0003-record":			{"url":"/modules/dynamic/group-001/enquiry.0003.record.html","table_id":"20009702","name_for_search":"Enquiry (record)"},
+		"contact-us-0001":				{"url":"/modules/dynamic/group-001/contact-us.0001.html","table_id":"20009702","name_for_search":"Contact us"},
+		"contact-us-0001-record":		{"url":"/modules/dynamic/group-001/contact-us.0001.record.html","table_id":"20009702","name_for_search":"Contact us (records)"},
+		"appointment-0002":				{"url":"/modules/dynamic/group-001/appointment.0002.html","table_id":"20009702","name_for_search":"Appointment"},
+		"appointment-0002-record":		{"url":"/modules/dynamic/group-001/appointment.0002.record.html","table_id":"20009702","name_for_search":"Appointment (records)"},
+
+
+        "what-is-business-portal":		{"url":"/modules/static/about/what-is-business-portal.html"},
+        "solutions":		            {"url":"/modules/static/about/solutions.html"},
+        "structure":		            {"url":"/modules/static/about/structure.html"},
+        "my-goals":		                {"url":"/modules/static/about/my-goals.html"},
+        "my-skills":		            {"url":"/modules/static/about/my-skills.html"},
+		"my-hobbies":		            {"url":"/modules/static/about/my-hobbies.html"},
+        "job-proposal":		            {"url":"/modules/static/about/job-proposal.html"},
+        "business-proposal":		    {"url":"/modules/static/about/business-proposal.html"},
+        "protential-success":		    {"url":"/modules/static/about/protential-success.html"},
+        "working-together":		        {"url":"/modules/static/about/working-together.html"},
+        "user-help":		            {"url":"/modules/dynamic/help/help.html","table_id":"20010425","form_module":"user_help_form","view":"user_help_view"},
+        "user_help_form":	            {"url":"/modules/dynamic/help/help.form.html","table_id":"20010425"},
+        "user_help_view":	            {"url":"/modules/dynamic/help/help.view.html","table_id":"20010425"},
+        "dev-help":		                {"url":"/modules/dynamic/help/help.html","table_id":"20010426","form_module":"dev_help_form","view":"dev_help_view"},
+        "dev_help_form":	            {"url":"/modules/dynamic/help/help.form.html","table_id":"20010426"},
+        "dev_help_view":	            {"url":"/modules/dynamic/help/help.view.html","table_id":"20010426"},
+
+		"dropdown-list":{"url":"/modules/dynamic/basic/dropdown-list.html","table_id":"20008497"},
+		"radio-button":	{"url":"/modules/dynamic/basic/radio-button.html","table_id":"20008499"},
+		"checkbox":		{"url":"/modules/dynamic/basic/checkbox.html","table_id":"20008498"},
+		"color":		{"url":"/modules/dynamic/basic/color.html","table_id":"20008493"},
+		"date":			{"url":"/modules/dynamic/basic/date.html","table_id":"20008491"},
+		"file":			{"url":"/modules/dynamic/basic/file.html","table_id":"20008500"},
+		"image":		{"url":"/modules/dynamic/basic/image.html","table_id":"20008501"},
+		"autocomplete":			{"url":"/modules/dynamic/basic/autocomplete.html","table_id":"20008495"},
+		"autocomplete_with_new":{"url":"/modules/dynamic/basic/autocomplete_with_new.html","table_id":"20008495"},
+		"postcode":				{"url":"/modules/dynamic/basic/postcode.html","table_id":"20008494"},
+		"calculation":			{"url":"/modules/dynamic/basic/calculation.html","table_id":"20008496"},
+
+		"room-booking_monthly":			{"url":"/templates/room-booking/modules/dynamic/monthly.html","table_id":"20003813","prefix":"room-booking_","name_for_search":""},
+		"room-booking_daily":			{"url":"/templates/room-booking/modules/dynamic/daily.html","table_id":"20003813","prefix":"room-booking_","name_for_search":""},
+		"room-booking_booking_record":	{"url":"/templates/room-booking/modules/dynamic/booking_record.html","table_id":"20003813","name_for_search":""},
+		"room-booking_room":			{"url":"/templates/room-booking/modules/dynamic/room.html","table_id":"20003812","name_for_search":""},
+
+
+		"simple-dynamic-content-module":{"url":"/modules/dynamic/basic/simple-dynamic-content-module.html","table_id":"20008490"},
+        "contact-us-record":	        {"url":"/modules/dynamic/basic/contact-us-record.html","table_id":"20011189"},
+
+		"simple-static-content-module":	{"url":"/modules/static/basic/simple-static-content-module.html"	},
+		"automatic-slide-show-w3":		{"url":"/modules/static/basic/automatic-slide-show-w3.html"},
+		"carousel-slide-b4":			{"url":"/modules/static/basic/carousel-slide-b4.html"},
+		"price":						{"url":"/modules/static/basic/price.html"},
+		"sandbox":						{"url":"/modules/static/basic/sandbox.html"},
+		"sandbox-content":				{"url":"/modules/static/basic/sandbox.content.html"},
+        "test":				            {"url":"/modules/static/basic/test.html"},
+        "test2":				        {"url":"/modules/static/basic/test2.html"},
+        "test3":				        {"url":"/modules/static/basic/test3.html"},
+        "test4":				        {"url":"/modules/static/basic/test4.html"},
+        "test5":				        {"url":"/modules/static/basic/test5.html"},
+        "test6":				        {"url":"/modules/static/basic/test6.html"},
+		"news":				            {"url":"/modules/static/basic/news.html"},
+		"gallery":				        {"url":"/modules/static/basic/gallery.html"},
+		"one-column":				    {"url":"/modules/static/basic/one-column.html"},
+		"two-column":				    {"url":"/modules/static/basic/two-column.html"},
+		"three-column":				    {"url":"/modules/static/basic/three-column.html"},
+
+		"service-lexis":				{"url":"/modules/static/group-001/service-lexis.html"},
+		"work-lexis":					{"url":"/modules/static/group-001/work-lexis.html"},
+		"team-lexis":					{"url":"/modules/static/group-001/team-lexis.html"},
+		"particles-particles":			{"url":"/modules/static/group-001/particles-particles.html"},
+		"particles-nasa":				{"url":"/modules/static/group-001/particles-nasa.html"},
+		"particles-bubble":				{"url":"/modules/static/group-001/particles-bubble.html"},
+		"particles-snow":				{"url":"/modules/static/group-001/particles-snow.html"},
+		"particles-nyan-cat":			{"url":"/modules/static/group-001/particles-nyan-cat.html"},
+
+		"windfarm_home":					{"url":"/modules/static/wind-farm/home.html","name_for_search":"Windfarm home page"},
+		"windfarm_purpose-of-research":		{"url":"/modules/static/wind-farm/purpose-of-research.html"},
+		"windfarm_about-woolcock-research":	{"url":"/modules/static/wind-farm/about-woolcock-research.html"},
+		"windfarm_researcher":				{"url":"/modules/static/wind-farm/researcher.html"}
+	}
+}

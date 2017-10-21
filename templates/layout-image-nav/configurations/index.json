@@ -1,0 +1,24 @@
+{
+	"parts_path":"https://vmiis.github.io/parts",
+	"api_path_development":"https://cbs.wappsystem.com/dev/",
+	"api_path_production":"https://cbs.wappsystem.com/dev/",
+	"modules":
+	{
+		"home":
+		{
+			"url":"/modules/static/home.html"
+		},
+		"portal":
+		{
+			"url":"/modules/static/nav.html"
+		},
+		"module_a":
+		{
+			"url":"/modules/static/module_a.html"
+		},
+		"module_b":
+		{
+			"url":"/modules/static/module_b.html"
+		}
+	}
+}

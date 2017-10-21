@@ -1,0 +1,29 @@
+{
+	"group":"static-group_001",
+	"modules":
+	{
+		"home-page-who-am-i":		{"url":"/modules/static/group-001/home-page-who-am-i.html"},
+		"home-page-company":	    {"url":"/modules/static/group-001/home-page-company.html"},
+		"home-page-creative":	    {"url":"/modules/static/group-001/home-page-creative.html"},
+		"home-page-studio":	       	{"url":"/modules/static/group-001/home-page-studio.html"},
+		"home-page-lumino":	       	{"url":"/modules/static/group-001/home-page-lumino.html"},
+		"home-page-lexis":	       	{"url":"/modules/static/group-001/home-page-lexis.html"},
+
+		"contact-us-sydney":			{"url":"/modules/static/group-001/contact-us-sydney.html"},
+        "contact-us-creative":	       	{"url":"/modules/static/group-001/contact-us-creative.html"},
+
+
+        "scenery-rspilhaus":			{"url":"/modules/static/group-001/scenery-rspilhaus.html"},
+
+
+		"home-page-ocean":	   	{"url":"/modules/static/group-001/ocean/home-page.html","name_for_search":"Home page (ocean)"},
+		"info-ocean":	       	{"url":"/modules/static/group-001/ocean/info.html","name_for_search":"Info (ocean)"},
+		"about-ocean":	       	{"url":"/modules/static/group-001/ocean/about.html","name_for_search":"About (ocean)"},
+		"contactus-ocean":     	{"url":"/modules/static/group-001/ocean/contactus.html","name_for_search":"Contact us (ocean)"},
+
+		"home-snapshot":	   	{"url":"/modules/static/group-001/snapshot/home.html","name_for_search":"Home page (snapshot)"},
+		"gallery-snapshot":	    {"url":"/modules/static/group-001/snapshot/gallery.html","name_for_search":"Gallery (snapshot)"},
+		"about-snapshot":	    {"url":"/modules/static/group-001/snapshot/about.html","name_for_search":"About (snapshot)"},
+		"contact-snapshot":     {"url":"/modules/static/group-001/snapshot/contact.html","name_for_search":"Contact us (snapshot)"}
+	}
+}

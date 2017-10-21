@@ -1,0 +1,110 @@
+<div header id=header__ID>
+    <nav id=nav__ID class="navbar navbar-expand-md navbar-dark">
+        <a class="navbar-brand d-none d-lg-inline-block" onclick="$vm.nav_load_module('home');">
+        	<div class=large_logo__ID>
+	        	<div class="logo_image__ID"></div>
+				<div class="logo_label__ID">
+	                <div class="large_logo_large_label__ID">
+	                    Modular distributed web applications
+	                </div>
+	                <div class="large_logo_small_label__ID">
+	                    Open source project (https://github.com/vmiis)
+	                </div>
+	            </div>
+	        </div>
+
+        </a>
+        <a class="navbar-brand d-lg-none" onclick="$vm.nav_load_module('home');">
+            <div class=small_logo__ID>Modular distributed web applications<br>Open source project (https://github.com/vmiis)</div>
+        </a>
+
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbars__ID" aria-controls="navbars__ID" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbars__ID" class="navbar-collapse collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('home');"><i class="fa fa-home"></i> Home</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('about');"><i class="fa fa-info-circle"></i> About</a></li>
+                <li><a class="nav-link" onclick="$vm.nav_click_process('vm_signinout');" name=signinout><i class="fa fa-user"></i> Sign In/Out</a></li>
+            </ul>
+			<form id=form__ID class="form-inline my-2 my-lg-0">
+				<input id=vm_system_search class="form-control mr-sm-2" type="text" placeholder="Search modules..." aria-label="Search modules..." />
+			</form>
+        </div>
+    </nav>
+    <script>
+        //---------------------------------------------
+        if($vm.user=='guest'){
+            $('a[name=signinout]').html('<i class="fa fa-user"></i> Sign In')
+            $('#username__ID').text('');
+        }
+        else{
+            $('a[name=signinout]').html('<i class="fa fa-user"></i> Sign Out')
+            $('#username__ID').text('Signed in as '+ $vm.user);
+        }
+        //---------------------------------------------
+    </script>
+    <style>
+        #header__ID{
+            /*background: rgba(128,128,128,0.8);*/
+            background-color: #38384c;
+        }
+		#header__ID a{
+            cursor:pointer;
+        }
+		#nav__ID{
+			padding:0;
+	        z-index:99;
+        }
+        .large_logo__ID{
+            color:#fff;
+            padding-left:30px;
+            display:table;
+        }
+		.logo_image__ID{
+			width:94px;
+			height:94px;
+			border-radius: 47px;
+			background: url('images/logo.jpg') no-repeat top center;
+			background-size: cover;
+		}
+		.logo_label__ID{
+			padding: 20px 0 0 30px;
+			display: table-cell;
+			vertical-align: top;
+			color:#fff;
+			font-family: Helvetica,Arial,sans-serif;
+		}
+        .large_logo_large_label__ID{
+            font-size:140%;
+        }
+        .large_logo_small_label__ID{
+            font-size:74%;
+        }
+		.small_logo__ID{
+            color:#fff;
+			font-size: 60%;
+			padding:5px 0;
+        }
+		#navbars__ID{
+	        padding-top:55px;
+            padding-left:90px;
+        }
+        #form__ID{
+	        padding-right:80px;
+        }
+		@media screen and (max-width:768px){
+			#nav__ID{
+	        	padding:0 10px;
+				background-color:#555;
+			}
+	        #navbars__ID{
+		        padding-top:5px;
+		        padding-left:5px;
+	        }
+	        #form__ID{
+		        padding-right:0px;
+	        }
+		}
+    </style>
+</div>

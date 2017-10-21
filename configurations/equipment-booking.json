@@ -1,0 +1,26 @@
+{
+	"group":"equipment-booking",
+	"modules":
+	{
+		"monthly":{
+			"table_id":"20002163",
+			"url":"/modules/dynamic/equipment-booking/monthly.html"
+		},
+		"weekly":{
+			"table_id":"20002163",
+			"url":"/modules/dynamic/equipment-booking/weekly.html"
+		},
+		"daily":{
+			"table_id":"20002163",
+			"url":"/modules/dynamic/equipment-booking/daily.html"
+		},
+		"booking_record":{
+			"table_id":"20002163",
+			"url":"/modules/dynamic/equipment-booking/booking_record.html"
+		},
+		"equipment":{
+			"table_id":"20002162",
+			"url":"/modules/dynamic/equipment-booking/equipment.html"
+		}
+	}
+}

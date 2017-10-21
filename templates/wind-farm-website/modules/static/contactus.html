@@ -1,0 +1,98 @@
+<div style='background-color:#555;height:100%;overflow:auto;color:#fff'>
+	<div class="container-fluid" style='max-width:800px'>
+		<div class="text-center" style='padding-top:30px'>
+			<h1><b>FOLLOW US</b></h1>
+			<a href="#" class="fa fa-facebook fa__ID "></a>
+			<a href="#" class="fa fa-twitter fa__ID"></a>
+			<a href="#" class="fa fa-linkedin fa__ID"></a>
+			<a href="#" class="fa fa-youtube fa__ID"></a>
+		</div>
+		<div>
+			<h5>Address:</h5>
+			<p>
+				431 Glebe Point Road
+			</p>
+			<h5>Email:</h5>
+			<p>
+				windfarmstudy@woolcock.org.au
+			</p>
+			<h5>Phone:</h5>
+			<p>
+				(02) 90008000
+			</p>
+			<br>
+		</div>
+		<div>
+			<div id="googleMap" style="height:400px;width:100%;"></div>
+			<script>
+				function myMap() {
+				var myCenter = new google.maps.LatLng(-33.873577, 151.182451);
+				var mapProp = {center:myCenter, zoom:15, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
+				var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+				var marker = new google.maps.Marker({position:myCenter});
+				marker.setMap(map);
+				}
+			</script>
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&callback=myMap"></script>
+		</div>
+		<br>
+	</div>
+</div>
+<style>
+	#D__ID{
+		padding-top:30px;
+		height:100%;
+		overflow: auto;
+		animation: vm_module_fadein 1.0s;
+	}
+	/*
+	@keyframes vm_title__ID {
+		from {margin-top: 100px;}
+	    to {margin-top: 0px;}
+	}
+	#title__ID {
+	    animation: vm_title__ID 2s;
+		margin-top: 0px;
+	}
+	#img__ID{
+		height:200px;
+		background-image: url(images/img02.jpg);
+	}
+
+	#jumbotron__ID.jumbotron {
+		color:#fff;
+   		background: rgba(0, 0, 0, 0);
+	}
+	*/
+
+	.fa__ID {
+	  padding: 10px;
+	  font-size: 20px;
+	  width: 40px;
+	  text-align: center;
+	  text-decoration: none;
+	  margin: 5px 2px;
+	  border-radius: 50%;
+	}
+
+	.fa__ID:hover {
+	    opacity: 0.8;
+	}
+
+	.fa-facebook {
+	  background: #3B5998;
+	  color: white;
+	}
+	.fa-twitter {
+	  background: #55ACEE;
+	  color: white;
+	}
+	.fa-linkedin {
+	  background: #007bb5;
+	  color: white;
+	}
+	.fa-youtube {
+	  background: #bb0000;
+	  color: white;
+	}
+</style>

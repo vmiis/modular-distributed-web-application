@@ -1,0 +1,24 @@
+<section>
+    VmInclude:__BASE__/vmiis/Common-Code/toolbar/back.html
+    <form id=F__ID>
+        <iframe id=icontents__ID sandbox frameborder="0" style='width:100%;'></iframe>
+    </form>
+</section>
+<script>
+    function F__ID(){
+        //-------------------------------------
+        VmInclude:__BASE__/vmiis/Common-Code/toolbar/back.js
+        VmInclude:__BASE__/vmiis/Common-Code/style/ease-in-out.js
+        //-------------------------------------
+        $('#D__ID').on('load',function(){
+            var contents=$vm.vm['__ID'].op.contents;
+            document.getElementById('icontents__ID').src = "data:text/html;charset=utf-8," + contents;
+            var top1=$('#icontents__ID').offset().top;
+            $('#icontents__ID').css("height",$(window).height()-top1-$('#'+$vm.root_layout_footer).outerHeight()-5);
+        })
+        //-------------------------------------
+    }
+</script>
+<style>
+    VmInclude:__BASE__/vmiis/Common-Code/style/default.css
+</style>

@@ -1,0 +1,202 @@
+<section>
+      VmInclude:__PARTS__/toolbar/back.html
+      <div id=div1__ID>
+                <b><span style='font-size:16px' >Is it possible to create a new “Facebook” styled business connecting structured data globally?</span></b><br><br>
+                One of my goals is to build a business portal with <b>flexible data collection</b> functions and <b>real time business intelligence</b> solutions.
+                <br>
+                Furthermore I would like to build a structured data based <b>global business network</b> for all kind of business operation,
+                management and collaboration.
+                <br>It would be greatly appreciated if you could help me <b>find sponsors</b> to keep my concept further developed.
+                <br>
+                <br>
+<!--
+                <b>Summary:</b>
+                <br>A: Business data tracking or collection will become very easy and flexible if database tables and relations can be generated dynamically.
+                <br>B: Business intelligence solutions in small and medium-sized enterprises are looks very complex. But if we have a detail
+                look at the BI requirements, most of them are just some kind of data aggregations. With some simple tricks we can
+                make most of the common work done in OLTP systems (in another word, no need for OLAP). The key concept is just to
+                calculate the aggregation in a short period (say one day) when a data record is added, modified or deleted and save
+                the small aggregation value into a database. After that we can calculate a big aggregation by adding the small one
+                together. The conclusion is that we can just use standard SQL to query the database and get most common BI results
+                in real-time. After years of effort and test I have implemented an application framework that integrates the data
+                collection and data analysis together. This make me be able to setup a cloud based business portal system from scratch
+                in a very short time.
+                <br>
+                <br>
+                <b>My points of view:</b>
+                <br>A: Data tables and relations should be created dynamically.
+                <br>B: “Big data” can be treated as “Small data”
+                <br>
+                <br>
+                The following table lists what the technical problems are and what I have done as well as what I plan to achieve.
+                <br>
+                <table>
+                    <tr><th style='width:280px'>Main Points</th><th>Brief Description</th></tr>
+                    <tr><td>Data sharing is the power of the internet</td>
+                    <td>Facebook, LinkedIn, Twitter...  why are they so popular? One of the reasons is that all of them provide
+                        some kind of information sharing. We have seen people post messages, photos, videos, audios and documents
+                        for sharing. All of these information sharing has changed our life a lot.
+                    </td></tr>
+                    <tr><td>
+                        <a target=_blank href=http://www.webopedia.com/TERM/S/structured_data.html>Structured data</a>
+                        sharing will become one of the big demands in the future of internet</td>
+                    <td>If we have a detail look at the
+                        information sharing on the internet, most of the information are
+                        <a target=_blank href=https://en.wikipedia.org/wiki/Unstructured_data>unstructured</a> or free format.  Can we go further to let
+                        people to share structured information? Structured data are widely used in business. They are often stored
+                        in a database and well shared inside an organisation. But it is not well or widely shared between
+                        organisations across internet. If sharing some records in a database become relay easy and simple between
+                        companies, the business collaborations will be more efficient. For example if a delivery service company
+                        can access an online shop’s client address information and the online shop can access the delivery
+                        company’s service status, the collaborations between them would be more efficient.
+                    </td></tr>
+                    <tr><td>A Scenario of data sharing</td>
+                    <td>
+            			Tom in the marketing department builds a form to collect/track
+                        <b><u data-m='20007171'>client information</u></b> (name, address, phone number etc).
+            			Anna in the financial department builds a form to collect/track client information
+                        for <b><u data-m='20007346'>invoices</u></b>. She just needs to collect the information she needs (such as invoice items, client payments etc) and then reference the client data collected by Tom.
+            			David in the service department needs to build a <b><u data-m='20004800'>service booking calendar</u></b>. He can also use the client data collected by tom in his booking form.
+                        And finally, Lucy as business manager can pick out all data collected by other people and fill the data into her reporting form.
+            			<br>Furthermore, Michael as a manager in a delivery company can build a form to collect/track delivery status. He does not need to recollect client information (such as address, phone number). He just needs a reference to the data collected by Tom.
+                    </td></tr>
+                    <tr><td>How to share structured data?</td>
+                    <td><ul>
+                        <li>Share data vir <a target=_blank href=https://en.wikipedia.org/wiki/Application_programming_interface>api</a> (client side data join)</li>
+                        <li>Direct share database records (server side data join)</li>
+                    </ul></td></tr>
+                    <tr><td>What are the problems of sharing structured data?</td>
+                    <td><ul>
+                        <li>Sharing data via api is good for a small amount of data sharing. If we need to aggregate a huge number
+                            of records, accessing data from third party via api is not efficient or even
+                            impossible to load huge data from server side database to client side browser for data analysing.</li>
+                        <li>It looks that the server side joining all data together is the solution for data analytics, but we will
+                            see the current technology of relational database or data warehouse is not designed for sharing data
+                            between companies or organisations.</li>
+                    </ul></td></tr>
+                    <tr><td>What are the problems of structured data for modern business applications?</td>
+                    <td><ul>
+                        <li>It is very difficult to define a complete data structure for a company. Sometimes the business
+                            data structure needs to be changed as the business is growing.</li>
+                        <li>No manager can have a complete detailed picture of the data structure for tracking all company business
+                            activities. In most cases it is the individual staff who knows about what data needs to be tracked as it
+                            is usually an integral part of his/her daily operations.</li>
+                        <li>It is even more impossible to have a complete detailed picture of the data structure for all other
+                            companies or organisations (sharing data with them) when designing an application.</li>
+                    </ul></td></tr>
+                    <tr><td>Structured data design should start from bottom to top</td>
+                        <td>Because each staff is an expert in their job, we should just let them define the data structure for
+                            tracking the business activities that they are involved with.
+                            <br>We need<ul>
+                                <li>Anyone can build data collection tables.</li>
+                                <li>Anyone can reference any of the data collected by others if he or she has the permissions.</li>
+                                <li>Anyone can control the access permissions for his/hers data.</li>
+                            </ul>
+                    </td></tr>
+                    <tr><td>Traditional relation database concept is not good enough
+                        for sharing data across the internet
+                    </td>
+                    <td>
+                        We need a database
+                        concept that allows dynamically creating tables and building
+                        relations between them
+                    </td></tr>
+                    <tr><td>Traditional database data analytics tolls are not good enough
+                            for real-time data analysis if we have huge number of rows in tables. </td>
+                    <td>We need a solution to aggregate data incrementally so that we can
+                        have most real-time business intelligence functions in
+                        <a target=_blank href=https://en.wikipedia.org/wiki/Online_transaction_processing>OLTP</a> system instead of
+                        <a target=_blank href=https://en.wikipedia.org/wiki/Online_analytical_processing>OLAP</a> system.
+                    </td></tr>
+                    <tr><td>Important parts in a business portal system</td>
+                    <td>
+                        <ul>
+                            <li>
+                            Data collection<br>
+                            When you make a decision you must based on some data about your business. What is the business data? The business data are usually the records created by staff, business partners or even your clients, for examples the client information, sales transactions, bookings, rosters etc.
+                            </li>
+                            <li>
+                            Data search and query<br>
+                            In order to conduct the business, you or your staff may need some data, such as an email address if a business letter is needed to be sent out.
+                            </li>
+                            <li>
+                            Data analysis and visualisation<br>
+                            In order to make a right decision you need to understand your business behaviours or patterns. Analysing the historical data can help you to achieve this.
+                            </li>
+                        </ul>
+                    </td></tr>
+                    <tr><td>Principles of the system architecture</td>
+                    <td>
+                        <ul>
+                        <li>Code (html/JavaScript/CSS) for any specific application function will be run on client side.</li>
+                        <li>No server side code is needed for any specific application function, server side function is something like 'operatiing system'.</li>
+                        </ul>
+                    </td></tr>
+                    <tr><td>Data collection</td>
+                    <td>
+                        Business Date collection is the first step to manage a business because all decisions or
+                        actions will depend on the data collected. Traditionally each staff in an organisation will
+                        keep some records on papers or keep the records in private excel files. In order to make the
+                        business more intelligent all data must be kept in a database so that the data can be accessed
+                        and analysed when they are needed. Almost all staff in an organisation has no ideas about
+                        the concept of database table. They usually say I want to keep records that should contain
+                        fields like first name, last name, phone number etc.  Without the step of designing the
+                        database table how can we keep the data into a database? With many years of effort and test
+                        I have implemented a special technique that can easily create a data collection module
+                        (using Html, JavaScript and CSS) on client side and automatically generate a database table
+                        on server side. Here is an example:  <u data-m='20007128'>user interface</u> and
+                        <a target=_blank href=/developer/M20007128>sources code</a>.
+                    </td></tr>
+                    <tr><td>Data quering</td>
+                    <td>All queries (SQL statements) are issued from client side.The challenge is that we must have very
+                    easy and flexible ways to let data owner to control the permissions. Because the SQL statements are
+                    sent from client side, we must have a mechanism that can prevent from running dangerous code on server side
+                    </td></tr>
+                    <tr><td>Data aggregation</td>
+                    <td>Sub aggregation (small amount or records) values are calculated in real-time and the results are stored
+                    into the database when transaction records are created, modified or deleted. So we do not need to scan all
+                    transaction records when we need aggregation calculation across big time span (years or even total records).
+                    <br>One principle is to reduce using OLAP system as much as possible and implement business intelligence function in OLTP system.
+                    </td></tr>
+                </table>
+-->
+      </div>
+</section>
+<script>
+      function F__ID(){
+            VmInclude:__PARTS__/toolbar/back.js
+            VmInclude:__PARTS__/style/ease-in-out.js
+      }
+</script>
+<style>
+      #D__ID{
+		  font-size:9pt;
+          font-family: Verdana,Helvetica,Arial,sans-serif;
+		  color:#000;
+		  height:100%;
+          width:100%;
+		  background: url("__IMAGE__/texture.png");
+      }
+      .nav__ID ul li{
+          cursor:pointer;
+      }
+
+      #D__ID table{
+          border-collapse: collapse;
+      }
+      #D__ID table,#D__ID th,#D__ID tr,#D__ID td{
+          border: 1px solid #888;
+          padding:5px;
+          vertical-align: top;
+      }
+
+      #div1__ID{
+          padding:30px;
+          font-size:9pt;
+          font-family: Verdana,Helvetica,Arial,sans-serif;
+          width:max-1024px;
+      }
+      #D__ID u{
+          cursor:pointer;
+      }
+</style>

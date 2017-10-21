@@ -1,0 +1,11 @@
+{
+	"group":"wind_farm",
+	"modules":
+	{
+		"home":						{"url":"/modules/static/wind-farm/home.html"},
+		"purpose-of-research":		{"url":"/modules/static/wind-farm/purpose-of-research.html"},
+		"about-woolcock-research":	{"url":"/modules/static/wind-farm/about-woolcock-research.html"},
+		"researcher":				{"url":"/modules/static/wind-farm/researcher.html"}
+
+	}
+}

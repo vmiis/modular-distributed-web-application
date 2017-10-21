@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/flexslider.css">
+		<link rel="stylesheet" href="css/jquery.fancybox.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/responsive.css">
+		<link rel="stylesheet" href="css/font-icon.css">
+		<link rel="stylesheet" href="css/animate.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.flexslider-min.js"></script>
+		<script src="js/jquery.fancybox.pack.js"></script>
+		<script src="js/retina.min.js"></script>
+		<script src="js/modernizr.js"></script>
+		<script src="js/main.js"></script>
+		<script type="text/javascript" src="js/jquery.contact.js"></script>
+		<style>html,body{height:100%;} #vm_top_container{height:100%;overflow:auto;}</style>
+		<script>
+			$(document).ready(function(){
+				window.onmessage=function(e){
+				    if(e.data.content!=undefined) $('body').html(e.data.content);
+				    if(e.data.res!=undefined) $('body').triggerHandler('res',e.data.res);
+				};
+				$('body').on('dblclick',function(){
+					if(event.altKey){
+						id=window.location.href.split('id=').pop()
+						window.parent.postMessage({sandbox_id:'sandbox'+id,id:id,cmd:3},"*")
+					}
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id=vm_top_container></div>
+	</body>
+</html>

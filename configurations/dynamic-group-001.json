@@ -1,0 +1,36 @@
+{
+	"group":"dynamic-group-001",
+	"modules":
+	{
+		"dynamic-contact-us-lumino":			{"url":"/modules/dynamic/group-001/contact-us-lumino.html"},
+        "dynamic-contact-us-studio":	       	{"url":"/modules/dynamic/group-001/contact-us-studio.html"},
+		"short-sleep-history":					{"url":"https://clinic-online-questionnaire.rt.org.au/modules/dynamic/task/short-sleep-history.html","table_id":"20011176"},
+		"short-sleep-history-data":				{"url":"https://clinic-online-questionnaire.rt.org.au/modules/dynamic/data/short-sleep-history.html","table_id":"20011176"},
+		"sleep-history":						{"url":"https://clinic-online-questionnaire.rt.org.au/modules/dynamic/task/sleep-history.html","table_id":"20011309"},
+		"sleep-history-data":					{"url":"https://clinic-online-questionnaire.rt.org.au/modules/dynamic/data/sleep-history.html","table_id":"20011309"},
+		"health-history":						{"url":"https://clinic-online-questionnaire.rt.org.au/modules/dynamic/task/health-history.html","table_id":"20011308"},
+		"health-history-data":					{"url":"https://clinic-online-questionnaire.rt.org.au/modules/dynamic/data/health-history.html","table_id":"20011308"},
+		"personal":								{"url":"https://clinic-online-questionnaire.rt.org.au/modules/dynamic/task/personal.html","table_id":"20011312"},
+		"personal-data":						{"url":"https://clinic-online-questionnaire.rt.org.au/modules/dynamic/data/personal.html","table_id":"20011312"},
+		"medicare-referrals":					{"url":"https://clinic-online-questionnaire.rt.org.au/modules/dynamic/task/medicare-referrals.html","table_id":"20011175"},
+		"medicare-referrals-data":				{"url":"https://clinic-online-questionnaire.rt.org.au/modules/dynamic/data/medicare-referrals.html","table_id":"20011175"},
+		"epworth-sleepiness-scale":				{"url":"https://clinic-online-questionnaire.rt.org.au/modules/dynamic/task/epworth-sleepiness-scale.html","table_id":"20011311"},
+		"epworth-sleepiness-scale-data":		{"url":"https://clinic-online-questionnaire.rt.org.au/modules/dynamic/data/epworth-sleepiness-scale.html","table_id":"20011311"},
+		"additional-questions":					{"url":"https://clinic-online-questionnaire.rt.org.au/modules/dynamic/task/additional-questions.html","table_id":"20011310"},
+		"additional-questions-data":			{"url":"https://clinic-online-questionnaire.rt.org.au/modules/dynamic/data/additional-questions.html","table_id":"20011310"},
+
+		"clinic-questionnaire_visit":			{"url":"https://clinic-questionnaire.rt.org.au/modules/dynamic/visit.html","table_id":"20011195","prefix":"dynamic-group-001_clinic-questionnaire_"},
+		"clinic-questionnaire_physician":		{"url":"https://clinic-questionnaire.rt.org.au/modules/dynamic/physician.html","table_id":"20011196"},
+		"clinic-questionnaire_area":			{"url":"https://clinic-questionnaire.rt.org.au/modules/dynamic/area.html","table_id":"20011197"},
+		"clinic-questionnaire_visit-type":		{"url":"https://clinic-questionnaire.rt.org.au/modules/dynamic/visit-type.html","table_id":"20011198"},
+		"clinic-questionnaire_email_001":		{"url":"https://clinic-questionnaire.rt.org.au/modules/dynamic/email-001.html","prefix":"dynamic-group-001_clinic-questionnaire_"},
+		"clinic-questionnaire_report":			{"url":"https://clinic-questionnaire.rt.org.au/modules/dynamic/report.html","prefix":"dynamic-group-001_clinic-questionnaire_"},
+		"clinic-questionnaire_patient_info":	{"url":"https://clinic-questionnaire.rt.org.au/modules/dynamic/patient_info.html","prefix":"dynamic-group-001_clinic-questionnaire_"},
+
+		"room-booking_monthly":			{"url":"/templates/room-booking/modules/dynamic/monthly.html","table_id":"20003813","prefix":"dynamic-group-001_room-booking_","name_for_search":"Room booking calendar"},
+		"room-booking_daily":			{"url":"/templates/room-booking/modules/dynamic/daily.html","table_id":"20003813","prefix":"dynamic-group-001_room-booking_","name_for_search":"Booking a room"},
+		"room-booking_booking_record":	{"url":"/templates/room-booking/modules/dynamic/booking_record.html","table_id":"20003813","name_for_search":"Room booking records (admin)"},
+		"room-booking_room":			{"url":"/templates/room-booking/modules/dynamic/room.html","table_id":"20003812","name_for_search":"Add or remove a room"}
+
+	}
+}

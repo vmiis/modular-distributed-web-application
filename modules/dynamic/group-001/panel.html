@@ -1,0 +1,80 @@
+<div id=panel__ID>
+    <div class='nav__ID'>
+	    <span>Contact us</span>
+        <ul>
+			<li module=dynamic-contact-us-studio>Studio</li>
+			<li module=dynamic-contact-us-lumino>Lumino</li>
+        </ul>
+		<span>Clinic questionnaire</span>
+        <ul>
+			<li module=clinic-questionnaire_visit>Visit setup</li>
+			<li module=clinic-questionnaire_physician>Physician</li>
+			<li module=clinic-questionnaire_area>Area</li>
+			<li module=clinic-questionnaire_visit-type>Visit Type</li>
+			<li module=clinic-questionnaire_email_001>Email 001</li>
+			<li module=clinic-questionnaire_report>Report</li>
+			<li module=clinic-questionnaire_patient_info>Patient Info</li>
+        </ul>
+		<span>Room booking</span>
+        <ul>
+			<li module=room-booking_monthly>Room booking calendar</li>
+			<li module=room-booking_daily>Booking a room</li>
+			<li module=room-booking_booking_record>Room booking records (admin)</li>
+			<li module=room-booking_room>Add or remove a room</li>
+        </ul>
+		<span>Test</span>
+        <ul>
+			<li module=contact-us-001>Contact us</li>
+			<li module=contact-us-001-admin>Contact us (admin)</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+      function F__ID(){
+		  //--------------------------------------------------------
+		  var group="";
+		  $vm.load_config_and_init("/configurations/dynamic-group-001.json",function(config){
+			  group=config.group; if(group!="") group=group+"_";
+		  });
+		  //--------------------------------------------------------
+		  $('#panel__ID li').on('click',function(){
+			  var m=group+$(this).attr('module');
+			  $vm.nav_load_module(m);
+		  })
+		  //--------------------------------------------------------
+      }
+</script>
+<style>
+	VmInclude:__PARTS__/navigation/navigation.css
+	#D__ID{
+		background: url("__PARTS__/image/texture.png");
+		height:100%;
+		overflow: auto;
+		animation: vm_module_fadein 1.0s;
+	}
+	#panel__ID{
+		padding-left:10px;
+	}
+	#panel__ID li {
+		color:#666;
+	}
+	#panel__ID li:hover {
+		color:#fff;
+	}
+	#panel__ID a {
+		text-decoration: none;
+	}
+	#panel__ID a:link {
+		color:#666;
+	}
+	#panel__ID a:visited {
+		color:#666;
+	}
+	#panel__ID a:hover {
+		color:#fff;
+	}
+	#panel__ID a:active {
+		color:#666;
+	}
+</style>

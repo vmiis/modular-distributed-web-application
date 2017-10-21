@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/hero-slider.css">
+        <link rel="stylesheet" href="css/owl-carousel.css">
+        <link rel="stylesheet" href="css/templatemo-style.css">
+        <link rel="stylesheet" href="css/lightbox.css">
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" type="text/javascript"></script>
+	    <script src="js/vendor/bootstrap.min.js"></script>
+	    <script src="js/plugins.js"></script>
+	    <script src="js/main.js"></script>
+
+
+		<style>html,body{height:100%;} #vm_top_container{height:100%;overflow:auto;} a{cursor:pointer}</style>
+		<script>
+			$(document).ready(function(){
+				id=window.location.href.split('id=').pop()
+				window.onmessage=function(e){
+					if(id==e.data.id){
+						if(e.data.content!=undefined) $('body').html(e.data.content);
+						if(e.data.res!=undefined) $('body').triggerHandler('res',e.data.res);
+					}
+				};
+				$('body').on('dblclick',function(){
+					if(event.altKey){
+						window.parent.postMessage({sandbox_id:'sandbox'+id,id:id,cmd:'source'},"*")
+					}
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id=vm_top_container></div>
+	</body>
+</html>

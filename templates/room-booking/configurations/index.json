@@ -1,0 +1,16 @@
+{
+    "component_path":"https://vmiis.github.io/parts",
+	"api_path_development":"https://cbs.wappsystem.com/dev/",
+	"api_path_production":"https://cbs.wappsystem.com/dev/",
+	"default_production":"No",
+	"additional_groups":[],
+	"modules":
+	{
+		"home":	            {"url":"/modules/static/home.html","name_for_search":"Home page"},
+		"monthly":          {"url":"/modules/dynamic/monthly.html","table_id":"20003813","name_for_search":"Monthly calendar"},
+        "daily":            {"url":"/modules/dynamic/daily.html","table_id":"20003813","name_for_search":"Booking a room"},
+        "booking_record":   {"url":"/modules/dynamic/booking_record.html","table_id":"20003813"},
+        "room":             {"url":"/modules/dynamic/room.html","table_id":"20003812"}
+	}
+}
+			

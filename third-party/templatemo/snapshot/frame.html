@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/animate.min.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+	  	<link rel="stylesheet" href="css/component.css">
+	    <link rel="stylesheet" href="css/owl.theme.css">
+		<link rel="stylesheet" href="css/owl.carousel.css">
+		<link rel="stylesheet" href="css/vegas.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/vegas.min.js"></script>
+		<script src="js/modernizr.custom.js"></script>
+		<script src="js/toucheffects.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/smoothscroll.js"></script>
+		<script src="js/wow.min.js"></script>
+
+		<style>html,body{height:100%;} #vm_top_container{height:100%;overflow:auto;} a{cursor:pointer}</style>
+		<script>
+			$(document).ready(function(){
+				id=window.location.href.split('id=').pop()
+				window.onmessage=function(e){
+					if(id==e.data.id){
+						if(e.data.content!=undefined) $('body').html(e.data.content);
+						if(e.data.res!=undefined) $('body').triggerHandler('res',e.data.res);
+					}
+				};
+				$('body').on('dblclick',function(){
+					if(event.altKey){
+						window.parent.postMessage({sandbox_id:'sandbox'+id,id:id,cmd:'source'},"*")
+					}
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id=vm_top_container></div>
+	</body>
+</html>

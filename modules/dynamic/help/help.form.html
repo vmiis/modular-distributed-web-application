@@ -1,0 +1,58 @@
+<section>
+    VmInclude:__BASE__/vmiis/Common-Code/toolbar/back_save.html
+    <form id=F__ID>
+        <input data-id=Title data-custom=1 placeholder='Title' style='width:500px'></input><input data-id=Category data-custom=1 placeholder='Category' style='width:200px'></input>
+        <input data-id=Subcategory data-custom=1 placeholder='Subcategory' style='width:200px'></input><input data-id=Order data-custom=1 placeholder='Order' style='width:50px'></input>
+        <br><textarea id=editor__ID data-id=Contents data-custom=1 style='box-sizing: border-box;width:100%;min-height:300px;border:1px solid #aaa;'></textarea>
+    </form>
+</section>
+<script>
+    function F__ID(){
+        //-------------------------------------
+        VmInclude:__BASE__/vmiis/Common-Code/grid/form.js
+        VmInclude:__BASE__/vmiis/Common-Code/style/ease-in-out.js
+        //-------------------------------------
+        $('#D__ID').on('load',function(){
+            _init();
+            _field_process();
+            custom_field_process();
+            var top1=$('#editor__ID').offset().top;
+            $('#editor__ID').css("height",$(window).height()-top1-$('#'+$vm.root_layout_footer).outerHeight()-5);
+        })
+        //-------------------------------------
+        var custom_field_process=function(){
+            //-------------------------------------
+            $('#F__ID input[data-custom=1]').each(function(){
+                var field=$(this).attr('data-id');
+                switch(field){
+                    case "Title":
+                    case "Order":
+                    case "Category":
+                    case "Subcategory":
+                        $(this).val(_records[I][field]);
+                        $(this).blur(function(){
+                            _set_value($(this).val(),_records,I,field);
+                        })
+                    break;
+                }
+            })
+            //-------------------------------------
+            $('#F__ID textarea[data-custom=1]').each(function(){
+                var field=$(this).attr('data-id');
+                switch(field){
+                    case "Contents":
+                        $(this).val(_records[I][field]);
+                        $(this).blur(function(){
+                            _set_value($(this).val(),_records,I,field);
+                        })
+                    break;
+                }
+            })
+            //-------------------------------------
+        }
+        //----------------------------------
+    }
+</script>
+<style>
+    VmInclude:__BASE__/vmiis/Common-Code/style/default.css
+</style>
