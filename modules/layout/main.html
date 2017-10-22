@@ -114,8 +114,10 @@ VmInclude:/modules/layout/footer.html
 			   	}
 			}
 			N--;
+            console.log("group:"+N);
 			if(N==0){
 				set_module_search();
+                console.log("call load_home_module");
 				load_home_module();
 			}
 		}
