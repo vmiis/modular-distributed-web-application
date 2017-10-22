@@ -3,13 +3,5 @@
 	"api_path_development":"https://cbs.wappsystem.com/dev/",
 	"api_path_production":"https://cbs.wappsystem.com/dev/",
 	"default_production":"No",
-	"additional_groups":[],
-    "modules":
-	{
-		"home":	            {"url":"/modules/static/home.html","name_for_search":"Home page"},
-		"monthly":          {"url":"/modules/dynamic/monthly.html","table_id":"20000908","name_for_search":"Monthly calendar"},
-        "daily":            {"url":"/modules/dynamic/daily.html","table_id":"20000908","name_for_search":"Booking a car"},
-        "booking_record":   {"url":"/modules/dynamic/booking_record.html","table_id":"20000908","name_for_search":"Booking records"},
-        "car":              {"url":"/modules/dynamic/car.html","table_id":"20000906","name_for_search":"Add/Remove cars"}
-	}
+	"module_groups":["main.json"]
 }

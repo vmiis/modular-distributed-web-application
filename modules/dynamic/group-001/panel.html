@@ -67,10 +67,7 @@
 <script>
       function F__ID(){
 		  //--------------------------------------------------------
-		  var group="";
-		  $vm.load_config_and_init("/configurations/dynamic-group-001.json",function(config){
-			  group=config.group; if(group!="") group=group+"_";
-		  });
+		  var group="dynamic-group-001_";
 		  //--------------------------------------------------------
 		  $('#panel__ID li').on('click',function(){
 			  var m=group+$(this).attr('module');

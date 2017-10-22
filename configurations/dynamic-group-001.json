@@ -1,5 +1,4 @@
 {
-	"group":"dynamic-group-001",
 	"modules":
 	{
 		"dynamic-contact-us-lumino":			{"url":"/modules/dynamic/group-001/contact-us-lumino.html"},
@@ -19,22 +18,22 @@
 		"additional-questions":					{"url":"https://clinic-online-questionnaire.rt.org.au/modules/dynamic/task/additional-questions.html","table_id":"20011310"},
 		"additional-questions-data":			{"url":"https://clinic-online-questionnaire.rt.org.au/modules/dynamic/data/additional-questions.html","table_id":"20011310"},
 
-		"clinic-questionnaire_visit":			{"url":"https://clinic-questionnaire.rt.org.au/modules/dynamic/visit.html","table_id":"20011195","prefix":"dynamic-group-001_clinic-questionnaire_"},
+		"clinic-questionnaire_visit":			{"url":"https://clinic-questionnaire.rt.org.au/modules/dynamic/visit.html","table_id":"20011195","prefix":"clinic-questionnaire_"},
 		"clinic-questionnaire_physician":		{"url":"https://clinic-questionnaire.rt.org.au/modules/dynamic/physician.html","table_id":"20011196"},
 		"clinic-questionnaire_area":			{"url":"https://clinic-questionnaire.rt.org.au/modules/dynamic/area.html","table_id":"20011197"},
 		"clinic-questionnaire_visit-type":		{"url":"https://clinic-questionnaire.rt.org.au/modules/dynamic/visit-type.html","table_id":"20011198"},
-		"clinic-questionnaire_email_001":		{"url":"https://clinic-questionnaire.rt.org.au/modules/dynamic/email-001.html","prefix":"dynamic-group-001_clinic-questionnaire_"},
-		"clinic-questionnaire_report":			{"url":"https://clinic-questionnaire.rt.org.au/modules/dynamic/report.html","prefix":"dynamic-group-001_clinic-questionnaire_"},
-		"clinic-questionnaire_patient_info":	{"url":"https://clinic-questionnaire.rt.org.au/modules/dynamic/patient_info.html","prefix":"dynamic-group-001_clinic-questionnaire_"},
+		"clinic-questionnaire_email_001":		{"url":"https://clinic-questionnaire.rt.org.au/modules/dynamic/email-001.html","prefix":"clinic-questionnaire_"},
+		"clinic-questionnaire_report":			{"url":"https://clinic-questionnaire.rt.org.au/modules/dynamic/report.html","prefix":"clinic-questionnaire_"},
+		"clinic-questionnaire_patient_info":	{"url":"https://clinic-questionnaire.rt.org.au/modules/dynamic/patient_info.html","prefix":"clinic-questionnaire_"},
 
-		"room-booking_monthly":			{"url":"/templates/room-booking/modules/dynamic/monthly.html","table_id":"20003813","prefix":"dynamic-group-001_room-booking_","name_for_search":"Room booking calendar"},
-		"room-booking_daily":			{"url":"/templates/room-booking/modules/dynamic/daily.html","table_id":"20003813","prefix":"dynamic-group-001_room-booking_","name_for_search":"Booking a room"},
-		"room-booking_booking_record":	{"url":"/templates/room-booking/modules/dynamic/booking_record.html","table_id":"20003813","name_for_search":"Room booking records (admin)"},
-		"room-booking_room":			{"url":"/templates/room-booking/modules/dynamic/room.html","table_id":"20003812","name_for_search":"Add/Remove rooms"},
+		"room-booking_monthly":			{"url":"/modules/dynamic/room-booking/monthly.html","table_id":"20003813","prefix":"room-booking_","name_for_search":"Room booking calendar"},
+		"room-booking_daily":			{"url":"/modules/dynamic/room-booking/daily.html","table_id":"20003813","prefix":"room-booking_","name_for_search":"Booking a room"},
+		"room-booking_booking_record":	{"url":"/modules/dynamic/room-booking/booking_record.html","table_id":"20003813","name_for_search":"Room booking records (admin)"},
+		"room-booking_room":			{"url":"/modules/dynamic/room-booking/room.html","table_id":"20003812","name_for_search":"Add/Remove rooms"},
 
-        "car-booking_monthly":          {"url":"/templates/car-booking/modules/dynamic/monthly.html","table_id":"20000908","name_for_search":"Car booking calendar","prefix":"dynamic-group-001_car-booking_"},
-        "car-booking_daily":            {"url":"/templates/car-booking/modules/dynamic/daily.html","table_id":"20000908","name_for_search":"Booking a car","prefix":"dynamic-group-001_car-booking_"},
-        "car-booking_booking_record":   {"url":"/templates/car-booking/modules/dynamic/booking_record.html","table_id":"20000908","name_for_search":"Car booking records (admin)"},
-        "car-booking_car":              {"url":"/templates/car-booking/modules/dynamic/car.html","table_id":"20000906","name_for_search":"Add/Remove cars"}
+        "car-booking_monthly":          {"url":"/modules/dynamic/car-booking/monthly.html","table_id":"20000908","name_for_search":"Car booking calendar","prefix":"car-booking_"},
+        "car-booking_daily":            {"url":"/modules/dynamic/car-booking/daily.html","table_id":"20000908","name_for_search":"Booking a car","prefix":"car-booking_"},
+        "car-booking_booking_record":   {"url":"/modules/dynamic/car-booking/booking_record.html","table_id":"20000908","name_for_search":"Car booking records (admin)"},
+        "car-booking_car":              {"url":"/modules/dynamic/car-booking/car.html","table_id":"20000906","name_for_search":"Add/Remove cars"}
 	}
 }

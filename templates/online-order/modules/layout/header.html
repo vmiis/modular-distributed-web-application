@@ -1,5 +1,5 @@
 <div header id=header__ID>
-    <nav id=nav__ID class="navbar navbar-expand-md navbar-dark">
+    <nav id=nav__ID class="navbar navbar-expand-md navbar-dark" style='z-index:99999'>
         <a class="navbar-brand d-none d-lg-block" onclick="$vm.nav_load_module('main_home');">
             <div class=large_logo__ID>
                 <div class=large_logo_large_label__ID>
@@ -19,20 +19,22 @@
         <div id="navbars__ID" class="navbar-collapse collapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('main_home');"><i class="fa fa-home"></i> Home</a></li>
-                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('main_monthly');">Calendar</a></li>
-                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('main_daily');">Booking</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('main_order');">Order</a></li>
+            </ul>
+			<ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="nav_dropdown__ID" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administrator</a>
                     <div class="dropdown-menu" aria-labelledby="nav_dropdown__ID">
-                        <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('main_booking_record');">Booking Records</a>
-                        <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('main_car');">Add/Remove Cars</a>
+                        <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('main_order_record');">Order Records</a>
                     </div>
                 </li>
-                <li><a class="nav-link" onclick="$vm.nav_click_process('vm_signinout');" name=signinout><i class="fa fa-user"></i> Sign In/Out</a></li>
+                <li class="nav-item"><a class="nav-link" onclick="$vm.nav_click_process('vm_signinout');" name=signinout><i class="fa fa-user"></i> Sign In/Out</a></li>
             </ul>
+			<!--
 			<form id=form__ID class="form-inline my-2 my-lg-0">
 				<input id=vm_system_search class="form-control mr-sm-2" type="text" placeholder="Search modules..." aria-label="Search modules..." />
 			</form>
+			-->
         </div>
     </nav>
     <script>
@@ -49,7 +51,7 @@
     </script>
     <style>
         #header__ID{
-            background: rgba(50,60,70,0.9);
+            background: rgba(0,0,0,0.5);
         }
         #header__ID a{
             cursor:pointer;
@@ -74,6 +76,9 @@
 	        padding-right:80px;
         }
 		@media screen and (max-width:768px){
+			#nav__ID{
+                padding: 3px 15px;
+			}
             #navbars__ID{
     	        padding-top:0px;
             }
@@ -81,13 +86,75 @@
                 color:#fff;
                 font-size: 140%;
             }
-			#nav__ID{
-                background: rgba(50,60,70,1);
-                padding: 3px 15px;
-			}
 	        #form__ID{
 		        padding-right:0px;
 	        }
 		}
+		/****************************/
+		#navbars__ID a:focus {
+			outline: none;
+		}
+		#navbars__ID .navbar-brand {
+			font-size: 1.1rem;
+			color: white;
+		}
+		#navbars__ID .navbar-brand.active,
+		#navbars__ID .navbar-brand:active,
+		#navbars__ID .navbar-brand:focus,
+		#navbars__ID .navbar-brand:hover {
+			color: white;
+		}
+		#navbars__ID .navbar-nav {
+			letter-spacing: 1px;
+		}
+		#navbars__ID .navbar-nav li.nav-item a.nav-link {
+			color: white;
+		}
+		#navbars__ID .navbar-nav li.nav-item a.nav-link:hover {
+			color: #18BC9C;
+			outline: none;
+		}
+		#navbars__ID .navbar-nav li.nav-item a.nav-link:active,
+		#navbars__ID .navbar-nav li.nav-item a.nav-link:focus {
+			color: white;
+		}
+		#navbars__ID .navbar-toggler {
+			font-size: 14px;
+			padding: 11px;
+			text-transform: uppercase;
+			color: white;
+			border-color: white;
+		}
+		#navbars__ID .navbar-toggler:focus,
+		#navbars__ID .navbar-toggler:hover {
+			color: white;
+			border-color: #18BC9C;
+			background-color: #18BC9C;
+		}
+		@media (min-width: 992px) {
+			#navbars__ID {
+				-webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+				-moz-transition: padding-top 0.3s, padding-bottom 0.3s;
+				transition: padding-top 0.3s, padding-bottom 0.3s;
+			}
+			#navbars__ID .navbar-brand {
+				font-size: 2em;
+				-webkit-transition: all 0.3s;
+				-moz-transition: all 0.3s;
+				transition: all 0.3s;
+			}
+			#navbars__ID .navbar-nav > li.nav-item > a.nav-link.active {
+				color: white;
+				border-radius: 3px;
+				background: #18BC9C;
+			}
+			#navbars__ID .navbar-nav > li.nav-item > a.nav-link.active:active,
+			#navbars__ID .navbar-nav > li.nav-item > a.nav-link.active:focus,
+			#navbars__ID .navbar-nav > li.nav-item > a.nav-link.active:hover {
+				color: white;
+				background: #18BC9C;
+		  	}
+		}
+		/*********************************/
     </style>
 </div>

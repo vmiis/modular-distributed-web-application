@@ -52,8 +52,7 @@ var vm_init=function(){
 		//--------------------------------------------------------
 		$vm.app_config=config;
 		//--------------------------------------------------------
-		$vm.library_path=config.library_path;
-		$vm.parts_path=config.parts_path;
+		$vm.parts_path="https://vmiis.github.io/component";
 		$vm.image_path=config.image_path;
 		if(window.location.hostname=='127.0.0.1' || window.location.hostname=='localhost'){
 			$vm.library_path =window.location.protocol+'//'+window.location.host;
@@ -113,8 +112,6 @@ var vm_init=function(){
 		text=text.replace(/__LIB__\/vmiis\/Common-Code\//g,'__COMPONENT__/');
 		text=text.replace(/__BASE__\/vmiis\/common-code\//g,'__COMPONENT__/');
 		text=text.replace(/__LIB__\/vmiis\/common-code\//g,'__COMPONENT__/');
-		text=text.replace(/__BASE__\//g,$vm.library_path+'/');
-		text=text.replace(/__LIB__\//g,$vm.library_path+'/');
 		text=text.replace(/__PARTS__\//g,'https://vmiis.github.io/component/');
 		text=text.replace(/__COMPONENT__\//g,'https://vmiis.github.io/component/');
 		text=text.replace(/__HOST__\//g,$vm.hosting_path+'/');
@@ -131,7 +128,7 @@ var vm_init=function(){
 			//do not use local system files
 			text=text.replace(/http:\/\/127.0.0.1:8000\/vmiis\/api/g,'https://vmiis.github.io/api');
 			text=text.replace(/http:\/\/127.0.0.1:8000\/vmiis\/framework/g,'https://vmiis.github.io/framework');
-			text=text.replace(/http:\/\/127.0.0.1:8000\/vmiis\/parts/g,'https://vmiis.github.io/parts');
+			text=text.replace(/http:\/\/127.0.0.1:8000\/vmiis\/component/g,'https://vmiis.github.io/component');
 			text=text.replace(/http:\/\/127.0.0.1:8000\/vmiis\/modules/g,'https://vmiis.github.io/modules');
 		}
 		if(window.location.toString().indexOf('_d=1')!=-1){
@@ -146,24 +143,17 @@ var vm_init=function(){
 			//use latest unstable version (master branch, not gh-pages branch)
 			text=text.replace(/https:\/\/vmiis.github.io\/api/g,'https://raw.githubusercontent.com/vmiis/api/master');
 			text=text.replace(/https:\/\/vmiis.github.io\/framework/g,'https://raw.githubusercontent.com/vmiis/framework/master');
-			text=text.replace(/https:\/\/vmiis.github.io\/parts/g,'https://raw.githubusercontent.com/vmiis/parts/master');
+			text=text.replace(/https:\/\/vmiis.github.io\/component/g,'https://raw.githubusercontent.com/vmiis/component/master');
 			text=text.replace(/https:\/\/vmiis.github.io\/modules/g,'https://raw.githubusercontent.com/vmiis/modules/master');
 			text=text.replace(/http:\/\/127.0.0.1:8000\/vmiis\/api/g,'https://raw.githubusercontent.com/vmiis/api/master');
 			text=text.replace(/http:\/\/127.0.0.1:8000\/vmiis\/framework/g,'https://raw.githubusercontent.com/vmiis/framework/master');
-			text=text.replace(/http:\/\/127.0.0.1:8000\/vmiis\/parts/g,'https://raw.githubusercontent.com/vmiis/parts/master');
+			text=text.replace(/http:\/\/127.0.0.1:8000\/vmiis\/component/g,'https://raw.githubusercontent.com/vmiis/component/master');
 			text=text.replace(/http:\/\/127.0.0.1:8000\/vmiis\/modules/g,'https://raw.githubusercontent.com/vmiis/modules/master');
 		}
 		return text;
 	}
 	//--------------------------------------------------------
 	var last=function(){
-		//at last point we will load some modules for ready to use
-        //-------------------------------------
-        $vm.module_list['_system_export_dialog_module']={table_id:'',url:'__COMPONENT__/dialog/export_dialog_module.html'};
-        $vm.load_module_by_name('_system_export_dialog_module','',{})
-        //-------------------------------------
-        $vm.module_list['_system_import_dialog_module']={table_id:'',url:'__COMPONENT__/dialog/import_dialog_module.html'};
-        $vm.load_module_by_name('_system_import_dialog_module','',{})
         //-------------------------------------
 		setTimeout(function (){
 	        $.ajaxSetup({ cache: true });

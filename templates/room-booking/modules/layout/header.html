@@ -1,6 +1,6 @@
 <div header id=header__ID>
     <nav id=nav__ID class="navbar navbar-expand-md navbar-dark" style='z-index:99999'>
-        <a class="navbar-brand d-none d-lg-block" onclick="$vm.nav_load_module('monthly');">
+        <a class="navbar-brand d-none d-lg-block" onclick="$vm.nav_load_module('main_home');">
             <div class=large_logo__ID>
                 <div class=large_logo_large_label__ID>
                     Business Portal
@@ -10,7 +10,7 @@
                 </div>
             </div>
         </a>
-        <a class="navbar-brand d-lg-none" onclick="$vm.nav_load_module('monthly');">
+        <a class="navbar-brand d-lg-none" onclick="$vm.nav_load_module('main_home');">
             <div class=small_logo__ID>Business Portal</div>
         </a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbars__ID" aria-controls="navbars__ID" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,14 +18,14 @@
         </button>
         <div id="navbars__ID" class="navbar-collapse collapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('home');"><i class="fa fa-home"></i> Home</a></li>
-                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('monthly');">Calendar</a></li>
-                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('daily');">Booking</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('main_home');"><i class="fa fa-home"></i> Home</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('main_monthly');">Calendar</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('main_daily');">Booking</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="nav_dropdown__ID" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administrator</a>
                     <div class="dropdown-menu" aria-labelledby="nav_dropdown__ID">
-                        <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('booking_record');">Booking Records</a>
-                        <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('room');">Add/Remove Rooms</a>
+                        <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('main_booking_record');">Booking Records</a>
+                        <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('main_room');">Add/Remove Rooms</a>
                     </div>
                 </li>
                 <li><a class="nav-link" onclick="$vm.nav_click_process('vm_signinout');" name=signinout><i class="fa fa-user"></i> Sign In/Out</a></li>

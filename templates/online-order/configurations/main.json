@@ -1,0 +1,8 @@
+{
+    "modules":
+	{
+		"home":	            {"url":"../../modules/static/basic/home.html","name_for_search":"Home page"},
+		"order":	        {"url":"../../modules/static/basic/under-construction.html","name_for_search":"Order"},
+		"order_record":	    {"url":"../../modules/static/basic/under-construction.html","name_for_search":"Order records"}
+	}
+}
