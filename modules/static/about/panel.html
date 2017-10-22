@@ -98,16 +98,20 @@ Building a web application is just creating a layout module and links all other 
 
 <script>
       function F__ID(){
+		  //--------------------------------------------------------
+		  var group="about_";
 		  $('#panel__ID li').on('click',function(){
-			  var m=$(this).attr('module');
-			  $vm.nav_load_module(m);
-		  })
-          $('#D__ID').on('load',function(){
-              var modules=$vm.vm['__ID'].op.sys.config.modules;
-              for (var property in modules) {
-                  if($vm.module_list[property]==undefined) $vm.module_list[property]=modules[property];
+              var m=$(this).attr('module');
+              if(m!=undefined){
+				  if($vm.module_list[group+m]==undefined){
+					  alert(group+m +" is not in the module list. check the panel 'about' and about.json");
+					  return;
+				  }
+                  $vm.module_list[group+m].alert='1';
+			      $vm.nav_load_module(group+m);
               }
-          })
+		  })
+		  //--------------------------------------------------------
       }
 </script>
 <style>

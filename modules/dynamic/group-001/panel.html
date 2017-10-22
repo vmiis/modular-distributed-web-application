@@ -4,7 +4,7 @@
         <ul>
 			<li module=dynamic-contact-us-studio>Studio</li>
 			<li module=dynamic-contact-us-lumino>Lumino</li>
-            <li module=contact-us-record>Contact us records</li>
+            <li module=contact-us-0001-record>Contact us records</li>
         </ul>
 		<span>Clinic questionnaire setup</span>
         <ul>
@@ -72,6 +72,10 @@
 		  $('#panel__ID li').on('click',function(){
               var m=$(this).attr('module');
               if(m!=undefined){
+				  if($vm.module_list[group+m]==undefined){
+					  alert(group+m +" is not in the module list. check the panel 'dynamic-group-001' and dynamic-group-001.json");
+					  return;
+				  }
                   $vm.module_list[group+m].alert='1';
 			      $vm.nav_load_module(group+m);
               }

@@ -47,6 +47,10 @@
 		  $('#panel__ID li').on('click',function(){
               var m=$(this).attr('module');
               if(m!=undefined){
+				  if($vm.module_list[group+m]==undefined){
+					  alert(group+m +" is not in the module list. check the panel 'static-group-001' and static-group-001.json");
+					  return;
+				  }
                   $vm.module_list[group+m].alert='1';
 			      $vm.nav_load_module(group+m);
               }

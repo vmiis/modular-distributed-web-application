@@ -13,7 +13,6 @@
 		"enquiry-0003":					{"url":"/modules/dynamic/group-001/enquiry.0003.html","table_id":"20009702","name_for_search":"Enquiry"},
 		"enquiry-0003-record":			{"url":"/modules/dynamic/group-001/enquiry.0003.record.html","table_id":"20009702","name_for_search":"Enquiry (record)"},
 		"contact-us-0001":				{"url":"/modules/dynamic/group-001/contact-us.0001.html","table_id":"20009702","name_for_search":"Contact us"},
-		"contact-us-0001-record":		{"url":"/modules/dynamic/group-001/contact-us.0001.record.html","table_id":"20009702","name_for_search":"Contact us (records)"},
 		"appointment-0002":				{"url":"/modules/dynamic/group-001/appointment.0002.html","table_id":"20009702","name_for_search":"Appointment"},
 		"appointment-0002-record":		{"url":"/modules/dynamic/group-001/appointment.0002.record.html","table_id":"20009702","name_for_search":"Appointment (records)"},
 
@@ -35,17 +34,6 @@
         "dev_help_form":	            {"url":"/modules/dynamic/help/help.form.html","table_id":"20010426"},
         "dev_help_view":	            {"url":"/modules/dynamic/help/help.view.html","table_id":"20010426"},
 
-		"dropdown-list":{"url":"/modules/dynamic/basic/dropdown-list.html","table_id":"20008497"},
-		"radio-button":	{"url":"/modules/dynamic/basic/radio-button.html","table_id":"20008499"},
-		"checkbox":		{"url":"/modules/dynamic/basic/checkbox.html","table_id":"20008498"},
-		"color":		{"url":"/modules/dynamic/basic/color.html","table_id":"20008493"},
-		"date":			{"url":"/modules/dynamic/basic/date.html","table_id":"20008491"},
-		"file":			{"url":"/modules/dynamic/basic/file.html","table_id":"20008500"},
-		"image":		{"url":"/modules/dynamic/basic/image.html","table_id":"20008501"},
-		"autocomplete":			{"url":"/modules/dynamic/basic/autocomplete.html","table_id":"20008495"},
-		"autocomplete_with_new":{"url":"/modules/dynamic/basic/autocomplete_with_new.html","table_id":"20008495"},
-		"postcode":				{"url":"/modules/dynamic/basic/postcode.html","table_id":"20008494"},
-		"calculation":			{"url":"/modules/dynamic/basic/calculation.html","table_id":"20008496"},
 
 		"room-booking_monthly":			{"url":"/modules/dynamic/room-booking/monthly.html","table_id":"20003813","prefix":"room-booking_","name_for_search":""},
 		"room-booking_daily":			{"url":"/modules/dynamic/room-booking/daily.html","table_id":"20003813","prefix":"room-booking_","name_for_search":""},

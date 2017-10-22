@@ -124,6 +124,10 @@
 		  $('#page__ID li').on('click',function(){
 			  var m=$(this).attr('module');
               if(m!=undefined){
+				  if($vm.module_list[group+m]==undefined){
+					  alert(group+m +" is not in the module list. check the panel 'main' and main.json");
+					  return;
+				  }
                   $vm.module_list[group+m].alert='1';
 			      $vm.nav_load_module(group+m);
               }

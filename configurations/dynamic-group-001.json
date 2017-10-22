@@ -3,6 +3,8 @@
 	{
 		"dynamic-contact-us-lumino":			{"url":"/modules/dynamic/group-001/contact-us-lumino.html"},
         "dynamic-contact-us-studio":	       	{"url":"/modules/dynamic/group-001/contact-us-studio.html"},
+		"contact-us-0001-record":				{"url":"/modules/dynamic/group-001/contact-us.0001.record.html","table_id":"20009702","name_for_search":"Contact us (records)"},
+
 		"short-sleep-history":					{"url":"https://clinic-online-questionnaire.rt.org.au/modules/dynamic/task/short-sleep-history.html","table_id":"20011176"},
 		"short-sleep-history-data":				{"url":"https://clinic-online-questionnaire.rt.org.au/modules/dynamic/data/short-sleep-history.html","table_id":"20011176"},
 		"sleep-history":						{"url":"https://clinic-online-questionnaire.rt.org.au/modules/dynamic/task/sleep-history.html","table_id":"20011309"},
@@ -34,6 +36,18 @@
         "car-booking_monthly":          {"url":"/modules/dynamic/car-booking/monthly.html","table_id":"20000908","name_for_search":"Car booking calendar","prefix":"car-booking_"},
         "car-booking_daily":            {"url":"/modules/dynamic/car-booking/daily.html","table_id":"20000908","name_for_search":"Booking a car","prefix":"car-booking_"},
         "car-booking_booking_record":   {"url":"/modules/dynamic/car-booking/booking_record.html","table_id":"20000908","name_for_search":"Car booking records (admin)"},
-        "car-booking_car":              {"url":"/modules/dynamic/car-booking/car.html","table_id":"20000906","name_for_search":"Add/Remove cars"}
+        "car-booking_car":              {"url":"/modules/dynamic/car-booking/car.html","table_id":"20000906","name_for_search":"Add/Remove cars"},
+
+		"dropdown-list":{"url":"/modules/dynamic/basic/dropdown-list.html","table_id":"20008497"},
+		"radio-button":	{"url":"/modules/dynamic/basic/radio-button.html","table_id":"20008499"},
+		"checkbox":		{"url":"/modules/dynamic/basic/checkbox.html","table_id":"20008498"},
+		"color":		{"url":"/modules/dynamic/basic/color.html","table_id":"20008493"},
+		"date":			{"url":"/modules/dynamic/basic/date.html","table_id":"20008491"},
+		"file":			{"url":"/modules/dynamic/basic/file.html","table_id":"20008500"},
+		"image":		{"url":"/modules/dynamic/basic/image.html","table_id":"20008501"},
+		"autocomplete":			{"url":"/modules/dynamic/basic/autocomplete.html","table_id":"20008495"},
+		"autocomplete_with_new":{"url":"/modules/dynamic/basic/autocomplete_with_new.html","table_id":"20008495"},
+		"postcode":				{"url":"/modules/dynamic/basic/postcode.html","table_id":"20008494"},
+		"calculation":			{"url":"/modules/dynamic/basic/calculation.html","table_id":"20008496"}
 	}
 }

@@ -2,5 +2,10 @@
 	"api_path_development":"https://cbs.wappsystem.com/dev/",
 	"api_path_production":"https://cbs.wappsystem.com/dev/",
 	"default_production":"No",
-	"module_groups":["main.json","static-group-001.json","dynamic-group-001.json"]
+	"module_groups":[
+		"main.json",
+		"static-group-001.json",
+		"dynamic-group-001.json",
+		"about.json"
+	]
 }
