@@ -128,7 +128,7 @@ VmInclude:/modules/layout/footer.html
 		if(groups!=undefined && groups.length>0){
 			N=groups.length;
 			//------------------------------------
-			for(var i=0;i<N;i++){
+			for(var i=0;i<groups.length;i++){
 				var url=$vm.hosting_path+"/configurations/"+groups[i];
 				var ver=localStorage.getItem(url+"_ver");
 				var txt=localStorage.getItem(url+"_txt");
@@ -140,8 +140,7 @@ VmInclude:/modules/layout/footer.html
 			//------------------------------------
 		}
 		else{
-			set_module_search();
-			load_home_module();
+            alert("No module group in the system!")
 		}
 		//------------------------------------
 	}

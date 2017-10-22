@@ -70,8 +70,11 @@
 		  var group="dynamic-group-001_";
 		  //--------------------------------------------------------
 		  $('#panel__ID li').on('click',function(){
-			  var m=group+$(this).attr('module');
-			  $vm.nav_load_module(m);
+              var m=$(this).attr('module');
+              if(m!=undefined){
+                  $vm.module_list[group+m].alert='1';
+			      $vm.nav_load_module(group+m);
+              }
 		  })
 		  //--------------------------------------------------------
       }

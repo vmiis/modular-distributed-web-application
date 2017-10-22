@@ -122,9 +122,11 @@
 		  //--------------------------------------------------------
 		  var group="main_";
 		  $('#page__ID li').on('click',function(){
-			  var m=group+$(this).attr('module');
-			  $vm.module_list[m].alert='1';
-			  $vm.nav_load_module(m);
+			  var m=$(this).attr('module');
+              if(m!=undefined){
+                  $vm.module_list[group+m].alert='1';
+			      $vm.nav_load_module(group+m);
+              }
 		  })
 		  //--------------------------------------------------------
       }
