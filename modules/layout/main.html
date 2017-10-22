@@ -127,6 +127,7 @@ VmInclude:/modules/layout/footer.html
 			$.get(url+'?_='+$vm.ver[1]+$vm.reload,function(data){
 				localStorage.setItem(url+"_txt",data);
 				localStorage.setItem(url+"_ver",$vm.ver[1]);
+                console.log("processing "+group) 
 				add_config_modules_to_module_list_and_start(data,group);
 			},'text').fail(function() {
 				alert( "The configuration file ("+url+") doesn't exist!" );
@@ -143,9 +144,13 @@ VmInclude:/modules/layout/footer.html
 				var ver=localStorage.getItem(url+"_ver");
 				var txt=localStorage.getItem(url+"_txt");
 				if(ver!=$vm.ver[1] || txt===null || $vm.debug===true || $vm.reload!=''){
+                    console.log("processing "+groups[i])
 					process_config_file(url,groups[i].replace('.json','_'));
 				}
-				else{ add_config_modules_to_module_list_and_start(txt,groups[i].replace('.json','_')); }
+				else{
+                    console.log("processing "+groups[i])
+                    add_config_modules_to_module_list_and_start(txt,groups[i].replace('.json','_'));
+                }
 			}
 			//------------------------------------
 		}
