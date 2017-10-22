@@ -65,23 +65,58 @@
 </div>
 
 <script>
-      function F__ID(){
-		  //--------------------------------------------------------
-		  var group="dynamic-group-001_";
-		  //--------------------------------------------------------
-		  $('#panel__ID li').on('click',function(){
-              var m=$(this).attr('module');
-              if(m!=undefined){
-				  if($vm.module_list[group+m]==undefined){
-					  alert(group+m +" is not in the module list. check the panel 'dynamic-group-001' and dynamic-group-001.json");
-					  return;
-				  }
-                  $vm.module_list[group+m].alert='1';
-			      $vm.nav_load_module(group+m);
-              }
-		  })
-		  //--------------------------------------------------------
-      }
+	function F__ID(){
+		//--------------------------------------------------------
+		var group="dynamic-group-001_";
+		//--------------------------------------------------------
+		$('#panel__ID li').on('click',function(event){
+			var m=$(this).attr('module');
+			if(m!=undefined){
+				if($vm.module_list[group+m]==undefined){
+					alert(group+m +" is not in the module list. check the panel 'dynamic-group-001' and dynamic-group-001.json");
+					return;
+				}
+				$vm.module_list[group+m].alert='1';
+				$vm.nav_load_module(group+m);
+			}
+		})
+		//--------------------------------------------------------
+		/*
+		function UrlExists(url, cb){
+			jQuery.ajax({
+			    url:      url,
+			    dataType: 'text',
+			    type:     'GET',
+			    complete:  function(xhr){
+					 console.log(xhr.status+" "+url)
+			    }
+			});
+		}
+		//--------------------------------------------------------
+		var N=0;
+		$('#panel__ID li').each(function(){
+			var m=$(this).attr('module');
+			if($vm.module_list[group+m]==undefined){alert(group+m +" is not in the module list");return;}N++;
+		})
+		alert(N);
+		//--------------------------------------------------------
+		var N=0;
+		$('#panel__ID li').each(function(){
+			var m=$(this).attr('module');
+			if($vm.module_list[group+m].url==undefined){alert(group+m +" url is not set");return;}
+			N++;
+		})
+		alert(N);
+		//--------------------------------------------------------
+		$('#panel__ID li').each(function(){
+			var m=$(this).attr('module');
+			var url=$vm.module_list[group+m].url;
+			if(url[0]=='/') url=$vm.hosting_path+url;
+			UrlExists(url)
+		})
+		//--------------------------------------------------------
+		*/
+	}
 </script>
 <style>
 	VmInclude:__PARTS__/navigation/navigation.css
