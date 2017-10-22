@@ -1,5 +1,5 @@
 <div header id=header__ID>
-    <nav id=nav__ID class="navbar navbar-expand-md navbar-dark" style='z-index:99999'>
+    <nav id=nav__ID class="navbar navbar-expand-md navbar-dark">
         <a class="navbar-brand d-none d-lg-block" onclick="$vm.nav_load_module('main_home');">
             <div class=large_logo__ID>
                 <div class=large_logo_large_label__ID>
@@ -54,6 +54,9 @@
         #header__ID a{
             cursor:pointer;
         }
+        #nav__ID{
+            z-index:99999;
+        }
         #navbars__ID{
 	        padding-top:30px;
         }
@@ -83,7 +86,7 @@
             #navbars__ID{
     	        padding-top:0px;
                 padding-left:10px;
-                background: rgba(0,0,0,0.3);
+                background-color:#445a26;
             }
             .small_logo__ID{
                 color:#fff;
