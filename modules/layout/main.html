@@ -127,7 +127,7 @@ VmInclude:/modules/layout/footer.html
 			$.get(url+'?_='+$vm.ver[1]+$vm.reload,function(data){
 				localStorage.setItem(url+"_txt",data);
 				localStorage.setItem(url+"_ver",$vm.ver[1]);
-                console.log("processing "+group) 
+                console.log("processing "+group)
 				add_config_modules_to_module_list_and_start(data,group);
 			},'text').fail(function() {
 				alert( "The configuration file ("+url+") doesn't exist!" );
@@ -139,7 +139,7 @@ VmInclude:/modules/layout/footer.html
 			N=groups.length;
             console.log("there is/are "+N +" module group(s)")
 			//------------------------------------
-			for(var i=0;i<N;i++){
+			for(var i=0;i<groups.length;i++){
 				var url=$vm.hosting_path+"/configurations/"+groups[i];
 				var ver=localStorage.getItem(url+"_ver");
 				var txt=localStorage.getItem(url+"_txt");
