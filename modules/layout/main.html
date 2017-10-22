@@ -134,7 +134,7 @@ VmInclude:/modules/layout/footer.html
 		var groups=$vm.app_config.module_groups;
 		if(groups!=undefined && groups.length>0){
 			N=groups.length;
-            console.write("there is/are "+N +" module group(s)")
+            console.log("there is/are "+N +" module group(s)")
 			//------------------------------------
 			for(var i=0;i<N;i++){
 				var url=$vm.hosting_path+"/configurations/"+groups[i];
