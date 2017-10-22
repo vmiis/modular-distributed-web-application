@@ -1,32 +1,34 @@
 <div header id=header__ID>
-    <nav id=nav__ID class="navbar navbar-expand-md navbar-dark">
-        <a class="navbar-brand d-none d-lg-inline-block" onclick="$vm.nav_load_module('main_home');">
-        	<div class=large_logo__ID>
-	        	<div class="logo_image__ID"></div>
-				<div class="logo_label__ID">
-	                <div class="large_logo_large_label__ID">
-	                    Modular distributed web applications
-	                </div>
-	                <div class="large_logo_small_label__ID">
-	                    Open source project (https://github.com/vmiis)
-	                </div>
-	            </div>
-	        </div>
+    <nav id=nav__ID class="navbar navbar-expand-xl navbar-dark">
+		<div id=brand__ID>
+	        <a class="navbar-brand d-none d-xl-inline-block" onclick="$vm.nav_load_module('main_home');">
+	        	<div class=large_logo__ID>
+		        	<div class="logo_image__ID"></div>
+					<div class="logo_label__ID">
+		                <div class="large_logo_large_label__ID">
+		                    Modular distributed web applications
+		                </div>
+		                <div class="large_logo_small_label__ID">
+		                    Open source project (https://github.com/vmiis)
+		                </div>
+		            </div>
+		        </div>
 
-        </a>
-        <a class="navbar-brand d-lg-none" onclick="$vm.nav_load_module('main_home');">
-            <div class=small_logo__ID>Modular distributed web applications<br>Open source project (https://github.com/vmiis)</div>
-        </a>
-
+	        </a>
+	        <a class="navbar-brand d-xl-none" onclick="$vm.nav_load_module('main_home');">
+	            <div class=small_logo__ID>Modular distributed web applications<br>Open source project (https://github.com/vmiis)</div>
+	        </a>
+		</div>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbars__ID" aria-controls="navbars__ID" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div id="navbars__ID" class="navbar-collapse collapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('main_home');"><i class="fa fa-home"></i> Home</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('main_about');"><i class="fa fa-info-circle"></i> About</a></li>
             </ul>
-			<form id=form__ID class="form-inline my-2 my-lg-0">
+			<form id=form__ID class="form-inline my-2 my-xl-0">
 				<input id=vm_system_search class="form-control mr-sm-2" type="text" placeholder="Search modules..." aria-label="Search modules..." />
 			</form>
 			<ul class="navbar-nav">

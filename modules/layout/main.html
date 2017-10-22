@@ -12,7 +12,7 @@ VmInclude:/modules/layout/footer.html
 		var website_item_list_for_search=[]
 		//------------------------------------
 		var set_height=function(){
-			var header_height=$('#header__ID').outerHeight(); $vm.header_height=header_height;
+			var header_height=$('#brand__ID').outerHeight(); $vm.header_height=header_height;
 			var footer_height=$('#footer__ID').outerHeight();
 			$vm.min_height=($(window).height()-header_height-footer_height);
 			$('#content_container__ID').css({'height':$vm.min_height});

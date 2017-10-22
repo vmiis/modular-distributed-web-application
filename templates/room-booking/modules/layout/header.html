@@ -1,18 +1,20 @@
 <div header id=header__ID>
-    <nav id=nav__ID class="navbar navbar-expand-md navbar-dark" style='z-index:99999'>
-        <a class="navbar-brand d-none d-lg-block" onclick="$vm.nav_load_module('main_home');">
-            <div class=large_logo__ID>
-                <div class=large_logo_large_label__ID>
-                    Business Portal
-                </div>
-                <div class=large_logo_small_label__ID>
-                    on-demand business applications
-                </div>
-            </div>
-        </a>
-        <a class="navbar-brand d-lg-none" onclick="$vm.nav_load_module('main_home');">
-            <div class=small_logo__ID>Business Portal</div>
-        </a>
+    <nav id=nav__ID class="navbar navbar-expand-xl navbar-dark" style='z-index:99999'>
+		<div id=brand__ID>
+	        <a class="navbar-brand d-none d-xl-block" onclick="$vm.nav_load_module('main_home');">
+	            <div class=large_logo__ID>
+	                <div class=large_logo_large_label__ID>
+	                    Business Portal
+	                </div>
+	                <div class=large_logo_small_label__ID>
+	                    on-demand business applications
+	                </div>
+	            </div>
+	        </a>
+	        <a class="navbar-brand d-xl-none" onclick="$vm.nav_load_module('main_home');">
+	            <div class=small_logo__ID>Business Portal</div>
+	        </a>
+		</div>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbars__ID" aria-controls="navbars__ID" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,7 +32,7 @@
                 </li>
                 <li><a class="nav-link" onclick="$vm.nav_click_process('vm_signinout');" name=signinout><i class="fa fa-user"></i> Sign In/Out</a></li>
             </ul>
-			<form id=form__ID class="form-inline my-2 my-lg-0">
+			<form id=form__ID class="form-inline my-2 my-xl-0">
 				<input id=vm_system_search class="form-control mr-sm-2" type="text" placeholder="Search modules..." aria-label="Search modules..." />
 			</form>
         </div>
@@ -73,7 +75,7 @@
         #form__ID{
 	        padding-right:80px;
         }
-		@media screen and (max-width:768px){
+		@media screen and (max-width:1200px){
             #navbars__ID{
     	        padding-top:0px;
             }
