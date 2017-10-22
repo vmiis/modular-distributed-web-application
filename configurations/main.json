@@ -1,49 +1,10 @@
 {
 	"modules":
 	{
-		"home":			{"url":"/modules/static/home.html","name_for_search":"Home page"},
-		"about":		{"url":"/modules/static/about/panel.html"},
-
-		"static-wind-farm":	           	{"url":"/modules/static/wind-farm/panel.html"},
-		"static-group-001":	           	{"url":"/modules/static/group-001/panel.html"},
-		"dynamic-group-001":	        {"url":"/modules/dynamic/group-001/panel.html"},
-        "dynamic-equipment-booking":	{"url":"/modules/dynamic/equipment-booking/panel.html"},
-
-
-		"enquiry-0003":					{"url":"/modules/dynamic/group-001/enquiry.0003.html","table_id":"20009702","name_for_search":"Enquiry"},
-		"enquiry-0003-record":			{"url":"/modules/dynamic/group-001/enquiry.0003.record.html","table_id":"20009702","name_for_search":"Enquiry (record)"},
-		"contact-us-0001":				{"url":"/modules/dynamic/group-001/contact-us.0001.html","table_id":"20009702","name_for_search":"Contact us"},
-		"contact-us-0001-record":		{"url":"/modules/dynamic/group-001/contact-us.0001.record.html","table_id":"20009702","name_for_search":"Contact us (record)"},
-		"appointment-0002":				{"url":"/modules/dynamic/group-001/appointment.0002.html","table_id":"20009702","name_for_search":"Appointment"},
-		"appointment-0002-record":		{"url":"/modules/dynamic/group-001/appointment.0002.record.html","table_id":"20009702","name_for_search":"Appointment (records)"},
-
-
-        "what-is-business-portal":		{"url":"/modules/static/about/what-is-business-portal.html"},
-        "solutions":		            {"url":"/modules/static/about/solutions.html"},
-        "structure":		            {"url":"/modules/static/about/structure.html"},
-        "my-goals":		                {"url":"/modules/static/about/my-goals.html"},
-        "my-skills":		            {"url":"/modules/static/about/my-skills.html"},
-		"my-hobbies":		            {"url":"/modules/static/about/my-hobbies.html"},
-        "job-proposal":		            {"url":"/modules/static/about/job-proposal.html"},
-        "business-proposal":		    {"url":"/modules/static/about/business-proposal.html"},
-        "protential-success":		    {"url":"/modules/static/about/protential-success.html"},
-        "working-together":		        {"url":"/modules/static/about/working-together.html"},
-        "user-help":		            {"url":"/modules/dynamic/help/help.html","table_id":"20010425","form_module":"user_help_form","view":"user_help_view"},
-        "user_help_form":	            {"url":"/modules/dynamic/help/help.form.html","table_id":"20010425"},
-        "user_help_view":	            {"url":"/modules/dynamic/help/help.view.html","table_id":"20010425"},
-        "dev-help":		                {"url":"/modules/dynamic/help/help.html","table_id":"20010426","form_module":"dev_help_form","view":"dev_help_view"},
-        "dev_help_form":	            {"url":"/modules/dynamic/help/help.form.html","table_id":"20010426"},
-        "dev_help_view":	            {"url":"/modules/dynamic/help/help.view.html","table_id":"20010426"},
-
-
-		"room-booking_monthly":			{"url":"/modules/dynamic/room-booking/monthly.html","table_id":"20003813","prefix":"room-booking_","name_for_search":""},
-		"room-booking_daily":			{"url":"/modules/dynamic/room-booking/daily.html","table_id":"20003813","prefix":"room-booking_","name_for_search":""},
-		"room-booking_booking_record":	{"url":"/modules/dynamic/room-booking/booking_record.html","table_id":"20003813","name_for_search":""},
-		"room-booking_room":			{"url":"/modules/dynamic/room-booking/room.html","table_id":"20003812","name_for_search":""},
-
-
-		"simple-dynamic-content-module":{"url":"/modules/dynamic/basic/simple-dynamic-content-module.html","table_id":"20008490"},
-        "contact-us-record":	        {"url":"/modules/dynamic/basic/contact-us-record.html","table_id":"20011189"},
+		"home":			{"url":"/modules/panel/main.html","name_for_search":"Home page"},
+		"panel-001":	{"url":"/modules/panel/panel-001.html"},
+		"panel-002":	{"url":"/modules/panel/panel-002.html"},
+		"about":		{"url":"/modules/panel/about.html"},
 
 		"simple-static-content-module":	{"url":"/modules/static/basic/simple-static-content-module.html"	},
 		"automatic-slide-show-w3":		{"url":"/modules/static/basic/automatic-slide-show-w3.html"},
@@ -77,7 +38,27 @@
 		"windfarm_about-woolcock-research":	{"url":"/modules/static/wind-farm/about-woolcock-research.html"},
 		"windfarm_researcher":				{"url":"/modules/static/wind-farm/researcher.html"},
 
-		"scenery-rspilhaus":			{"url":"/modules/static/group-001/scenery-rspilhaus.html"}
+		"scenery-rspilhaus":			{"url":"/modules/static/group-001/scenery-rspilhaus.html"},
+
+
+		"enquiry-0003":					{"url":"/modules/dynamic/group-001/enquiry.0003.html","table_id":"20009702","name_for_search":"Enquiry"},
+		"enquiry-0003-record":			{"url":"/modules/dynamic/group-001/enquiry.0003.record.html","table_id":"20009702","name_for_search":"Enquiry (record)"},
+		"contact-us-0001":				{"url":"/modules/dynamic/group-001/contact-us.0001.html","table_id":"20009702","name_for_search":"Contact us"},
+		"contact-us-0001-record":		{"url":"/modules/dynamic/group-001/contact-us.0001.record.html","table_id":"20009702","name_for_search":"Contact us (record)"},
+		"appointment-0002":				{"url":"/modules/dynamic/group-001/appointment.0002.html","table_id":"20009702","name_for_search":"Appointment"},
+		"appointment-0002-record":		{"url":"/modules/dynamic/group-001/appointment.0002.record.html","table_id":"20009702","name_for_search":"Appointment (records)"},
+
+		"business-demographic-survey-0004":			{"url":"/modules/dynamic/group-001/business-demographic-survey-0004.html","table_id":"20009702","name_for_search":"Business demographic survey"},
+		"business-demographic-survey-0004-record":	{"url":"/modules/dynamic/group-001/business-demographic-survey-0004-record.html","table_id":"20009702","name_for_search":"Business demographic survey (record)"},
+
+		"room-booking_monthly":			{"url":"/modules/dynamic/room-booking/monthly.html","table_id":"20003813","prefix":"room-booking_","name_for_search":""},
+		"room-booking_daily":			{"url":"/modules/dynamic/room-booking/daily.html","table_id":"20003813","prefix":"room-booking_","name_for_search":""},
+		"room-booking_booking_record":	{"url":"/modules/dynamic/room-booking/booking_record.html","table_id":"20003813","name_for_search":""},
+		"room-booking_room":			{"url":"/modules/dynamic/room-booking/room.html","table_id":"20003812","name_for_search":""},
+
+
+		"simple-dynamic-content-module":{"url":"/modules/dynamic/basic/simple-dynamic-content-module.html","table_id":"20008490"},
+        "contact-us-record":	        {"url":"/modules/dynamic/basic/contact-us-record.html","table_id":"20011189"}
 
 	}
 }

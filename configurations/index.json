@@ -4,8 +4,8 @@
 	"default_production":"No",
 	"module_groups":[
 		"main.json",
-		"static-group-001.json",
-		"dynamic-group-001.json",
+		"panel-001.json",
+		"panel-002.json",
 		"about.json"
 	]
 }

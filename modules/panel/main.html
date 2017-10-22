@@ -1,4 +1,4 @@
-<section id=page__ID>
+<section id=panel__ID>
     <div style='width:100%;overflow:auto'>
         <div id=info__ID>
             <i>
@@ -41,7 +41,7 @@
 
 		</ul>
 		<ul>
-			<li module=static-group-001 style='list-style-type: circle;'>More static modules...</li>
+			<li module=panel-001 style='list-style-type: circle;'>More static modules...</li>
 	    </ul>
 	    <!--
         <ul>
@@ -52,6 +52,8 @@
 	<div class='nav__ID'>
 	    <span>Dynamic Modules (content to/from database)</span>
 	    <ul>
+			<li module=business-demographic-survey-0004>Business demographic survey</li>
+			<li module=business-demographic-survey-0004-record>Business demographic survey (records)</li>
 			<li module=enquiry-0003>Enquiry</li>
 			<li module=enquiry-0003-record>Enquiry (records)</li>
 			<li module=appointment-0002>Appointment</li>
@@ -63,9 +65,10 @@
 			<li module=room-booking_daily>Booking a room</li>
 			<li module=room-booking_booking_record>Room booking records (admin)</li>
 			<li module=room-booking_room>Add or remove a room</li>
+
 	    </ul>
         <ul>
-			<li module=dynamic-group-001 style='list-style-type: circle;'>More dynamic modules...</li>
+			<li module=panel-002 style='list-style-type: circle;'>More dynamic modules...</li>
 	    </ul>
 	</div>
 	<div class='nav__ID'>
@@ -121,7 +124,7 @@
       function F__ID(){
 		  //--------------------------------------------------------
 		  var group="main_";
-		  $('#page__ID li').on('click',function(){
+		  $('#panel__ID li').on('click',function(){
 			  var m=$(this).attr('module');
               if(m!=undefined){
 				  if($vm.module_list[group+m]==undefined){
@@ -133,46 +136,8 @@
               }
 		  })
 		  //--------------------------------------------------------
-		  /*
-		  		function UrlExists(url, cb){
-		  			jQuery.ajax({
-		  			    url:      url,
-		  			    dataType: 'text',
-		  			    type:     'GET',
-		  			    complete:  function(xhr){
-		  					 console.log(xhr.status+" "+url)
-		  			    }
-		  			});
-		  		}
-		  		//--------------------------------------------------------
-		  		var N=0;
-		  		$('#page__ID li').each(function(){
-		  			var m=$(this).attr('module');
-					if(m!=undefined){
-		  				if($vm.module_list[group+m]==undefined){alert(group+m +" is not in the module list");return false;}N++;
-					}
-		  		})
-		  		alert(N);
-		  		//--------------------------------------------------------
-		  		var N=0;
-		  		$('#page__ID li').each(function(){
-		  			var m=$(this).attr('module');
-					if(m!=undefined){
-		  				if($vm.module_list[group+m].url==undefined){alert(group+m +" url is not set");return false;}N++;
-					}
-		  		})
-		  		alert(N);
-		  		//--------------------------------------------------------
-		  		$('#page__ID li').each(function(){
-		  			var m=$(this).attr('module');
-					if(m!=undefined){
-			  			var url=$vm.module_list[group+m].url;
-			  			if(url[0]=='/') url=$vm.hosting_path+url;
-			  			UrlExists(url)
-					}
-		  		})
-		  		//--------------------------------------------------------
-		*/
+		  //Vm Include:__CURRENT_PATH__/check-link.js
+		  //--------------------------------------------------------
       }
 </script>
 
