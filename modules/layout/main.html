@@ -1,3 +1,4 @@
+<canvas class="p_background"></canvas>
 VmInclude:/modules/layout/top-right-corner.html
 VmInclude:/modules/layout/header.html
 VmInclude:/modules/layout/content-container.html
@@ -31,26 +32,11 @@ VmInclude:/modules/layout/footer.html
 		    }
 		};
 		//-----------------------------------------
-        /*
-        var modules=$vm.app_config.modules;
-		for (var property in modules) {
-		   	if($vm.module_list[property]==undefined){
-			   	$vm.module_list[property]=modules[property];
-				var nm=$vm.module_list[property]['name_for_search'];
-				if(nm!=""){
-					if(nm==undefined) nm=property;
-					website_item_list_for_search.push({label:nm,value:property})
-				}
-		   	}
-		}
-        */
-		//------------------------------------
 		//This is the place we can add background image to body (Asynchronous)
-		/*
 		var $image1 = $("<img>");
 		$image1.on('load',(function(){ $('body').css("background", "url("+$(this).attr("src")+") no-repeat bottom center"); $('body').css("background-size", "cover");  }));
 		$image1.attr("src", "__HOST__/images/background.jpg");
-		*/
+
 		//------------------------------------
 		//over write vm alert
 		$vm.alert=function(msg){
@@ -158,13 +144,45 @@ VmInclude:/modules/layout/footer.html
             alert("No module group in the system!")
 		}
 		//------------------------------------
+		//Particles.init({selector:'.p_background'});
+
+
+
+		Particles.init({
+		          selector: '.p_background',
+		          color: '#75A5B7',
+		          maxParticles: 130,
+		          connectParticles: true,
+		          responsive: [
+		            {
+		              breakpoint: 768,
+		              options: {
+		                maxParticles: 20
+		              }
+		            }, {
+		              breakpoint: 375,
+		              options: {
+		                maxParticles: 10
+		              }
+		            }
+		          ]
+		        });
+		//------------------------------------
 	}
 </script>
 <style main-layout-css>
+	.p_background{
+		position: absolute;
+		  display: block;
+		  top: 0;
+		  left: 0;
+		  z-index: 0;
+	}
     .vm_module{
         position:absolute;
         width:100%;
         height:100%;
+		background-color: #fff;
     }
 	html,body{
 		height:100%;

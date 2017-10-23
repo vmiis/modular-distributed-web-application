@@ -2,7 +2,7 @@
 <script>
 	function F__ID(){
 		//--------------------------------------------------------
-		var url=$vm.hosting_path+$vm.app_config.modules['sandbox-content'].url;
+		var url=$vm.hosting_path+$vm.module_list['main_sandbox-content'].url;
 		$vm.load_module_content(url,function(sandbox_content){
 			document.getElementById('sandbox__ID').src = "data:text/html;charset=utf-8," + encodeURIComponent(sandbox_content);
 		})

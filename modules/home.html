@@ -1,0 +1,65 @@
+<div id=page__ID>
+	<div class="container-fluid" style='max-width:800px;'>
+		<div class="text-center panel__ID">
+		  <h1>Modular Distributed Web Applications.</h1>
+	  	  <hr style='border-top:1px solid #f05f40;'></hr>
+	  	  <p>I build this website for demonstrating the concept of modular distributed web application.
+			  I am looking for sponsors to keep my concept further developed.
+		  </p>
+		  <hr style='border-top:1px solid #f05f40;'></hr>
+		  <p>
+			  My goal is to create an open source modular distributed cloud business operating system.
+			  <div style='padding-left:10px'>
+			  <ul class="text-left">
+			  	<li>All modules should be open source and should be able to be hosted anywhere.</li>
+			    <li>Business data and files should be stored in business owner's private database and storage.</li>
+		  	  </ul>
+		  	</div>
+		  </p>
+		  <hr style='border-top:1px solid #f05f40;'></hr>
+		  <p>
+			 I can build a web application with unlimited number of shared reusable modules distributed on different
+			 static web servers around the world and maintained by different people with different skills!
+		  </p>
+		  <hr style='border-top:1px solid #f05f40;'></hr>
+		  <p>
+			 I am creating more various kind of shared reusable modules for fast building up a website and easy maintenance.
+		  </p>
+		  <button id=a1__ID class="btn btn-primary">See more modules</button>
+		  <br>
+		  <br><br>
+		</div>
+	</div>
+</div>
+<script>
+	function F__ID(){
+		$('#a1__ID').on('click',function(){
+			$vm.nav_load_module('main_panel');
+		})
+	}
+</script>
+<style>
+	#D__ID{
+		height:100%;
+        overflow:auto;
+		animation: vm_module_fadein 1.0s;
+		background-color: transparent;
+	}
+	#page__ID{
+		height:100%;
+		display: flex;
+		align-items: center;
+	}
+	.panel__ID{
+		color:#fff;
+		font-weight: normal;
+		background: rgba(20,20,20,0.6);
+	    padding: 30px 20px 10px 20px;
+	    border-radius: 15px;
+	}
+	@media screen and (max-width:1200px){
+		#page__ID{
+			display: block;
+		}
+	}
+</style>
