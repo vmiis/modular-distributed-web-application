@@ -1,0 +1,54 @@
+AAA
+<div id=shell></div>
+BBB
+
+
+<script>
+	function F__ID(){
+		/*
+		var importContent = document.querySelector('link[rel="import"]').import;
+alert(importContent)
+	    var template = importContent.querySelector('#myTemplate');
+	    var clone = document.importNode(template.content, true);
+	    document.querySelector('#shell').appendChild(clone);
+		*/
+		var link = document.createElement('link');
+		link.rel = 'import';
+		link.href = 'modules/static/test/remote.html';
+		//link.setAttribute('async', ''); // make it async!
+		link.onload = function(e) {
+			alert(1)
+			var importContent = link.import;//document.querySelector('link[rel="import"]').import;
+			var hosta = document.querySelector('#shell');
+			hosta.attachShadow(importContent);
+			//var root = hosta.createShadowRoot();
+			//root.textContent ="123";
+			//var h=importContent.body.innerHTML;
+
+			//var template = importContent.querySelector('#myTemplate');
+			//document.querySelector('#shell').attachShadow(importContent);
+
+			//$('#shell').html(h)
+
+//var shell = document.getElementById('shell');
+//shell.shadow=document.createElement('p');//importContent;
+
+
+
+		};
+		link.onerror = function(e) {
+			alert(2)
+
+		};
+		document.head.appendChild(link);
+	}
+</script>
+
+
+<style>
+      #D__ID{
+		  height:100%;
+		  overflow: auto;
+          animation: vm_module_fadein 1.0s;
+      }
+</style>
