@@ -37,14 +37,20 @@
     </nav>
     <script>
         //---------------------------------------------
-        if($vm.user=='guest'){
-            $('a[name=signinout]').html('<i class="fa fa-user"></i> Sign In')
-            $('#username__ID').text('');
-        }
-        else{
-            $('a[name=signinout]').html('<i class="fa fa-user"></i> Sign Out')
-            $('#username__ID').text('Signed in as '+ $vm.user);
-        }
+		var init_loop=setInterval(function (){
+			console.log('init_loop...')
+			if($vm.init_status==1){
+				clearInterval(init_loop);
+				if($vm.user=='guest'){
+		            $('a[name=signinout]').html('<i class="fa fa-user"></i> Sign In')
+		            $('#username__ID').text('');
+		        }
+		        else{
+		            $('a[name=signinout]').html('<i class="fa fa-user"></i> Sign Out')
+		            $('#username__ID').text('Signed in as '+ $vm.user);
+		        }
+			}
+		},100);
         //---------------------------------------------
     </script>
     <style>
@@ -89,7 +95,7 @@
 			padding:5px 0;
         }
 		#navbars__ID{
-			padding: 50px 80px 0 80px;
+			padding: 50px 60px 0 60px;
         }
 		@media screen and (max-width:1200px){
 			#nav__ID{

@@ -102,7 +102,8 @@ VmInclude:/modules/layout/footer.html
 			N--;
             console.log("group:"+N);
 			if(N==0){
-				set_module_search();
+				//set_module_search();
+				$vm.search_list=1;
                 console.log("call load_home_module");
 				load_home_module();
 			}
@@ -144,29 +145,43 @@ VmInclude:/modules/layout/footer.html
             alert("No module group in the system!")
 		}
 		//------------------------------------
-		//Particles.init({selector:'.p_background'});
-
-
-
-		Particles.init({
-		          selector: '.p_background',
-		          color: '#75A5B7',
-		          maxParticles: 130,
-		          connectParticles: true,
-		          responsive: [
-		            {
-		              breakpoint: 768,
-		              options: {
-		                maxParticles: 80
-		              }
-		            }, {
-		              breakpoint: 375,
-		              options: {
-		                maxParticles: 50
-		              }
-		            }
-		          ]
-		        });
+		var particles=function(){
+			Particles.init({
+			  selector: '.p_background',
+			  color: '#75A5B7',
+			  maxParticles: 130,
+			  connectParticles: true,
+			  responsive: [
+			    {
+			      breakpoint: 768,
+			      options: {
+			        maxParticles: 80
+			      }
+			    }, {
+			      breakpoint: 375,
+			      options: {
+			        maxParticles: 50
+			      }
+			    }
+			  ]
+			});
+		}
+		//------------------------------------
+		var particlesjs_loop=setInterval(function (){
+			console.log('particlesjs_loop...')
+			if($vm.js_particlesjs==1){
+				clearInterval(particlesjs_loop);
+				particles();
+			}
+		},100);
+		//------------------------------------
+		var search_loop=setInterval(function (){
+			console.log('search_loop...')
+			if($vm.js_jquery_ui==1 && $vm.search_list==1){
+				clearInterval(search_loop);
+				set_module_search();
+			}
+		},100);
 		//------------------------------------
 	}
 </script>

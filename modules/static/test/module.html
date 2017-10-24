@@ -4,7 +4,8 @@ BBB
 <script>
 	function F__ID(){
 		var host = document.querySelector('#host__ID');
-		var root = host.attachShadow({mode: 'closed'});
+		//var root = host.attachShadow({mode: 'closed'});
+		var root = host.createShadowRoot();
 		root.innerHTML="<style>a{color:red;}</style> <a style='cursor:pointer'>123</a>";
 	}
 </script>

@@ -86,7 +86,10 @@ var vm_init=function(){
 	//load vm framework, vm api and first module
 	var load_vmapi   =function(){ load_js($vm.url('https://vmiis.github.io/api/distribution/vmapi.min.js'),load_vm);	}
 	var load_vm      =function(){ load_js($vm.url('https://vmiis.github.io/framework/distribution/vmframework.min.js'),init);}
-	var init         =function(){ $vm.init_v3({callback:function(){$vm.load_first_module_to_body({url:'/modules/layout/main.html',callback:last});}})}
+	var init         =function(){
+		$vm.init_v3({callback:function(){$vm.init_status=1;}})
+		$vm.load_first_module_to_body({url:'/modules/layout/main.html',callback:last});
+	}
 	//--------------------------------------------------------
 	var load_js=function(url,next){
 		//this is js loader
@@ -154,23 +157,27 @@ var vm_init=function(){
 	}
 	//--------------------------------------------------------
 	var last=function(){
+		$('head').append("<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'>");
         //-------------------------------------
 		setTimeout(function (){
-	        $.ajaxSetup({ cache: true });
+			$.getScript('https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.0.2/particles.min.js',function(){$vm.js_particlesjs=1;});
 			$('head').append("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>");
-			$('head').append("<link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>");
 			$('head').append("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.css'>");
 
             $.getScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js');
-            $.getScript('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js');
+            $.getScript('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js',function(){$vm.js_bootstrap=1;});
 			$.getScript('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js');
-            $.getScript('https://apis.google.com/js/plusone.js');
 
+
+			$('head').append("<link rel='stylesheet' href='https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/redmond/jquery-ui.css'>");
+			$.getScript('https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js',function(){$vm.js_jquery_ui=1;});
+			$.getScript('https://apis.google.com/js/plusone.js');
 	        $.getScript('https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js');
 	        $.getScript('https://sdk.amazonaws.com/js/aws-sdk-2.1.34.min.js');
 			$.getScript('https://www.gstatic.com/charts/loader.js',function(){
 				google.charts.load('current', {packages: ['corechart']});
 			});
+			$('head').append("<link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>");
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
