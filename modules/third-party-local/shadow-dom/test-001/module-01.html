@@ -1,0 +1,29 @@
+<div id=host__ID></div>
+<script>
+	function F__ID(){
+		//--------------------------------------------------------
+		var third=$vm.hosting_path+'/third-party-remote/shadow-dom/test-001';
+        var url=third+'/module-01.html';
+        //--------------------------------------------------------
+		$vm.load_module_content(url,function(content){
+			var host = document.querySelector('#host__ID');
+			var root = host.createShadowRoot();   //var root = host.attachShadow({mode: 'closed'});
+			content=content.replace(/__CONTENT_ROOT__/g,third);
+			root.innerHTML=content;
+		})
+        //--------------------------------------------------------
+	}
+</script>
+
+
+<style>
+      #D__ID{
+		  height:100%;
+		  /*overflow: auto;*/
+          animation: vm_module_fadein 1.0s;
+      }
+	  #host__ID{
+		  height:100%;
+		  width:100%;
+	  }
+</style>

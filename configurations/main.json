@@ -2,7 +2,7 @@
 	"modules":
 	{
 		"home":			{"url":"/modules/home.html","name_for_search":"Home page"},
-		"panel":		{"url":"/modules/panel/main.html","name_for_search":"Module panel"},
+		"panel":		{"url":"/modules/panel/main.html","name_for_search":"Main panel"},
 		"panel-001":	{"url":"/modules/panel/panel-001.html","name_for_search":"Panel 001"},
 		"panel-002":	{"url":"/modules/panel/panel-002.html","name_for_search":"Panel 002"},
 		"about":		{"url":"/modules/panel/about.html","name_for_search":"About this website"},
@@ -14,8 +14,7 @@
 		"sandbox":						{"url":"/modules/static/basic/sandbox.html"},
 		"sandbox-content":				{"url":"/modules/static/basic/sandbox.content.html","name_for_search":""},
 
-		"test-x":				        {"url":"/modules/static/test/module.html"},
-
+		"test-x":				        {"url":"/modules/third-party-local/shadow-dom/test-001/module-01.html"},
 
         "particles-particles":			{"url":"/modules/third-party-local/github/VincentGarreau/particles-particles.html","name_for_search":"Particles"},
 		"particles-nasa":				{"url":"/modules/third-party-local/github/VincentGarreau/particles-nasa.html","name_for_search":"NASA"},
