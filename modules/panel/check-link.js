@@ -4,32 +4,32 @@ function UrlExists(url, cb){
 		dataType: 'text',
 		type:     'GET',
 		complete:  function(xhr){
-			 console.log(xhr.status+" "+url)
+			if(xhr.status!=200)	 console.log(xhr.status+" "+url)
 		}
 	});
 }
 //--------------------------------------------------------
-var N=0;
+var N=0,E=0;
 $('#panel__ID li').each(function(){
 	var m=$(this).attr('module');
 	if(m!=undefined){
-		if($vm.module_list[group+m]==undefined){alert(group+m +" is not in the module list");return false;}N++;
+		if($vm.module_list[group+m]==undefined){console.log(group+m +" is not in the module list");E++;} N++;
 	}
 })
-alert(N);
+console.log(E+"/"+N+ " modules were checked");
 //--------------------------------------------------------
-var N=0;
+var N=0,E=0;
 $('#panel__ID li').each(function(){
 	var m=$(this).attr('module');
-	if(m!=undefined){
-		if($vm.module_list[group+m].url==undefined){alert(group+m +" url is not set");return false;}N++;
+	if($vm.module_list[group+m]!=undefined){
+		if($vm.module_list[group+m].url==undefined){console.log(group+m +" url is not set");E++;} N++;
 	}
 })
-alert(N);
+console.log(E+"/"+N+ " module's url were checked");
 //--------------------------------------------------------
 $('#panel__ID li').each(function(){
 	var m=$(this).attr('module');
-	if(m!=undefined){
+	if($vm.module_list[group+m]!=undefined && $vm.module_list[group+m].url!=undefined){
 		var url=$vm.module_list[group+m].url;
 		if(url[0]=='/') url=$vm.hosting_path+url;
 		UrlExists(url)
