@@ -14,19 +14,13 @@
 			  	  <hr style='border-top:1px solid #f05f40;'></hr>
 			  	  <p>We can build a web application with unlimited number of shared reusable modules distributed on different static web servers around the world and maintained by different people with different skills!</p>
 				  <br>
-			  	  <button id=link_1 class="btn btn-primary">Check a simple dynamic content module</button>
+			  	  <button onclick="$vm.nav_load_module('main_simple-dynamic-content-module');" class="btn btn-primary">Check a simple dynamic content module</button>
 				  <br><br>
 				  <br><br>
 				</div>
 			</div>
 		</div>
 		<script>
-			var root_document=document.getElementById('__MODULE_ROOT_ID__').shadowRoot;
-			var link=root_document.querySelector('#link_1');
-			link.addEventListener('click', function(){
-				var root=document.getElementById('__MODULE_ROOT_ID__');
-			    root.dispatchEvent(new Event('link_1',{'module':'main_simple-dynamic-content-module'},"a","b"));
-			});
 		</script>
 		<style>
 			#root_container{
