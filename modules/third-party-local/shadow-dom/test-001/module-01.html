@@ -7,11 +7,22 @@
         //--------------------------------------------------------
 		$vm.load_module_content(url,function(content){
 			var host = document.querySelector('#host__ID');
-			var root = host.createShadowRoot();   //var root = host.attachShadow({mode: 'closed'});
-			content=content.replace(/__CONTENT_ROOT__/g,third);
-			root.innerHTML=content;
+			var root = host.attachShadow({mode: 'open'});
+			content=content.replace(/__MODULE_ROOT_PATH__/g,third);
+			content=content.replace(/__MODULE_ROOT_ID__/g,'host__ID');
+			var template = document.createElement( 'template' )
+			template.innerHTML = content;
+			root.appendChild( document.importNode( template.content, true ) )
 		})
         //--------------------------------------------------------
+		$('#host__ID').on('link_1',function(e,a,b){
+			/*
+			alert(JSON.stringify(e))
+			alert(JSON.stringify(a))
+			alert(JSON.stringify(b))
+			*/
+		})
+		//--------------------------------------------------------
 	}
 </script>
 
@@ -19,7 +30,6 @@
 <style>
       #D__ID{
 		  height:100%;
-		  /*overflow: auto;*/
           animation: vm_module_fadein 1.0s;
       }
 	  #host__ID{

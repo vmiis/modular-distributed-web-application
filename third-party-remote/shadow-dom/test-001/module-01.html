@@ -1,14 +1,54 @@
-<div id=aaa>
-	<link rel="stylesheet" href="__CONTENT_ROOT__/css/style.css">
-	<div>
-		<h1>Hello World!</h1>
-	</div>
-	<style>
-		#aaa{
-			/*border: 10px solid red;*/
-			height:100%;
-			width:100%;
-			background-color: #123;
-		}
-	</style>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+		<link rel="stylesheet" href="__MODULE_ROOT_PATH__/css/style.css">
+		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'>
+	</head>
+	<body>
+		<div id=root_container>
+			<div class="container-fluid info_div" style='max-width:800px'>
+				<div class="text-center">
+				  <h1>Modular Distributed Web Aplications.</h1>
+			  	  <hr style='border-top:1px solid #f05f40;'></hr>
+			  	  <p>We can build a web application with unlimited number of shared reusable modules distributed on different static web servers around the world and maintained by different people with different skills!</p>
+				  <br>
+			  	  <button id=link_1 class="btn btn-primary">Check a simple dynamic content module</button>
+				  <br><br>
+				  <br><br>
+				</div>
+			</div>
+		</div>
+		<script>
+			var root_document=document.getElementById('__MODULE_ROOT_ID__').shadowRoot;
+			var link=root_document.querySelector('#link_1');
+			link.addEventListener('click', function(){
+				var root=document.getElementById('__MODULE_ROOT_ID__');
+			    root.dispatchEvent(new Event('link_1',{'module':'main_simple-dynamic-content-module'},"a","b"));
+			});
+		</script>
+		<style>
+			#root_container{
+				height:100%;
+				width:100%;
+				overflow: auto;
+
+				background-position: center;
+				background-size: cover;
+				background-image: url("__MODULE_ROOT_PATH__/images/background.jpg");
+			}
+			.info_div{
+				position:relative;
+				height:100%;
+				width:100%;
+				display: flex;
+				align-items: center;
+			    color:#fff;
+				font-family: Verdana,sans-serif;
+			    font-size: 15px;
+			    line-height: 1.5;
+			}
+		</style>
+	</body>
+</html>
