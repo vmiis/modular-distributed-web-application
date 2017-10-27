@@ -16,11 +16,11 @@
 
 		"test-x":				        {"url":"/modules/third-party-local/shadow-dom/test-001/module-01.html"},
 
-        "particles-particles":			{"url":"/modules/third-party-local/github/VincentGarreau/particles-particles.html","name_for_search":"Particles"},
-		"particles-nasa":				{"url":"/modules/third-party-local/github/VincentGarreau/particles-nasa.html","name_for_search":"NASA"},
-		"particles-bubble":				{"url":"/modules/third-party-local/github/VincentGarreau/particles-bubble.html","name_for_search":"Bubble"},
-		"particles-snow":				{"url":"/modules/third-party-local/github/VincentGarreau/particles-snow.html","name_for_search":"Snow"},
-		"particles-nyan-cat":			{"url":"/modules/third-party-local/github/VincentGarreau/particles-nyan-cat.html","name_for_search":"Nyan cat"},
+        "particles-particles":			{"url":"/modules/third-party/github/VincentGarreau/local/particles-particles.html","name_for_search":"Particles"},
+		"particles-nasa":				{"url":"/modules/third-party/github/VincentGarreau/local/particles-nasa.html","name_for_search":"NASA"},
+		"particles-bubble":				{"url":"/modules/third-party/github/VincentGarreau/local/particles-bubble.html","name_for_search":"Bubble"},
+		"particles-snow":				{"url":"/modules/third-party/github/VincentGarreau/local/particles-snow.html","name_for_search":"Snow"},
+		"particles-nyan-cat":			{"url":"/modules/third-party/github/VincentGarreau/local/particles-nyan-cat.html","name_for_search":"Nyan cat"},
 
 		"windfarm_home":					{"url":"/modules/static/wind-farm/home.html","name_for_search":"Windfarm home page"},
 		"windfarm_purpose-of-research":		{"url":"/modules/static/wind-farm/purpose-of-research.html","name_for_search":"Purpose of research"},
