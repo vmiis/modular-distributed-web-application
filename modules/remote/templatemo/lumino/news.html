@@ -1,11 +1,10 @@
-<iframe id=sandbox__ID sandbox="allow-scripts" frameborder="0"></iframe>
+<iframe id=sandbox__ID sandbox="allow-scripts allow-same-origin" frameborder="0"></iframe>
 <script>
 	function F__ID(){
 		//--------------------------------------------------------
-		var third="https://remote-modules.vmiis.com/templatemo/lumino/vmiis";
-		var url_frame  =third+"/frame.html?v="+$vm.version+"&id=__ID";
-        var url_content=third+"/modules/news.html"
-		VmInclude:__CURRENT_PATH__/common/local.js
+        var page="news.html";
+		$('#sandbox__ID').attr('src',"https://remote-modules.vmiis.com/templatemo/lumino/vmiis/frame.html?v="+$vm.version+"&id=__ID&page="+page);
+		VmInclude:__CURRENT_PATH__/local.js
         //--------------------------------------------------------
 	}
 </script>

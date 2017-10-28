@@ -6,6 +6,7 @@
 		"main.json",
 		"panel-001.json",
 		"panel-002.json",
-		"about.json"
+		"about.json",
+        "shadow-dom.json"
 	]
 }

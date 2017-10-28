@@ -1,0 +1,76 @@
+<div id=panel__ID>
+    <div style='width:100%;overflow:auto'>
+        <div id=info__ID>
+            <i>Shadow DOM is a new technology for integrating CSS encapsulated contents module. Currently not all browsers support this new technology. We recommend using Google Chrome to show the modules in this page.</i>
+        </div>
+    </div>
+	<div class='nav__ID'>
+	    <span></span>
+	    <ul>
+            <li module=module-01>CSS module</li>
+            <li module=scenery>Scenery</li>
+            <li module=one-thing>One thing</li>
+            <li module=text-patch-work>Text patch work</li>
+            <li module=pricing-table>Price table</li>
+        </ul>
+	</div>
+</div>
+<script>
+      function F__ID(){
+		  //--------------------------------------------------------
+		  var group="shadow-dom_";
+		  $('#panel__ID li').on('click',function(){
+              var m=$(this).attr('module');
+              if(m!=undefined){
+				  if($vm.module_list[group+m]==undefined){
+					  alert(group+m +" is not in the module list.");
+					  return;
+				  }
+                  $vm.module_list[group+m].alert='1';
+			      $vm.nav_load_module(group+m);
+              }
+		  })
+		  //--------------------------------------------------------
+		  //Vm Include:__CURRENT_PATH__/check-link.js
+		  //--------------------------------------------------------
+      }
+</script>
+<style>
+	VmInclude:__PARTS__/navigation/navigation.css
+	#D__ID{
+		background: url("__PARTS__/image/texture.png");
+		height:100%;
+		overflow: auto;
+		animation: vm_module_fadein 1.0s;
+	}
+    #info__ID{
+        font-size: 9px;
+        padding:5px 10px 0 10px;
+        color:#222;
+        /*float:right;*/
+    }
+	#D__ID li {
+		color:#666;
+	}
+	li::before{
+		font-size: 20px!Important;
+	}
+	#D__ID li:hover {
+		color:#fff;
+	}
+	#D__ID a {
+		text-decoration: none;
+	}
+	#D__ID a:link {
+		color:#666;
+	}
+	#D__ID a:visited {
+		color:#666;
+	}
+	#D__ID a:hover {
+		color:#fff;
+	}
+	#D__ID a:active {
+		color:#666;
+	}
+</style>

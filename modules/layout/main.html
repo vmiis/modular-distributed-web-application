@@ -20,7 +20,15 @@ VmInclude:/modules/layout/footer.html
 			$('#content_container__ID').css({'top':header_height+'px'})
 			console.log('window:'+$(window).height()+', header:'+header_height+', footer:'+footer_height);
 		}
-		setTimeout(function (){	set_height();},100);	setTimeout(function (){	set_height();},2000);
+        //------------------------------------
+        set_height();
+        $vm._nn=6;
+        function checkForChanges(){
+            set_height();
+            $vm._nn--; if($vm._nn==0) return;
+            setTimeout(checkForChanges, 500);
+        }
+        checkForChanges();
 		//------------------------------------
 		window.onresize=function(e){set_height();};
 		window.onmessage=function(e){
@@ -149,18 +157,18 @@ VmInclude:/modules/layout/footer.html
 			Particles.init({
 			  selector: '.p_background',
 			  color: '#75A5B7',
-			  maxParticles: 130,
-			  connectParticles: true,
+			  maxParticles: 80,
+			  connectParticles: false,
 			  responsive: [
 			    {
 			      breakpoint: 768,
 			      options: {
-			        maxParticles: 80
+			        maxParticles: 60
 			      }
 			    }, {
 			      breakpoint: 375,
 			      options: {
-			        maxParticles: 50
+			        maxParticles: 30
 			      }
 			    }
 			  ]

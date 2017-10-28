@@ -2,10 +2,9 @@
 <script>
 	function F__ID(){
 		//--------------------------------------------------------
-		var third="https://remote-modules.vmiis.com/free-css/studio/vmiis";
-		var url_frame  =third+"/frame.html?v="+$vm.version+"&id=__ID";
-        var url_content=third+"/modules/team.html"
-		VmInclude:__CURRENT_PATH__/common/local.js
+		var page="team.html";
+		$('#sandbox__ID').attr('src',"https://remote-modules.vmiis.com/free-css/studio/vmiis/frame.html?v="+$vm.version+"&id=__ID&page="+page);
+		VmInclude:__CURRENT_PATH__/local.js
         //--------------------------------------------------------
 	}
 </script>

@@ -6,6 +6,7 @@
 		"panel-001":	{"url":"/modules/panel/panel-001.html","name_for_search":"Panel 001"},
 		"panel-002":	{"url":"/modules/panel/panel-002.html","name_for_search":"Panel 002"},
 		"about":		{"url":"/modules/panel/about.html","name_for_search":"About this website"},
+        "shadow-dom":	{"url":"/modules/panel/shadow-dom.html","name_for_search":"Shadow DOM modules"},
 
 		"simple-static-content-module":	{"url":"/modules/static/basic/simple-static-content-module.html","name_for_search":"A simple static content module"},
 		"automatic-slide-show-w3":		{"url":"/modules/static/basic/automatic-slide-show-w3.html","name_for_search":"Automatic slide show"},
@@ -13,8 +14,6 @@
 		"price":						{"url":"/modules/static/basic/price.html","name_for_search":"Example of showing price"},
 		"sandbox":						{"url":"/modules/static/basic/sandbox.html"},
 		"sandbox-content":				{"url":"/modules/static/basic/sandbox.content.html","name_for_search":""},
-
-		"test-x":				        {"url":"/modules/third-party-local/shadow-dom/test-001/module-01.html"},
 
         "particles-particles":			{"url":"/modules/remote/github/VincentGarreau/particles-particles.html","name_for_search":"Particles"},
 		"particles-nasa":				{"url":"/modules/remote/github/VincentGarreau/particles-nasa.html","name_for_search":"NASA"},
@@ -27,7 +26,6 @@
 		"windfarm_about-woolcock-research":	{"url":"/modules/static/wind-farm/about-woolcock-research.html","name_for_search":"Woolcock research"},
 		"windfarm_researcher":				{"url":"/modules/static/wind-farm/researcher.html","name_for_search":"Researcher"},
 
-		"scenery-rspilhaus":			{"url":"/modules/third-party-local/codepen/rspilhaus/scenery.html","name_for_search":"Scenery"},
 
 
 		"enquiry-0003":					{"url":"/modules/dynamic/group-001/enquiry.0003.html","table_id":"20009702","name_for_search":"Enquiry"},
