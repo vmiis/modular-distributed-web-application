@@ -19,7 +19,15 @@ VmInclude:/modules/layout/footer.html
 			$('#content_container__ID').css({'top':header_height+'px'})
 			console.log('window:'+$(window).height()+', header:'+header_height+', footer:'+footer_height);
 		}
-		setTimeout(function (){	set_height();},100);	setTimeout(function (){	set_height();},2000);
+		//------------------------------------
+		set_height();
+        $vm._nn=6;
+        function checkForChanges(){
+            set_height();
+            $vm._nn--; if($vm._nn==0) return;
+            setTimeout(checkForChanges, 500);
+        }
+        checkForChanges();
 		//------------------------------------
 		window.onresize=function(e){set_height();};
 		window.onmessage=function(e){
