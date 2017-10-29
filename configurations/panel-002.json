@@ -48,6 +48,14 @@
 		"autocomplete":			{"url":"/modules/dynamic/basic/autocomplete.html","table_id":"20008495"},
 		"autocomplete_with_new":{"url":"/modules/dynamic/basic/autocomplete_with_new.html","table_id":"20008495"},
 		"postcode":				{"url":"/modules/dynamic/basic/postcode.html","table_id":"20008494"},
-		"calculation":			{"url":"/modules/dynamic/basic/calculation.html","table_id":"20008496"}
+		"calculation":			{"url":"/modules/dynamic/basic/calculation.html","table_id":"20008496"},
+
+        "transactions":	                    {"url":"/modules/dynamic/bookkeeping/transaction/transactions_with_basic_toolbar.html","table_id":"20007172","name_for_search":"Transactions -- Bookkeeping"},
+        "transactions_with_period":	        {"url":"/modules/dynamic/bookkeeping/transaction/transactions_with_period_toolbar.html","table_id":"20007172","name_for_search":"Transactions (period) -- Bookkeeping"},
+        "transactions_with_year_and_month":	{"url":"/modules/dynamic/bookkeeping/transaction/transactions_with_year_month_toolbar.html","table_id":"20007172","name_for_search":"Transactions (month) -- Bookkeeping"},
+        "transactions_with_year_quarter":	{"url":"/modules/dynamic/bookkeeping/transaction/transactions_with_year_quarter_toolbar.html","table_id":"20007172","name_for_search":"Transactions (quarter) -- Bookkeeping"},
+        "bi_processing":	                {"url":"/modules/dynamic/bookkeeping/transaction/income_and_expense_bookkeeping_bi.html","table_id":"20010377","name_for_search":"BI processing -- Bookkeeping"},
+        "bi_processing_details":	        {"url":"/modules/dynamic/bookkeeping/transaction/income_and_expense_bookkeeping_bi_details.html","table_id":"20010377","name_for_search":""},
+        "predefined_transaction_item":      {"url":"/modules/dynamic/bookkeeping/transaction/predefined_transaction_item.html","table_id":"20005380","name_for_search":"Predefined transaction item -- Bookkeeping"}
 	}
 }

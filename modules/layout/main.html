@@ -100,6 +100,7 @@ VmInclude:/modules/layout/footer.html
 			   	if($vm.module_list[group+property]==undefined){
 				   	$vm.module_list[group+property]=modules[property];
 					if($vm.module_list[group+property].prefix!=undefined) $vm.module_list[group+property].prefix=group+$vm.module_list[group+property].prefix;
+                    else $vm.module_list[group+property].prefix=group;
 					var nm=$vm.module_list[group+property]['name_for_search'];
 					if(nm!=""){
 						if(nm==undefined) nm=property;
