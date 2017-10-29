@@ -7,7 +7,8 @@
 	    	<div id=row_2__ID class="col-sm col-lg-3">
 		        	<button id=new__ID  type=button class='btn btn-secondary' ><i class="fa fa-plus" title='New'></i></button>
 		        	<button id=save__ID type=button class='btn btn-secondary'><i class="fa fa-upload" title='Save'></i></button>
-                    <input placeholder='name' id=name__ID type=text style="width: 150px; display:inline-block;" class="form-control" />
+                    <input placeholder='name' id=name__ID type=text style="width: 120px; display:inline-block;" class="form-control" />
+					<input placeholder='type' id=type__ID type=text style="width: 120px; display:inline-block;" class="form-control" />
 
                     <button id=query__ID type=button class="btn btn-secondary"><i class="fa fa-search" title='Search'></i></button>
 	    	</div>
@@ -46,23 +47,30 @@
 <script>
     function F__ID(){
         //-------------------------------------
-        VmInclude:__COMPONENT__/grid/grid.v3.js
-        VmInclude:__CURRENT_PATH__/bookkeeping.js
+		VmInclude:__COMPONENT__/grid/grid.v3.js
+        VmInclude:__CURRENT_PATH__/bookkeeping_details.js
         //-------------------------------------
+		$('#new__ID').hide();
+		$('#save__ID').hide();
         $('#t1__ID').datepicker({dateFormat:'dd/mm/yy',changeMonth:true, changeYear:true});
         $('#t2__ID').datepicker({dateFormat:'dd/mm/yy',changeMonth:true, changeYear:true});
         $('#t1__ID').val($vm.first_day_of_current_year());
         $('#t2__ID').val($vm.date_to_string_dmy($vm.date_today()));
         //-------------------------------------
         _set_req=function(){
-            var sql="with tb as (select Information,ID,UID,PUID,DateTime,Author,RowNum=row_number() over (order by DT1 DESC) from [TABLE-"+_db_pid+"] where DT1>=@T1 and DT1<=@T2 and S1 like '%'+@S1+'%')";
-            sql+="select Information,ID,UID,PUID,DateTime,Author,RowNum from tb where RowNum between @I6 and @I7 order by RowNum";
-            var sql_n="select count(ID) from [TABLE-"+_db_pid+"] where DT1>=@T1 and DT1<=@T2 and S1 like '%'+@S1+'%'";
-            _req={cmd:'query_records',db_pid:_db_pid,sql:sql,sql_n:sql_n,s1:$('#name__ID').val(),t1:$('#t1__ID').val(),t2:$('#t2__ID').val(),I:$('#I__ID').text(),page_size:$('#page_size__ID').val()}
+            var sql0="with tb as (select Information,ID,S1 from [TABLE-"+_db_pid+"] where DT1>=@T1 and DT1<=@T2 and S1 like '%'+@S1+'%')";
+            if($('#type__ID').val()=='')
+                sql0+=",item as (select S1,Information2=Information from [TABLE-"+predefined_transaction_item_tid+"])";
+            else
+                sql0+=",item as (select S1,Information2=Information from [TABLE-"+predefined_transaction_item_tid+"] where S2=@S2)";
+            sql0+=",tb2 as (select ID,Information,Information2,RowNum=row_number() over (order by ID DESC) from tb join item on tb.S1=item.S1)";
+            var sql=sql0+" select ID,Information,Information2 from tb2 where RowNum between @I6 and @I7";
+            var sql_n=sql0+" select count(ID) from tb2";
+            _req={cmd:'query_records',db_pid:_db_pid,sql:sql,sql_n:sql_n,s1:$('#name__ID').val(),s2:$('#type__ID').val(),t1:$('#t1__ID').val(),t2:$('#t2__ID').val(),I:$('#I__ID').text(),page_size:$('#page_size__ID').val()}
         }
         //-------------------------------------
     }
 </script>
 <style>
-    VmInclude:__COMPONENT__/grid/grid.v3.css
+	VmInclude:__COMPONENT__/grid/grid.v3.css
 </style>

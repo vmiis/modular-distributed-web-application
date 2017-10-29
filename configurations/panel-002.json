@@ -60,6 +60,8 @@
         "income_aggregation_table":	        {"url":"/modules/dynamic/bookkeeping/transaction_reporting/aggregation_query_income.html","table_id":"20010377","name_for_search":"Income aggregation table -- Bookkeeping"},
         "expense_aggregation_table":	    {"url":"/modules/dynamic/bookkeeping/transaction_reporting/aggregation_query_expense.html","table_id":"20010377","name_for_search":"Expense aggregation table -- Bookkeeping"},
         "income_chart":	                    {"url":"/modules/dynamic/bookkeeping/transaction_reporting/chart_income.html","table_id":"20010377","name_for_search":"Income aggregation chart -- Bookkeeping"},
-        "expense_chart":	                {"url":"/modules/dynamic/bookkeeping/transaction_reporting/chart_expense.html","table_id":"20010377","name_for_search":"Expense aggregation chart -- Bookkeeping"}
+        "expense_chart":	                {"url":"/modules/dynamic/bookkeeping/transaction_reporting/chart_expense.html","table_id":"20010377","name_for_search":"Expense aggregation chart -- Bookkeeping"},
+		"transaction_details":	            {"url":"/modules/dynamic/bookkeeping/transaction_reporting/transaction_details_with_basic_toolbar.html","table_id":"20007172","name_for_search":"Transaction details -- Bookkeeping"},
+		"transaction_details_with_period":	{"url":"/modules/dynamic/bookkeeping/transaction_reporting/transaction_details_with_period_toolbar.html","table_id":"20007172","name_for_search":"Transaction details (period) -- Bookkeeping"}
 	}
 }
