@@ -159,30 +159,32 @@ var vm_init=function(){
 	//--------------------------------------------------------
 	var last=function(){
 		$('head').append("<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'>");
+        $('head').append("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>");
+		$('head').append("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.css'>");
+        $('head').append("<link rel='stylesheet' href='https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/redmond/jquery-ui.css'>");
+        $('head').append("<link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>");
+		$.getScript('https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.0.2/particles.min.js',function(){$vm.js_particlesjs=1;});
+        $.getScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js');
+        $.getScript('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js',function(){$vm.js_bootstrap=1;});
+		$.getScript('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js');
+		$.getScript('https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js',function(){$vm.js_jquery_ui=1;});
+		$.getScript('https://apis.google.com/js/plusone.js');
+        $.getScript('https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js');
+        $.getScript('https://sdk.amazonaws.com/js/aws-sdk-2.1.34.min.js');
+		$.getScript('https://www.gstatic.com/charts/loader.js',function(){
+			google.charts.load('current', {packages: ['corechart']});
+		});
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-105358394-1', 'auto');
+		ga('send', 'pageview');
+        $vm.module_list['_system_export_dialog_module']={table_id:'',url:'__PARTS__/dialog/export_dialog_module.html'};
+        $vm.load_module_by_name('_system_export_dialog_module','',{})
         //-------------------------------------
-		//setTimeout(function (){
-            $('head').append("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>");
-			$('head').append("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.css'>");
-            $('head').append("<link rel='stylesheet' href='https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/redmond/jquery-ui.css'>");
-            $('head').append("<link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>");
-			$.getScript('https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.0.2/particles.min.js',function(){$vm.js_particlesjs=1;});
-            $.getScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js');
-            $.getScript('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js',function(){$vm.js_bootstrap=1;});
-			$.getScript('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js');
-			$.getScript('https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js',function(){$vm.js_jquery_ui=1;});
-			$.getScript('https://apis.google.com/js/plusone.js');
-	        $.getScript('https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js');
-	        $.getScript('https://sdk.amazonaws.com/js/aws-sdk-2.1.34.min.js');
-			$.getScript('https://www.gstatic.com/charts/loader.js',function(){
-				google.charts.load('current', {packages: ['corechart']});
-			});
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-			ga('create', 'UA-105358394-1', 'auto');
-			ga('send', 'pageview');
-	    //}, 10);
+        $vm.module_list['_system_import_dialog_module']={table_id:'',url:'__PARTS__/dialog/import_dialog_module.html'};
+        $vm.load_module_by_name('_system_import_dialog_module','',{})
 	}
 	//********************************************************
 	load_config_and_init();

@@ -88,6 +88,9 @@ var data_process=function(data_records){
 }
 //-------------------------------------
 _data_process=function(){
+    _records=data_process(_records);
+    chart(_records);
+    /*
     $vm.alert('Working hard...');
     var r=_records;
     _records=[];
@@ -96,6 +99,7 @@ _data_process=function(){
         chart(_records);
         $vm.close_alert();
     }, 100);
+    */
 }
 //-------------------------------------
 var selected_item='';
@@ -105,10 +109,11 @@ _set_req=_set_req_export=function(){
     _req={cmd:'query_records',sql:sql,i1:$('#YY__ID').val()}
 }
 //-------------------------------------
-var _request_data_export=function(){
+_export_records=function(){ //overwrite default export
+    _set_req();
     $VmAPI.request({data:_req,callback:function(res){
         _records=data_process(res.records);
-        _export_data(_filename);
+        $vm.download_csv({name:_filename,data:_records,fields:_fields});
     }})
 }
 //-------------------------------------
