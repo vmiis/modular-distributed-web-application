@@ -5,8 +5,6 @@
                 End Date: <input id=t2__ID type=text style="width: 100px; display:inline-block;" class="form-control" />
             </div>
 	    	<div id=row_2__ID class="col-sm col-lg-3">
-		        	<button id=new__ID  type=button class='btn btn-secondary' ><i class="fa fa-plus" title='New'></i></button>
-		        	<button id=save__ID type=button class='btn btn-secondary'><i class="fa fa-upload" title='Save'></i></button>
                     <input placeholder='name' id=name__ID type=text style="width: 120px; display:inline-block;" class="form-control" />
 					<input placeholder='type' id=type__ID type=text style="width: 120px; display:inline-block;" class="form-control" />
 
@@ -50,8 +48,6 @@
 		VmInclude:__COMPONENT__/grid/grid.v3.js
         VmInclude:__CURRENT_PATH__/bookkeeping_details.js
         //-------------------------------------
-		$('#new__ID').hide();
-		$('#save__ID').hide();
         $('#t1__ID').datepicker({dateFormat:'dd/mm/yy',changeMonth:true, changeYear:true});
         $('#t2__ID').datepicker({dateFormat:'dd/mm/yy',changeMonth:true, changeYear:true});
         $('#t1__ID').val($vm.first_day_of_current_year());

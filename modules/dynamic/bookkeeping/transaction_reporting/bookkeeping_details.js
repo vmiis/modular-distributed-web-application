@@ -2,7 +2,7 @@ var fields="Date,Name,Description,Transaction Type|I2_IE,Tax|I2_Tax_Rate,Item of
 _fields="_Form,"+fields;
 //-------------------------------------
 var prefix=_mlist[$vm.vm['__ID'].name].prefix;
-var predefined_transaction_item_tid=_mlist[prefix+'predefined_transaction_item'].table_id;
+var predefined_transaction_item_tid=_mlist[prefix+"_"+'predefined_transaction_item'].table_id;
 //-------------------------------------
 $('#name__ID').autocomplete({
     minLength:0,

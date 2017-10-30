@@ -9,6 +9,7 @@ $List2.val(y);
 //---------------------------------------------
 _fields="Item,Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec,Sub Total|Total";
 //-------------------------------------
+$('#D__ID').on('load',function(){_set_req(); _request_data();})
 $('#aquery__ID').on('click',function(){_set_req(); _request_data();})
 //-------------------------------------
 var data_process=function(data_records){

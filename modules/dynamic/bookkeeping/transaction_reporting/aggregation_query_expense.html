@@ -36,6 +36,9 @@ function F__ID(){
     VmInclude:__COMPONENT__/grid/grid.v3.js
     VmInclude:__CURRENT_PATH__/aggregation.js
     //------------------------
+	$('#YY__ID').on('change',function(){
+        _set_req(); _request_data();
+    })
     var create_results=function(data_records){
         var results={}
         for(var i=0;i<data_records.length;i++){
