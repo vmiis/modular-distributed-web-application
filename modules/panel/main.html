@@ -53,9 +53,10 @@
 	    </ul>
         <span>More modules</span>
         <ul>
-            <li module=panel-001 style='list-style-type: circle;'>Group 1</li>
-			<li module=panel-002 style='list-style-type: circle;'>Group 2</li>
-            <li module=shadow-dom style='list-style-type: circle;'>Shadow DOM</li>
+            <li panel=panel_001 style='list-style-type: circle;'>Group 1</li>
+			<li panel=panel_002 style='list-style-type: circle;'>Group 2</li>
+            <li panel=panel_shadow_dom style='list-style-type: circle;'>Shadow DOM</li>
+			<li panel=panel_nightstudy style='list-style-type: circle;'>Nightstudy (Clinical trials)</li>
 	    </ul>
 	</div>
 	<div class='nav__ID'>
@@ -110,18 +111,29 @@
 <script>
       function F__ID(){
 		  //--------------------------------------------------------
-		  var group="main_";
+		  var prefix=$vm.vm["__ID"].name+"_";
 		  $('#panel__ID li').on('click',function(){
 			  var m=$(this).attr('module');
               if(m!=undefined){
-				  if($vm.module_list[group+m]==undefined){
-					  alert(group+m +" is not in the module list. check the panel 'main' and main.json");
+				  if($vm.module_list[prefix+m]==undefined){
+					  alert(prefix+m +" is not in the module list.");
 					  return;
 				  }
-                  $vm.module_list[group+m].alert='1';
-			      $vm.nav_load_module(group+m);
+                  $vm.module_list[prefix+m].alert='1';
+			      $vm.nav_load_module(prefix+m);
               }
+			  else{
+				  var p=$(this).attr('panel');
+				  if(p!=undefined){
+					  if($vm.module_list[p]==undefined){
+						  alert(p +" is not in the module list.");
+						  return;
+					  }
+				      $vm.nav_load_module(p);
+	              }
+			  }
 		  })
+		  $vm.panel_nightstudy=1;
 		  //--------------------------------------------------------
 		  //Vm Include:__CURRENT_PATH__/check-link.js
 		  //--------------------------------------------------------

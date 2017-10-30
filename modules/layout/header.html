@@ -1,7 +1,7 @@
 <div header id=header__ID>
     <nav id=nav__ID class="navbar navbar-expand-xl navbar-dark">
 		<div id=brand__ID>
-	        <a class="navbar-brand d-none d-xl-inline-block" onclick="$vm.nav_load_module('main_home');">
+	        <a class="navbar-brand d-none d-xl-inline-block" onclick="$vm.nav_load_module('panel_main_home');">
 	        	<div class=large_logo__ID>
 		        	<div class="logo_image__ID"></div>
 					<div class="logo_label__ID">
@@ -15,7 +15,7 @@
 		        </div>
 
 	        </a>
-	        <a class="navbar-brand d-xl-none" onclick="$vm.nav_load_module('main_home');">
+	        <a class="navbar-brand d-xl-none" onclick="$vm.nav_load_module('panel_main_home');">
 	            <div class=small_logo__ID>Modular distributed web applications<br>Open source project (https://github.com/vmiis)</div>
 	        </a>
 		</div>
@@ -28,9 +28,9 @@
 				<input id=vm_system_search class="form-control mr-sm-2" type="text" placeholder="Search modules..." aria-label="Search modules..." />
 			</form>
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('main_home');"><i class="fa fa-home"></i> Home</a></li>
-				<li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('main_panel');"><i class="fa fa-th"></i> Modules</a></li>
-                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('main_about');"><i class="fa fa-info-circle"></i> About</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('panel_main_home');"><i class="fa fa-home"></i> Home</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('panel_main');"><i class="fa fa-th"></i> Modules</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('panel_about');"><i class="fa fa-info-circle"></i> About</a></li>
                 <li class="nav-item"><a class="nav-link" onclick="$vm.nav_click_process('vm_signinout');" name=signinout><i class="fa fa-user"></i> Sign In/Out</a></li>
             </ul>
         </div>
