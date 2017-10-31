@@ -2,7 +2,7 @@ var fields="Record_ID,Date,Name,Description,Amount,Additional_Info,Notes,Link,Do
 _fields="_Form,"+fields+",Submit Date|DateTime,Submitted by|Author,_Delete";
 //-------------------------------------
 var prefix=_mlist[$vm.vm['__ID'].name].prefix;
-var predefined_transaction_item_tid=_mlist[prefix+'_predefined_transaction_item'].table_id;
+var predefined_transaction_item_tid=_mlist[prefix+'predefined_transaction_item'].table_id;
 //-------------------------------------
 $('#name__ID').autocomplete({
     minLength:0,

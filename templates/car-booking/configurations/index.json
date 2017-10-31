@@ -1,7 +1,8 @@
 {
-    "component_path":"https://vmiis.github.io/parts",
 	"api_path_development":"https://cbs.wappsystem.com/dev/",
 	"api_path_production":"https://cbs.wappsystem.com/dev/",
 	"default_production":"No",
-	"module_groups":["main.json"]
+	"panels":{
+		"no_panel":{"url":"","modules":["main.json"]}
+	}
 }

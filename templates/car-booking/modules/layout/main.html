@@ -19,7 +19,15 @@ VmInclude:/modules/layout/footer.html
 			$('#content_container__ID').css({'top':header_height+'px'})
 			console.log('window:'+$(window).height()+', header:'+header_height+', footer:'+footer_height);
 		}
-		setTimeout(function (){	set_height();},100);	setTimeout(function (){	set_height();},2000);
+		//------------------------------------
+		set_height();
+        $vm._nn=6;
+        function checkForChanges(){
+            set_height();
+            $vm._nn--; if($vm._nn==0) return;
+            setTimeout(checkForChanges, 300);
+        }
+        checkForChanges();
 		//------------------------------------
 		window.onresize=function(e){set_height();};
 		window.onmessage=function(e){
@@ -73,9 +81,10 @@ VmInclude:/modules/layout/footer.html
 			$("#vm_system_search").focus(function(){$("#vm_system_search").autocomplete("search","");});
 		}
 		//------------------------------------
+		var home_page='no_panel_home';
 		var load_home_module=function(){
 			var a=window.location.href.split('module=');
-			if(a.length!=2)	$vm.nav_load_module('main_home');
+			if(a.length!=2)	$vm.nav_load_module(home_page);
 			else{
 				var name=a[1].split('&')[0];
 				if(name.length>0){
@@ -89,59 +98,87 @@ VmInclude:/modules/layout/footer.html
 		}
 		//********************************************************
 		var N=0;
-		//********************************************************
-		var add_config_modules_to_module_list_and_start=function(text,group){
+		//------------------------------------
+		var add_config_modules_to_module_list_and_start=function(url,text,prefix){
 			var config;
 			try{ config=JSON.parse(text);}
 			catch (e){ alert("Error in config file\n"+e); return; }
 			var modules=config.modules;
 			for (var property in modules) {
-			   	if($vm.module_list[group+property]==undefined){
-				   	$vm.module_list[group+property]=modules[property];
-					if($vm.module_list[group+property].prefix!=undefined) $vm.module_list[group+property].prefix=group+$vm.module_list[group+property].prefix;
-					var nm=$vm.module_list[group+property]['name_for_search'];
+			   	if($vm.module_list[prefix+property]==undefined){
+				   	$vm.module_list[prefix+property]=modules[property];
+					if($vm.module_list[prefix+property].prefix!=undefined) $vm.module_list[prefix+property].prefix=prefix+$vm.module_list[prefix+property].prefix;
+                    else $vm.module_list[prefix+property].prefix=prefix;
+					var nm=$vm.module_list[prefix+property]['name_for_search'];
 					if(nm!=""){
 						if(nm==undefined) nm=property;
-						website_item_list_for_search.push({label:nm,value:group+property})
+						website_item_list_for_search.push({label:nm,value:prefix+property})
+					}
+					var m_url=$vm.module_list[prefix+property].url;
+					if(m_url!=undefined && m_url[0]=='/'){
+						$vm.module_list[prefix+property].url=url.split('/configurations/')[0]+m_url;
+					}
+					else if(m_url!=undefined && m_url.substring(0,8)=='modules/'){
+						$vm.module_list[prefix+property].url=url.split('configurations/')[0]+m_url;
 					}
 			   	}
 			}
 			N--;
 			if(N==0){
-				set_module_search();
+				console.dir($vm.module_list);
+				//set_module_search();
+				$vm.search_list=1;
+                console.log("call load_home_module");
 				load_home_module();
+				console.log("Total number of module: "+Object.keys($vm.module_list).length);
 			}
 		}
 		//------------------------------------
-		var process_config_file=function(url,group){
+		var process_config_file=function(url,prefix){
 			console.log('loading '+url+'?_='+$vm.ver[1]+$vm.reload);
 			$.get(url+'?_='+$vm.ver[1]+$vm.reload,function(data){
 				localStorage.setItem(url+"_txt",data);
 				localStorage.setItem(url+"_ver",$vm.ver[1]);
-				add_config_modules_to_module_list_and_start(data,group);
+                console.log("processing "+prefix)
+				add_config_modules_to_module_list_and_start(url,data,prefix);
 			},'text').fail(function() {
 				alert( "The configuration file ("+url+") doesn't exist!" );
 			});
 		}
 		//------------------------------------
-		var groups=$vm.app_config.module_groups;
-		if(groups!=undefined && groups.length>0){
-			N=groups.length;
-			//------------------------------------
-			for(var i=0;i<groups.length;i++){
-				var url=$vm.hosting_path+"/configurations/"+groups[i];
+		//read all module's info from json files
+		var panels=$vm.app_config.panels;
+		for (var property in panels){
+			var json_files=panels[property].modules;
+			N=N+json_files.length;
+		}
+		for (var property in panels){
+			$vm.module_list[property]={"url":panels[property].url}
+			var prefix=property+"_";
+			var json_files=panels[property].modules;
+			for(var i=0;i<json_files.length;i++){
+				var url=$vm.url(json_files[i]);
+				if(json_files[i].indexOf('https://')==-1) url=$vm.hosting_path+"/configurations/"+url;
 				var ver=localStorage.getItem(url+"_ver");
 				var txt=localStorage.getItem(url+"_txt");
 				if(ver!=$vm.ver[1] || txt===null || $vm.debug===true || $vm.reload!=''){
-					process_config_file(url,groups[i].replace('.json','_'));
+                    console.log("processing "+json_files[i])
+					process_config_file(url,prefix);
 				}
-				else{ add_config_modules_to_module_list_and_start(txt,groups[i].replace('.json','_')); }
+				else{
+                    console.log("processing "+json_files[i])
+                    add_config_modules_to_module_list_and_start(url,txt,prefix);
+                }
 			}
-			//------------------------------------
 		}
-		else{
-            alert("No module group in the system!")
-		}
+		//********************************************************
+		var search_loop=setInterval(function (){
+			console.log('search_loop...')
+			if($vm.js_jquery_ui==1 && $vm.search_list==1){
+				clearInterval(search_loop);
+				set_module_search();
+			}
+		},100);
 		//------------------------------------
 	}
 </script>
