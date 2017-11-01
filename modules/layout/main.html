@@ -9,6 +9,7 @@ VmInclude:/modules/layout/footer.html
 
 <script main-layout-js>
 	function F__ID(){
+		console.log((new Date().getTime()-$vm.start_time).toString()+"---"+"********************* start running code in main.html ************************");
 		//------------------------------------
 		var website_item_list_for_search=[]
 		//------------------------------------
@@ -18,7 +19,7 @@ VmInclude:/modules/layout/footer.html
 			$vm.min_height=($(window).height()-header_height-footer_height);
 			$('#content_container__ID').css({'height':$vm.min_height});
 			$('#content_container__ID').css({'top':header_height+'px'})
-			console.log('window:'+$(window).height()+', header:'+header_height+', footer:'+footer_height);
+			console.log((new Date().getTime()-$vm.start_time).toString()+"---"+'window:'+$(window).height()+', header:'+header_height+', footer:'+footer_height);
 		}
         //------------------------------------
         set_height();
@@ -71,10 +72,30 @@ VmInclude:/modules/layout/footer.html
 			$("#vm_system_search").focus(function(){$("#vm_system_search").autocomplete("search","");});
 		}
 		//------------------------------------
+		function url_exists(url, cb){
+			jQuery.ajax({
+				url:      url,
+				dataType: 'text',
+				type:     'GET',
+				complete:  function(xhr){
+					//if(xhr.status!=200)	 console.log(xhr.status+" "+url)
+				}
+			});
+		}
+		var url_check=function(){
+			var N=0,E=0;
+			for(m in $vm.module_list){
+				var url=$vm.module_list[m].url;
+				if(url!=undefined){
+					url_exists(url)
+				}
+			}
+		}
+		//------------------------------------
 		var load_home_module=function(){
 			var a=window.location.href.split('module=');
 			if(a.length!=2){
-                console.log("loading home module...")
+                console.log((new Date().getTime()-$vm.start_time).toString()+"---"+"*********************** loading home module... **************************")
                 $vm.nav_load_module('panel_main_home');
             }
 			else{
@@ -87,6 +108,7 @@ VmInclude:/modules/layout/footer.html
 				};
 				alert("The module "+name+" doesn't exist!");
 			}
+			//url_check();
 		}
 		//********************************************************
 		var N=0;
@@ -107,6 +129,7 @@ VmInclude:/modules/layout/footer.html
 						website_item_list_for_search.push({label:nm,value:prefix+property})
 					}
 					var m_url=$vm.module_list[prefix+property].url;
+					if(m_url!=undefined) m_url=$vm.url(m_url);
 					if(m_url!=undefined && m_url[0]=='/'){
 						$vm.module_list[prefix+property].url=url.split('/configurations/')[0]+m_url;
 					}
@@ -116,22 +139,24 @@ VmInclude:/modules/layout/footer.html
 			   	}
 			}
 			N--;
-            console.log("Number of module json setup file:"+N);
+            console.log((new Date().getTime()-$vm.start_time).toString()+"---"+"Number of module json setup file:"+N);
 			if(N==0){
 				//set_module_search();
 				$vm.search_list=1;
-                console.log("call load_home_module");
+                console.log((new Date().getTime()-$vm.start_time).toString()+"---"+"call load_home_module");
 				load_home_module();
-				console.log("Total number of module: "+Object.keys($vm.module_list).length);
+				console.log((new Date().getTime()-$vm.start_time).toString()+"---"+"Total number of module: "+Object.keys($vm.module_list).length);
+				console.dir($vm.module_list);
+				console.log((new Date().getTime()-$vm.start_time).toString()+"---"+"$vm.module_list");
 			}
 		}
 		//------------------------------------
 		var process_config_file=function(url,prefix){
-			console.log('loading '+url+'?_='+$vm.ver[1]+$vm.reload);
+			console.log((new Date().getTime()-$vm.start_time).toString()+"---"+'loading '+url+'?_='+$vm.ver[1]+$vm.reload);
 			$.get(url+'?_='+$vm.ver[1]+$vm.reload,function(data){
 				localStorage.setItem(url+"_txt",data);
 				localStorage.setItem(url+"_ver",$vm.ver[1]);
-                console.log("processing "+prefix)
+                console.log((new Date().getTime()-$vm.start_time).toString()+"---"+"processing "+prefix)
 				add_config_modules_to_module_list_and_start(url,data,prefix);
 			},'text').fail(function() {
 				alert( "The configuration file ("+url+") doesn't exist!" );
@@ -145,7 +170,10 @@ VmInclude:/modules/layout/footer.html
 			N=N+json_files.length;
 		}
 		for (var property in panels){
-			$vm.module_list[property]={"url":panels[property].url}
+			var m_url=$vm.url(panels[property].url);
+			if(m_url!=undefined && m_url[0]=='/') m_url=$vm.hosting_path+m_url;
+			else if(m_url!=undefined && m_url.substring(0,8)=='modules/') m_url=$vm.hosting_path+"/"+m_url;
+			$vm.module_list[property]={"url":m_url}
 			var prefix=property+"_";
 			var json_files=panels[property].modules;
 			for(var i=0;i<json_files.length;i++){
@@ -154,11 +182,11 @@ VmInclude:/modules/layout/footer.html
 				var ver=localStorage.getItem(url+"_ver");
 				var txt=localStorage.getItem(url+"_txt");
 				if(ver!=$vm.ver[1] || txt===null || $vm.debug===true || $vm.reload!=''){
-                    console.log("processing "+json_files[i])
+                    console.log((new Date().getTime()-$vm.start_time).toString()+"---"+"processing "+json_files[i])
 					process_config_file(url,prefix);
 				}
 				else{
-                    console.log("processing "+json_files[i])
+                    console.log((new Date().getTime()-$vm.start_time).toString()+"---"+"processing "+json_files[i])
                     add_config_modules_to_module_list_and_start(url,txt,prefix);
                 }
 			}
@@ -187,7 +215,7 @@ VmInclude:/modules/layout/footer.html
 		}
 		//------------------------------------
 		var particlesjs_loop=setInterval(function (){
-			console.log('particlesjs_loop...')
+			console.log((new Date().getTime()-$vm.start_time).toString()+"---"+'particlesjs_loop...')
 			if($vm.js_particlesjs==1){
 				clearInterval(particlesjs_loop);
 				particles();
@@ -195,10 +223,11 @@ VmInclude:/modules/layout/footer.html
 		},100);
 		//------------------------------------
 		var search_loop=setInterval(function (){
-			console.log('search_loop...')
+			console.log((new Date().getTime()-$vm.start_time).toString()+"---"+'search_loop...')
 			if($vm.js_jquery_ui==1 && $vm.search_list==1){
 				clearInterval(search_loop);
 				set_module_search();
+				console.log((new Date().getTime()-$vm.start_time).toString()+"---"+"********************* ready to search module ************************");
 			}
 		},100);
 		//------------------------------------

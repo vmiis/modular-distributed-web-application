@@ -1,4 +1,5 @@
 var vm_init=function(){
+	$vm.start_time=new Date().getTime();
 	//check and clear localstorage
 	var data=''; for(var key in window.localStorage){ if(window.localStorage.hasOwnProperty(key)){ data+=window.localStorage[key]; }}
 	if(data.length>3000000) localStorage.clear();
@@ -30,7 +31,7 @@ var vm_init=function(){
 		var txt=localStorage.getItem(url+"_txt");
 		//------------------------------------------
 		if(ver!=$vm.ver[1] || txt===null || $vm.debug===true || $vm.reload!=''){
-			console.log('loading '+url+'?_='+$vm.ver[1]+$vm.reload);
+			console.log((new Date().getTime()-$vm.start_time).toString()+"---"+'loading '+url+'?_='+$vm.ver[1]+$vm.reload);
 			$.get(url+'?_='+$vm.ver[1]+$vm.reload,function(data){
 				localStorage.setItem(url+"_txt",data);
 				localStorage.setItem(url+"_ver",$vm.ver[1]);
@@ -97,7 +98,7 @@ var vm_init=function(){
 		var txt=localStorage.getItem(url+"_txt");
 		//------------------------------------------
 		if(ver!=$vm.ver[2] || txt===null || $vm.debug===true || $vm.reload!=''){
-			console.log('loading '+url+'?_='+$vm.ver[2]+$vm.reload);
+			console.log((new Date().getTime()-$vm.start_time).toString()+"---"+'loading '+url+'?_='+$vm.ver[2]+$vm.reload);
 			$.get(url+'?_='+$vm.ver[2]+$vm.reload,function(data){
 				localStorage.setItem(url+"_txt",data);
 				localStorage.setItem(url+"_ver",$vm.ver[2]);
@@ -131,6 +132,7 @@ var vm_init=function(){
 			text=text.replace(/https:\/\/distributed-modules.vmiis.com/g,window.location.protocol+'//'+window.location.host+'/vmiis/distributed-modules');
 
 			text=text.replace(/https:\/\/nightstudy.rt.org.au/g,window.location.protocol+'//'+window.location.host+'/woolcock-imr/nightstudy');
+			text=text.replace(/https:\/\/clinic-online-questionnaire.rt.org.au/g,window.location.protocol+'//'+window.location.host+'/woolcock-imr/clinic-online-questionnaire');
 
 			//do not use local system files
 			text=text.replace(/http:\/\/127.0.0.1:8000\/vmiis\/api/g,'https://vmiis.github.io/api');
@@ -183,10 +185,10 @@ var vm_init=function(){
 		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 		ga('create', 'UA-105358394-1', 'auto');
 		ga('send', 'pageview');
-        $vm.module_list['_system_export_dialog_module']={table_id:'',url:'__PARTS__/dialog/export_dialog_module.html'};
+        $vm.module_list['_system_export_dialog_module']={table_id:'',url:$vm.url('__COMPONENT__/dialog/export_dialog_module.html')};
         $vm.load_module_by_name('_system_export_dialog_module','',{})
         //-------------------------------------
-        $vm.module_list['_system_import_dialog_module']={table_id:'',url:'__PARTS__/dialog/import_dialog_module.html'};
+        $vm.module_list['_system_import_dialog_module']={table_id:'',url:$vm.url('__COMPONENT__/dialog/import_dialog_module.html')};
         $vm.load_module_by_name('_system_import_dialog_module','',{})
 	}
 	//********************************************************
