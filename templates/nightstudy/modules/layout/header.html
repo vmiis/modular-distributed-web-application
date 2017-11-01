@@ -1,7 +1,7 @@
 <div header id=header__ID>
     <nav id=nav__ID class="navbar navbar-expand-xl navbar-dark">
 		<div id=brand__ID>
-	        <a class="navbar-brand d-none d-xl-block" onclick="$vm.nav_load_module('no_panel_home');">
+	        <a class="navbar-brand d-none d-xl-block" onclick="$vm.nav_load_module('panel_main_home');">
 	            <div class=large_logo__ID>
 	                <div class=large_logo_large_label__ID>
 	                    Business Portal
@@ -11,7 +11,7 @@
 	                </div>
 	            </div>
 	        </a>
-	        <a class="navbar-brand d-xl-none" onclick="$vm.nav_load_module('no_panel_home');">
+	        <a class="navbar-brand d-xl-none" onclick="$vm.nav_load_module('panel_main_home');">
 	            <div class=small_logo__ID>Business Portal</div>
 	        </a>
 		</div>
@@ -19,22 +19,14 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div id="navbars__ID" class="navbar-collapse collapse">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('no_panel_home');"><i class="fa fa-home"></i> Home</a></li>
-                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('no_panel_enquiry');"><i class="fa fa-th"></i> Enquiry</a></li>
-            </ul>
-            <form id=form__ID class="form-inline my-2 my-xl-0 mr-auto">
-				<input id=vm_system_search class="form-control mr-sm-2" type="text" placeholder="Search modules..." aria-label="Search modules..." />
-			</form>
-			<ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="nav_dropdown__ID" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administrator</a>
-                    <div class="dropdown-menu" aria-labelledby="nav_dropdown__ID">
-                        <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('no_panel_enquiry_record');">Enquiry records</a>
-                    </div>
-                </li>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('panel_main_home');"><i class="fa fa-home"></i> Home</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('panel_main');"><i class="fa fa-th"></i> Nightstudy</a></li>
                 <li class="nav-item"><a class="nav-link" onclick="$vm.nav_click_process('vm_signinout');" name=signinout><i class="fa fa-user"></i> Sign In/Out</a></li>
             </ul>
+            <form id=form__ID class="form-inline my-2 my-xl-0">
+				<input id=vm_system_search class="form-control mr-sm-2" type="text" placeholder="Search modules..." aria-label="Search modules..." />
+			</form>
         </div>
     </nav>
     <script>
@@ -61,7 +53,7 @@
             z-index:99;
         }
         #navbars__ID{
-	        padding-top:30px;
+	        padding:30px 120px 0 50px;
         }
         .large_logo__ID{
             color:#fff;
@@ -72,9 +64,6 @@
         }
         .large_logo_small_label__ID{
             font-size:64%;
-        }
-        #navbars__ID{
-            padding-left:50px;
         }
         #form__ID{
             padding-left:80px;
