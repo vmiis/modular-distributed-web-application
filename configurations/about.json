@@ -6,7 +6,7 @@
         "structure":		            {"url":"/modules/static/about/structure.html"},
         "my-goals":		                {"url":"/modules/static/about/my-goals.html"},
         "my-skills":		            {"url":"/modules/static/about/my-skills.html"},
-		"my-hobbies":		            {"url":"/modules/static/about/my-hobbies.html"},
+		"what-can-i-do":		        {"url":"/modules/static/about/what-can-i-do.html"},
         "job-proposal":		            {"url":"/modules/static/about/job-proposal.html"},
         "business-proposal":		    {"url":"/modules/static/about/business-proposal.html"},
         "protential-success":		    {"url":"/modules/static/about/protential-success.html"},
