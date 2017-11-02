@@ -122,6 +122,7 @@ var vm_init=function(){
 		text=text.replace(/__VER__/g,$vm.ver[0]);
 		text=text.replace(/__IMAGE__\//g,$vm.image_path+'/');
 		if(window.location.hostname=='127.0.0.1' || window.location.hostname=='localhost'){
+			var host=window.location.protocol+'//'+window.location.host;
 			//use local version
             text=text.replace(/https:\/\/wappsystem.github.io/g,window.location.protocol+'//'+window.location.host+'/wappsystem');
 			text=text.replace(/https:\/\/woolcock-imr.github.io/g,window.location.protocol+'//'+window.location.host+'/woolcock-imr');
@@ -142,11 +143,11 @@ var vm_init=function(){
 		}
 		if(window.location.toString().indexOf('_d=1')!=-1){
 			//use local system files
-			text=text.replace(/https:\/\/vmiis.github.io\/api/g,'http://127.0.0.1:8000/vmiis/api');
-			text=text.replace(/https:\/\/vmiis.github.io\/framework/g,'http://127.0.0.1:8000/vmiis/framework');
-			text=text.replace(/https:\/\/vmiis.github.io\/parts/g,'http://127.0.0.1:8000/vmiis/component');
-			text=text.replace(/https:\/\/vmiis.github.io\/component/g,'http://127.0.0.1:8000/vmiis/component');
-			text=text.replace(/https:\/\/vmiis.github.io\/modules/g,'http://127.0.0.1:8000/vmiis/modules');
+			text=text.replace(/https:\/\/vmiis.github.io\/api/g,host+'/vmiis/api');
+			text=text.replace(/https:\/\/vmiis.github.io\/framework/g,host+'/vmiis/framework');
+			text=text.replace(/https:\/\/vmiis.github.io\/parts/g,host+'/vmiis/component');
+			text=text.replace(/https:\/\/vmiis.github.io\/component/g,host+'/vmiis/component');
+			text=text.replace(/https:\/\/vmiis.github.io\/modules/g,host+'/vmiis/modules');
 		}
 		if(window.location.toString().indexOf('_d=2')!=-1){
 			//use latest unstable version (master branch, not gh-pages branch)

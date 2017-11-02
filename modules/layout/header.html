@@ -29,7 +29,15 @@
 				<li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('panel_main');"><i class="fa fa-th"></i> Modules</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('panel_template');"><i class="fa fa-th-large"></i> Templates</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('panel_about');"><i class="fa fa-info-circle"></i> About</a></li>
-                <li class="nav-item"><a class="nav-link" onclick="$vm.nav_click_process('vm_signinout');" name=signinout><i class="fa fa-user"></i> Sign In/Out</a></li>
+                <!--<li class="nav-item"><a class="nav-link" onclick="$vm.nav_click_process('vm_signinout');" name=signinout><i class="fa fa-user"></i> Sign In/Out</a></li>-->
+				<li class="nav-item dropdown" id=signin__ID>
+                    <a class="nav-link dropdown-toggle" id="nav_dropdown__ID" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Sign In</a></a>
+                    <div class="dropdown-menu" aria-labelledby="nav_dropdown__ID">
+                        <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_wappsystem_signin();">Wappsystem</a>
+						<a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" id=google__ID >Google</a>
+                    </div>
+                </li>
+				<li class="nav-item" id=signout__ID style='display:none'><a class="nav-link" onclick=vm_signout() ><i class="fa fa-user"></i> Sign Out</a></li>
             </ul>
 			<form id=form__ID class="form-inline my-2 my-xl-0">
 				<input id=vm_system_search class="form-control mr-sm-2" type="text" placeholder="Search modules..." aria-label="Search modules..." />
@@ -38,17 +46,56 @@
     </nav>
     <script>
         //---------------------------------------------
+		$.getScript('https://apis.google.com/js/platform.js',function(){
+			gapi.load('auth2', function(){
+				// Retrieve the singleton for the GoogleAuth library and set up the client.
+				auth2 = gapi.auth2.init({
+					client_id: '175539446682-tvqlkse9j0mt79fk70uetoq30bpnrboa.apps.googleusercontent.com',
+					cookiepolicy: 'single_host_origin',
+					// Request scopes in addition to 'profile' and 'email'
+					//scope: 'additional_scope'
+				});
+				var element=document.getElementById('google__ID');
+				auth2.attachClickHandler(element, {}, function(googleUser) {
+						$('#username__ID').text("Signed in: "+googleUser.getBasicProfile().getName());
+						$vm.user=googleUser.getBasicProfile().getName();
+						$vm.user_google_email=googleUser.getBasicProfile().getId();
+						$vm.user_google_id=googleUser.getBasicProfile().getEmail();
+						$vm.user_google_id_token=googleUser.getAuthResponse().id_token;
+						$vm.google_auth=1;
+						$('#username__ID').text('Signed in as '+ $vm.user+' (Google)');
+						$('#signin__ID').hide();
+						$('#signout__ID').show();
+					},
+					function(error) {
+						//alert(JSON.stringify(error, undefined, 2));
+					}
+				);
+			});
+		});
+		//---------------------------------------------
+		var vm_signout=function(){
+			if($vm.google_auth==1){
+				$vm.google_auth=0;
+				var auth2 = gapi.auth2.getAuthInstance();
+    			auth2.signOut();
+			}
+			$vm.nav_signout();
+		}
+		//---------------------------------------------
 		var init_loop=setInterval(function (){
 			console.log('init_loop...')
 			if($vm.init_status==1){
 				clearInterval(init_loop);
 				if($vm.user=='guest'){
-		            $('a[name=signinout]').html('<i class="fa fa-user"></i> Sign In')
 		            $('#username__ID').text('');
+					$('#signin__ID').show();
+					$('#signout__ID').hide();
 		        }
 		        else{
-		            $('a[name=signinout]').html('<i class="fa fa-user"></i> Sign Out')
 		            $('#username__ID').text('Signed in as '+ $vm.user);
+					$('#signin__ID').hide();
+					$('#signout__ID').show();
 		        }
 			}
 		},100);
