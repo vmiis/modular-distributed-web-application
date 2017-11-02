@@ -111,6 +111,7 @@ var vm_init=function(){
 	}
 	//--------------------------------------------------------
 	$vm.url=function(text){
+		var host=window.location.protocol+'//'+window.location.host;
 		//replace some text in old modules to the correct ones
 		text=text.replace(/__BASE__\/vmiis\/Common-Code\//g,'__COMPONENT__/');
 		text=text.replace(/__LIB__\/vmiis\/Common-Code\//g,'__COMPONENT__/');
@@ -122,7 +123,6 @@ var vm_init=function(){
 		text=text.replace(/__VER__/g,$vm.ver[0]);
 		text=text.replace(/__IMAGE__\//g,$vm.image_path+'/');
 		if(window.location.hostname=='127.0.0.1' || window.location.hostname=='localhost'){
-			var host=window.location.protocol+'//'+window.location.host;
 			//use local version
             text=text.replace(/https:\/\/wappsystem.github.io/g,window.location.protocol+'//'+window.location.host+'/wappsystem');
 			text=text.replace(/https:\/\/woolcock-imr.github.io/g,window.location.protocol+'//'+window.location.host+'/woolcock-imr');

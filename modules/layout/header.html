@@ -59,13 +59,24 @@
 				auth2.attachClickHandler(element, {}, function(googleUser) {
 						$('#username__ID').text("Signed in: "+googleUser.getBasicProfile().getName());
 						$vm.user=googleUser.getBasicProfile().getName();
+						/*
 						$vm.user_google_email=googleUser.getBasicProfile().getId();
 						$vm.user_google_id=googleUser.getBasicProfile().getEmail();
+						*/
 						$vm.user_google_id_token=googleUser.getAuthResponse().id_token;
+						$VmAPI.request({data:{cmd:'signin_google',id_token:$vm.user_google_id_token},callback:function(res){
+							$vm.user=res.username;
+							$vm.user_id=res.user_id;
+							$VmAPI.set_token(res.token,res.api_url,res.username,res.user_id,res.nickname);
+							location.reload(true);
+						}})
+
+/*
 						$vm.google_auth=1;
 						$('#username__ID').text('Signed in as '+ $vm.user+' (Google)');
 						$('#signin__ID').hide();
 						$('#signout__ID').show();
+						*/
 					},
 					function(error) {
 						//alert(JSON.stringify(error, undefined, 2));
