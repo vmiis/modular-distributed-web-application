@@ -4,12 +4,12 @@
 <script>
     function F__ID(){
 		//-------------------------------------
-		var demo_data_id=1;
+		var demo_data_id=2;
         //-------------------------------------
         VmInclude:__PARTS__/grid/grid.v3.js
 		$('#new__ID').hide();
         //-------------------------------------
-        var fields="Name,Email,Message";
+        var fields="Date,First_Name,Last_Name,Time,Phone";
         _fields="_Form,"+fields+",Submit Date|DateTime,Submitted by|Author,_Delete";
         //-------------------------------------
         $('#D__ID').on('load',function(){  _set_req(); _request_data(); })

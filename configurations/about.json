@@ -11,10 +11,10 @@
         "business-proposal":		    {"url":"/modules/static/about/business-proposal.html"},
         "protential-success":		    {"url":"/modules/static/about/protential-success.html"},
         "working-together":		        {"url":"/modules/static/about/working-together.html"},
-        "user-help":		            {"url":"/modules/dynamic/help/help.html","table_id":"20010425","form_module":"user_help_form","view":"user_help_view"},
+        "user-help":		            {"url":"/modules/dynamic/help/help.html","table_id":"20010425","form_module":"panel_about_user_help_form","view":"panel_about_user_help_view"},
         "user_help_form":	            {"url":"/modules/dynamic/help/help.form.html","table_id":"20010425"},
         "user_help_view":	            {"url":"/modules/dynamic/help/help.view.html","table_id":"20010425"},
-        "dev-help":		                {"url":"/modules/dynamic/help/help.html","table_id":"20010426","form_module":"dev_help_form","view":"dev_help_view"},
+        "dev-help":		                {"url":"/modules/dynamic/help/help.html","table_id":"20010426","form_module":"panel_about_dev_help_form","view":"panel_about_dev_help_view"},
         "dev_help_form":	            {"url":"/modules/dynamic/help/help.form.html","table_id":"20010426"},
         "dev_help_view":	            {"url":"/modules/dynamic/help/help.view.html","table_id":"20010426"}
 	}

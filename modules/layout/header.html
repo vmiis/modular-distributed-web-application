@@ -38,7 +38,7 @@
 						<a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_wappsystem_signin();">With your Wappsystem account</a>
                     </div>
                 </li>
-				<li class="nav-item" id=signout__ID style='display:none'><a class="nav-link" onclick=vm_signout() ><i class="fa fa-user"></i> Sign Out</a></li>
+				<li class="nav-item" id=signout__ID style='display:none'><a class="nav-link" onclick=$vm.nav_signout() ><i class="fa fa-user"></i> Sign Out</a></li>
             </ul>
 			<form id=form__ID class="form-inline my-2 my-xl-0">
 				<input id=vm_system_search class="form-control mr-sm-2" type="text" placeholder="Search modules..." aria-label="Search modules..." />
@@ -47,96 +47,33 @@
     </nav>
     <script>
 		//---------------------------------------------
-		//facebook login
-		window.fbAsyncInit = function() {
-			FB.init({
-			  appId      : '360182794393427',
-			  cookie     : true,
-			  xfbml      : true,
-			  version    : 'v2.8'
-			});
-			FB.AppEvents.logPageView();
-		};
-		(function(d, s, id){
-			 var js, fjs = d.getElementsByTagName(s)[0];
-			 if (d.getElementById(id)) {return;}
-			 js = d.createElement(s); js.id = id;
-			 js.src = "https://connect.facebook.net/en_US/sdk.js";
-			 fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-		$('#facebook__ID').on('click',function(){
-			FB.login(function(response){
-				if(response.status==='connected'){
-					//$vm.facebook_auth=1;
-					$vm.user_facebook_token=response.authResponse.accessToken;
-					$VmAPI.request({data:{cmd:'signin_facebook',token:$vm.user_facebook_token},callback:function(res){
-						//$vm.user=res.username;
-						//$vm.user_id=res.user_id;
-						$VmAPI.set_token(res.token,res.api_url,res.username,res.user_id,res.nickname);
-						location.reload(true);
-					}})
-				}
-				else{
-				}
-			}, {scope: 'email'});
-		})
-		//---------------------------------------------
-		//google login
-		$.getScript('https://apis.google.com/js/platform.js',function(){
-			gapi.load('auth2', function(){
-				auth2 = gapi.auth2.init({
-					client_id: '175539446682-tvqlkse9j0mt79fk70uetoq30bpnrboa.apps.googleusercontent.com',
-					cookiepolicy: 'single_host_origin',
-					//scope: 'additional_scope'
-				});
-				var element=document.getElementById('google__ID');
-				auth2.attachClickHandler(element, {}, function(googleUser) {
-						//$vm.google_auth=1;
-						//$vm.user=googleUser.getBasicProfile().getName();
-						$vm.user_google_token=googleUser.getAuthResponse().id_token;
-						$VmAPI.request({data:{cmd:'signin_google',token:$vm.user_google_token},callback:function(res){
-							//$vm.user=res.username;
-							//$vm.user_id=res.user_id;
-							$VmAPI.set_token(res.token,res.api_url,res.username,res.user_id,res.nickname);
-							location.reload(true);
-						}})
-					},
-					function(error){}
-				);
-			});
-		});
-		//---------------------------------------------
-		var vm_signout=function(){
-			if($vm.user_puid=="1"){
-				var auth2 = gapi.auth2.getAuthInstance();
-    			auth2.signOut();
-			}
-			else if($vm.user_puid=="2"){
-				FB.logout(function(response){});
-			}
-			$vm.nav_signout();
-		}
-		//---------------------------------------------
 		var init_loop=setInterval(function (){
 			console.log('init_loop...')
 			if($vm.init_status==1){
 				clearInterval(init_loop);
-				var third=""
-				if($vm.user_puid=="1") third=" (Google)";
-				if($vm.user_puid=="2") third=" (Facebook)";
-				if($vm.user=='guest'){
-		            $('#username__ID').text('');
-					$('#signin__ID').show();
-					$('#signout__ID').hide();
-		        }
-		        else{
-		            $('#username__ID').text('Signed in as '+ $vm.user+third);
-					$('#signin__ID').hide();
-					$('#signout__ID').show();
-		        }
+				show_user();
 			}
 		},100);
         //---------------------------------------------
+		var show_user=function(){
+			var third=""
+			if($vm.user_puid=="1") third=" (Google)";
+			if($vm.user_puid=="2") third=" (Facebook)";
+			if($vm.user=='guest'){
+				$('#username__ID').text('');
+				$('#signin__ID').show();
+				$('#signout__ID').hide();
+			}
+			else{
+				$('#username__ID').text('Signed in as '+ $vm.user+third);
+				$('#signin__ID').hide();
+				$('#signout__ID').show();
+			}
+		}
+		//---------------------------------------------
+		$vm.google_signin_setup('175539446682-tvqlkse9j0mt79fk70uetoq30bpnrboa.apps.googleusercontent.com','google__ID',show_user);
+		$vm.facebook_signin_setup('360182794393427','facebook__ID',show_user);
+		//---------------------------------------------
     </script>
     <style>
         #header__ID{
