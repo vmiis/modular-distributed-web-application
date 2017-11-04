@@ -1,85 +1,177 @@
-<div header>
-	<div id=header__ID top-navigation class="w3-top">
-		<div id=small__ID class='w3-hide-large'><a onclick="$vm.nav_click_process('home')">Woolcock</a></div>
-		<div id=large__ID class="w3-hide-small w3-hide-medium">
-			<a onclick="$vm.nav_click_process('home')">
-				<img width=360 src='__HOST__/images/logo.jpg' style='margin-top:3px'></img>
-			</a>
+<div header id=header__ID>
+    <nav id=nav__ID class="navbar navbar-expand-xl navbar-dark">
+		<div id=brand__ID>
+	        <a class="navbar-brand d-none d-xl-block" onclick="$vm.nav_load_module('no_panel_home');">
+	            <div class=large_logo__ID>
+	                <div class=large_logo_large_label__ID>
+	                    Business Portal
+	                </div>
+	                <div class=large_logo_small_label__ID>
+	                    on-demand business applications
+	                </div>
+	            </div>
+	        </a>
+	        <a class="navbar-brand d-xl-none" onclick="$vm.nav_load_module('no_panel_home');">
+	            <div class=small_logo__ID>Business Portal</div>
+	        </a>
 		</div>
-		<div id=topbar__ID class="w3-right w3-hide-small w3-hide-medium">
-			<a onclick="$vm.nav_click_process('home')" class="w3-bar-item w3-button"><i class="fa fa-home"></i> Home</a>
-			<a onclick="$vm.nav_click_process('portal')" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Clinic Questionnaire</a>
-			<a name=signinout onclick="$vm.nav_click_process('vm_signinout')" class="w3-bar-item w3-button"></a>
-		</div>
-		<a  id=small_btn__ID href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-	</div>
-	<div id="sidebar__ID" side-navigation class="w3-sidebar w3-bar-block w3-black w3-card-2 w3-animate-left w3-hide-large">
-		<a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-		<a onclick="$vm.nav_click_process('home');w3_close()" class="w3-bar-item w3-button"><i class="fa fa-home"></i> Home</a>
-		<a onclick="$vm.nav_click_process('portal');w3_close()" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Clinic Questionnaire</a>
-		<a name=signinout onclick="$vm.nav_click_process('vm_signinout');w3_close()" class="w3-bar-item w3-button"></a>
-	</div>
-	<script navigation-processing>
-		//-----------------------------------------
-		setTimeout(function (){
-			var header_height=$('#header__ID').outerHeight();
-			$('#sidebar__ID').css({'margin-top':header_height+'px'});
-		},1000);
-		//------------------------------------
-		var sidebar = document.getElementById("sidebar__ID");
-		function w3_open() {
-			if (sidebar.style.display === 'block') sidebar.style.display = 'none';
-			else 								   sidebar.style.display = 'block';
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbars__ID" aria-controls="navbars__ID" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbars__ID" class="navbar-collapse collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('no_panel_home');"><i class="fa fa-home"></i> Home</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('no_panel_visit');">Visit</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="nav_dropdown__ID" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Setup</a>
+                    <div class="dropdown-menu" aria-labelledby="nav_dropdown__ID">
+                        <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('no_panel_physician');">Physician</a>
+                        <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('no_panel_area');">Area</a>
+                        <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('no_panel_visit-type');">Visit type</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown" id=signin__ID>
+                    <a class="nav-link dropdown-toggle" id="nav_dropdown__ID" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Sign In</a></a>
+                    <div class="dropdown-menu" aria-labelledby="nav_dropdown__ID">
+						<a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" id=google__ID >With your Google account</a>
+						<a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" id=facebook__ID >With your Facebook account</a>
+						<a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_wappsystem_signin();">With your Wappsystem account</a>
+                    </div>
+                </li>
+				<li class="nav-item" id=signout__ID style='display:none'><a class="nav-link" onclick=$vm.nav_signout() ><i class="fa fa-user"></i> Sign Out</a></li>
+            </ul>
+			<form id=form__ID class="form-inline my-2 my-xl-0">
+				<input id=vm_system_search class="form-control mr-sm-2" type="text" placeholder="Search modules..." aria-label="Search modules..." />
+			</form>
+        </div>
+    </nav>
+    <script>
+        //---------------------------------------------
+        if($vm.user=='guest'){
+            $('a[name=signinout]').html('<i class="fa fa-user"></i> Sign In')
+            $('#username__ID').text('');
+        }
+        else{
+            $('a[name=signinout]').html('<i class="fa fa-user"></i> Sign Out')
+            $('#username__ID').text('Signed in as '+ $vm.user);
+        }
+        //---------------------------------------------
+    </script>
+    <style>
+        #header__ID{
+            background: rgba(0,0,0,0.5);
+        }
+        #header__ID a{
+            cursor:pointer;
+        }
+        #nav__ID{
+			padding:0;
+            z-index:99;
+        }
+        #navbars__ID{
+	        padding-top:30px;
+        }
+        .large_logo__ID{
+            color:#fff;
+            padding:10px 0px 10px 30px;
+        }
+        .large_logo_large_label__ID{
+            font-size:140%;
+        }
+        .large_logo_small_label__ID{
+            font-size:64%;
+        }
+        #navbars__ID{
+            padding-left:50px;
+        }
+        #form__ID{
+            padding-left:80px;
+        }
+		@media screen and (max-width:1200px){
+			#nav__ID{
+	            z-index:99;
+	        }
+            #form__ID{
+		        padding-left:0px;
+	        }
+			#nav__ID{
+                padding: 3px 15px;
+			}
+            #navbars__ID{
+    	        padding-top:0px;
+                padding-left:10px;
+				background-color:#445a26;
+            }
+            .small_logo__ID{
+                color:#fff;
+                font-size: 140%;
+            }
 		}
-		function w3_close() {
-			sidebar.style.display = "none";
+		/****************************/
+		#navbars__ID a:focus {
+			outline: none;
 		}
-		//-----------------------------------------
-		if($vm.user=='guest'){
-			$('a[name=signinout]').html('<i class="fa fa-user"></i> Sign In')
-			$('#username__ID').text('');
+		#navbars__ID .navbar-brand {
+			font-size: 1.1rem;
+			color: white;
 		}
-		else{
-			$('a[name=signinout]').html('<i class="fa fa-user"></i> Sign Out')
-			$('#username__ID').text('Signed in as '+ $vm.user);
+		#navbars__ID .navbar-brand.active,
+		#navbars__ID .navbar-brand:active,
+		#navbars__ID .navbar-brand:focus,
+		#navbars__ID .navbar-brand:hover {
+			color: white;
 		}
-		//---------------------------------------------
-	</script>
-	<style>
-		#header__ID{
-			background: rgba(255,255,255,1);
-			opacity: 0.8;
+		#navbars__ID .navbar-nav {
+			letter-spacing: 1px;
 		}
-		#header__ID a{
-		  	cursor:pointer;
+		#navbars__ID .navbar-nav li.nav-item a.nav-link {
+			color: white;
 		}
-		#large__ID{
-			padding-left:90px;
-			display:inline-block;
+		#navbars__ID .navbar-nav li.nav-item a.nav-link:hover {
+			color: #18BC9C;
+			outline: none;
 		}
-		#small__ID{
-			font: 180% Arial;
-			font-weight: bold;
-			color:#000;
-			display: inline-block;
-			margin: 10px 0 5px 10px;
-			padding:3px 0 0 20px;
+		#navbars__ID .navbar-nav li.nav-item a.nav-link:active,
+		#navbars__ID .navbar-nav li.nav-item a.nav-link:focus {
+			color: white;
 		}
-		#large__ID a:hover,#small__ID a:hover{
-			color:#000;
-			text-decoration:none;
+		#navbars__ID .navbar-toggler {
+			font-size: 14px;
+			padding: 11px;
+			text-transform: uppercase;
+			color: white;
+			border-color: white;
 		}
-		#small_btn__ID{
-			color:#000;
-			font-size:26px;
+		#navbars__ID .navbar-toggler:focus,
+		#navbars__ID .navbar-toggler:hover {
+			color: white;
+			border-color: #18BC9C;
+			background-color: #18BC9C;
 		}
-		#topbar__ID{
- 			font-family: Helvetica,Arial,sans-serif;
-			color:#000;
-			padding: 50px 250px 6px 0px;
+		@media (min-width: 992px) {
+			#navbars__ID {
+				-webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+				-moz-transition: padding-top 0.3s, padding-bottom 0.3s;
+				transition: padding-top 0.3s, padding-bottom 0.3s;
+			}
+			#navbars__ID .navbar-brand {
+				font-size: 2em;
+				-webkit-transition: all 0.3s;
+				-moz-transition: all 0.3s;
+				transition: all 0.3s;
+			}
+			#navbars__ID .navbar-nav > li.nav-item > a.nav-link.active {
+				color: white;
+				border-radius: 3px;
+				background: #18BC9C;
+			}
+			#navbars__ID .navbar-nav > li.nav-item > a.nav-link.active:active,
+			#navbars__ID .navbar-nav > li.nav-item > a.nav-link.active:focus,
+			#navbars__ID .navbar-nav > li.nav-item > a.nav-link.active:hover {
+				color: white;
+				background: #18BC9C;
+		  	}
 		}
-		#sidebar__ID{
-			display:none;
-		}
-	</style>
+		/*********************************/
+    </style>
 </div>
