@@ -133,6 +133,7 @@ var vm_init=function(){
         if(window.location.hostname=='127.0.0.1' || window.location.hostname=='localhost'){
             //use local version of remote modules
 			text=text.replace(/https:\/\/clinic-questionnaire.rt.org.au/g,window.location.protocol+'//'+window.location.host+'/woolcock-imr/clinic-questionnaire');
+            text=text.replace(/https:\/\/clinic-online-questionnaire.rt.org.au/g,window.location.protocol+'//'+window.location.host+'/woolcock-imr/clinic-online-questionnaire');
 		}
 		return text;
 	}

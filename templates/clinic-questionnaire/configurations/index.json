@@ -3,6 +3,6 @@
 	"api_path_production":"https://cbs.wappsystem.com/dev/",
 	"default_production":"No",
 	"panels":{
-		"no_panel":{"url":"","modules":["main.json"]}
+		"panel_main":{"url":"","modules":["main.json"]}
 	}
 }

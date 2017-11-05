@@ -140,6 +140,7 @@ var vm_init=function(){
 			text=text.replace(/https:\/\/image.datalinkedin.com/g,window.location.protocol+'//'+window.location.host+'/vmiis/images');
 			text=text.replace(/https:\/\/distributed-modules.vmiis.com/g,window.location.protocol+'//'+window.location.host+'/vmiis/distributed-modules');
 			text=text.replace(/https:\/\/nightstudy.rt.org.au/g,window.location.protocol+'//'+window.location.host+'/woolcock-imr/nightstudy');
+            text=text.replace(/https:\/\/clinic-questionnaire.rt.org.au/g,window.location.protocol+'//'+window.location.host+'/woolcock-imr/clinic-questionnaire');
 			text=text.replace(/https:\/\/clinic-online-questionnaire.rt.org.au/g,window.location.protocol+'//'+window.location.host+'/woolcock-imr/clinic-online-questionnaire');
 		}
 		return text;

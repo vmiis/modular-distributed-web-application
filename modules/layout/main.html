@@ -9,6 +9,7 @@ VmInclude:/modules/layout/footer.html
 
 <script main-layout-js>
 	function F__ID(){
+        var home_page_module='panel_main_home';
 		console.log((new Date().getTime()-$vm.start_time).toString()+"---"+"********************* start running code in main.html ************************");
 		//------------------------------------
 		var website_item_list_for_search=[]
@@ -86,7 +87,7 @@ VmInclude:/modules/layout/footer.html
 			for(m in $vm.module_list){
 				var url=$vm.module_list[m].url;
 				if(url!=undefined){
-					url_exists(url)
+					url_exists($vm.url(url))
 				}
 			}
 		}
@@ -95,7 +96,7 @@ VmInclude:/modules/layout/footer.html
 			var a=window.location.href.split('module=');
 			if(a.length!=2){
                 console.log((new Date().getTime()-$vm.start_time).toString()+"---"+"*********************** loading home module... **************************")
-                $vm.nav_load_module('panel_main_home');
+                $vm.nav_load_module(home_page_module);
             }
 			else{
 				var name=a[1].split('&')[0];
