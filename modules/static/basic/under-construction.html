@@ -1,7 +1,7 @@
 <div id=page__ID>
 	<div class="container-fluid" style='max-width:800px'>
 		<div class="text-center">
-		  <h1>Under construction!</h1>
+		  <h1 id=text__ID>Under construction!</h1>
 	  	  <hr style='border-top:1px solid #f05f40;'></hr>
 	  	  <p>We can build a web application with unlimited number of modules distributed on different static web servers around the world and maintained by different people with different skills!</p>
 		  <br>
@@ -11,6 +11,8 @@
 </div>
 <script>
 	function F__ID(){
+		var text=$vm.module_list[$vm.vm['__ID'].name].text;
+        if(text!=undefined) $('#text__ID').text(text);
 	}
 </script>
 <style>

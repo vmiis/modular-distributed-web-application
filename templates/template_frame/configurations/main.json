@@ -1,0 +1,9 @@
+{
+    "modules":
+	{
+		"home":	          {"url":"../../modules/static/basic/home.html","name_for_search":"Home page","color":"#fff"},
+		"link-1":	      {"url":"../../modules/static/basic/under-construction.html","name_for_search":"Link 1","text":"Under Construction"},
+		"link-2":	      {"url":"../../modules/static/basic/under-construction.html","name_for_search":"Link 2","text":"Not Ready"},
+		"link-3":	      {"url":"../../modules/static/basic/under-construction.html","name_for_search":"Link 3","text":"Comming soon..."}
+	}
+}
