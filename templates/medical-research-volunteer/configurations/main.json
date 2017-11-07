@@ -2,7 +2,7 @@
     "modules":
 	{
 		"home":	          {"url":"/modules/home.html","name_for_search":"Home page"},
-		"projects":	      {"url":"https://volunteer-database.rt.org.au/modules/home.html"},
+		"projects":	      {"url":"https://volunteer-database.rt.org.au/modules/projects.html"},
 		"signin":	      {"url":"https://volunteer-database.rt.org.au/modules/volunteer/signin.html"},
 		"registration":	  {"url":"https://volunteer-database.rt.org.au/modules/volunteer/registration.html"},
 		"my_details":	  {"url":"https://volunteer-database.rt.org.au/modules/volunteer/registration_modify.html"},

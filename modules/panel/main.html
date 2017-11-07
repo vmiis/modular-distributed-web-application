@@ -2,6 +2,11 @@
 	<div id=tbar__ID class="btn-toolbar" _class="navbar navbar-default">
 		<div class="input-group" style='width:100%'>
 			<input id=test_module_url__ID class="form-control" placeholder='Type in the url of your module for testing, for example, https://vmiis.github.io/modular-distributed-web-application/modules/static/basic/simple-static-content-module.html '/>
+			<select id=method__ID>
+				<option>DIV</option>
+				<option>Shadow DOM</option>
+				<option>iFrame</option>
+			</select>
 			<button type=button id=test_module__ID class='btn btn-secondary'>GO</button>
 		</div>
     </div>
@@ -100,6 +105,7 @@
 				  $('#D'+id).remove();
 			  }
 			  $vm.module_list['_test_module']={url:$('<div />').html($('#test_module_url__ID').val()).text()}
+//alert( $('#method__ID').val());
 			  $vm.nav_load_module('_test_module');
 		  })
 		  //--------------------------------------------------------
