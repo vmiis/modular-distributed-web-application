@@ -1,7 +1,7 @@
 <section id=panel__ID>
 	<div id=tbar__ID class="btn-toolbar" _class="navbar navbar-default">
 		<div class="input-group" style='width:100%'>
-			<input id=test_module_url__ID class="form-control" placeholder='Type in the url of your module for testing, for example, https://vmiis.github.io/modular-distributed-web-application/modules/static/basic/simple-static-content-module.html '/>
+			<input id=test_module_url__ID style='font-size:80%' class="form-control" placeholder='Type in the url of your module for testing, for example, https://vmiis.github.io/modular-distributed-web-application/modules/static/basic/simple-static-content-module.html '/>
 			<select id=method__ID>
 				<option>DIV</option>
 				<option>Shadow DOM</option>
@@ -73,44 +73,62 @@
 </section>
 
 <script>
-      function F__ID(){
-		  //--------------------------------------------------------
-		  var prefix=$vm.vm["__ID"].name+"_";
-		  $('#panel__ID li').on('click',function(){
-			  var m=$(this).attr('module');
-              if(m!=undefined){
-				  if($vm.module_list[prefix+m]==undefined){
-					  alert(prefix+m +" is not in the module list.");
-					  return;
-				  }
-                  $vm.module_list[prefix+m].alert='1';
-			      $vm.nav_load_module(prefix+m);
-              }
-			  else{
-				  var p=$(this).attr('panel');
-				  if(p!=undefined){
-					  if($vm.module_list[p]==undefined){
-						  alert(p +" is not in the module list.");
-						  return;
-					  }
-				      $vm.nav_load_module(p);
-	              }
-			  }
-		  })
-		  $vm.panel_nightstudy=1;
-		  //--------------------------------------------------------
-		  $('#test_module__ID').on('click',function(){
-			  if($vm.module_list['_test_module']!=undefined){
-				  var id=$vm.module_list['_test_module'].id;
-				  $('#D'+id).remove();
-			  }
-			  $vm.module_list['_test_module']={url:$('<div />').html($('#test_module_url__ID').val()).text()}
-//alert( $('#method__ID').val());
-			  $vm.nav_load_module('_test_module');
-		  })
-		  //--------------------------------------------------------
-
-      }
+	function F__ID(){
+		//--------------------------------------------------------
+		var prefix=$vm.vm["__ID"].name+"_";
+		$('#panel__ID li').on('click',function(){
+			var m=$(this).attr('module');
+			if(m!=undefined){
+				if($vm.module_list[prefix+m]==undefined){
+					alert(prefix+m +" is not in the module list.");
+					return;
+				}
+				$vm.module_list[prefix+m].alert='1';
+				$vm.nav_load_module(prefix+m);
+			}
+			else{
+				var p=$(this).attr('panel');
+				if(p!=undefined){
+					if($vm.module_list[p]==undefined){
+						alert(p +" is not in the module list.");
+						return;
+					}
+					$vm.nav_load_module(p);
+				}
+			}
+		})
+		$vm.panel_nightstudy=1;
+		//--------------------------------------------------------
+		$('#test_module__ID').on('click',function(){
+			var url=$('<div />').html($('#test_module_url__ID').val()).text();
+			if(url!=''){
+				var method=$('#method__ID').val();
+				if(method=="DIV"){
+					if($vm.module_list['_test_module']!=undefined && $vm.module_list['_test_module']!=''){
+						var id=$vm.module_list['_test_module'].id;
+						$('#D'+id).remove();
+					}
+					$vm.module_list['_test_module']={url:url+"?_"+new Date().getTime()}
+					$vm.nav_load_module('_test_module');
+				}
+				else if(method=="Shadow DOM"){
+					if($vm.module_list['panel_main_shadow-dom-test']!=undefined && $vm.module_list['panel_main_shadow-dom-host']!=''){
+						var id=$vm.module_list['panel_main_shadow-dom-test'].id;
+						$('#D'+id).remove();
+					}
+					$vm.nav_load_module('panel_main_shadow-dom-test',undefined,{url:url});
+				}
+				else if(method=="iFrame"){
+					if($vm.module_list['panel_main_iframe-test']!=undefined && $vm.module_list['panel_main_iframe-test']!=''){
+						var id=$vm.module_list['panel_main_iframe-test'].id;
+						$('#D'+id).remove();
+					}
+					$vm.nav_load_module('panel_main_iframe-test',undefined,{url:url});
+				}
+			}
+		})
+		//--------------------------------------------------------
+	}
 </script>
 
 <style>

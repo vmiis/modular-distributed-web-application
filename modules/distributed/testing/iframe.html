@@ -1,0 +1,36 @@
+<iframe id=sandbox__ID sandbox="allow-scripts allow-same-origin" frameborder="0"></iframe>
+<script>
+	function F__ID(){
+		$('#D__ID').on('load',function(){
+			var url=$vm.url($vm.vm['__ID'].op.sys.config.url);
+			var fm=url.split('|')[0];
+			var path=fm.replace(fm.split('/').pop(),'');
+			var pg=url.split('|').pop();
+			//--------------------------------------------------------
+			$('#sandbox__ID').attr('src',fm+"?id=__ID&page="+pg);
+	        //--------------------------------------------------------
+			window.addEventListener('message', function(e) {
+				if(e.data.sandbox_id=='sandbox__ID'){
+					if(e.data.module_name!=undefined){
+						$vm.nav_load_module(e.data.module_name);
+					}
+					else if(e.data.cmd=='source'){
+			            var url_content=path+"/"+pg;
+						$vm.url_source(url_content);
+					}
+				}
+			}, false)
+		})
+		//--------------------------------------------------------
+	}
+</script>
+<style>
+	#D__ID{
+		height:100%;
+		animation: vm_module_fadein 1.0s;
+	}
+	#sandbox__ID{
+		height:100%;
+		width:100%;
+	}
+</style>
