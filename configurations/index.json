@@ -9,6 +9,7 @@
 		"panel_shadow_dom":{"url":"/modules/panel/shadow_dom.html","modules":["shadow-dom.json"]},
 		"panel_nightstudy":{"url":"https://nightstudy.rt.org.au/modules/panel/main.html","modules":["https://nightstudy.rt.org.au/configurations/main.json","https://nightstudy.rt.org.au/configurations/task.json"]},
 		"panel_about":{"url":"","modules":["about.json"]},
+		"panel_blog":{"url":"/modules/panel/blog.html","modules":["blog.json"]},
         "panel_template":{"url":"/modules/panel/template.html","modules":[]}
 	}
 }
