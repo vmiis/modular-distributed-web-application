@@ -1,6 +1,9 @@
 {
 	"modules":
 	{
+		"faq":		{"url":"/modules/static/about/faq.html","name_for_search":"FAQ"},
+		"myself":		{"url":"/modules/static/about/about-myself.html","name_for_search":"About myself"},
+		"proposals":		{"url":"/modules/static/about/proposals.html","name_for_search":"Proposals"},
         "what-is-business-portal":		{"url":"/modules/static/about/what-is-business-portal.html"},
         "solutions":		            {"url":"/modules/static/about/solutions.html"},
         "structure":		            {"url":"/modules/static/about/structure.html"},
