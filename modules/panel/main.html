@@ -110,7 +110,15 @@
 						var id=$vm.module_list['_test_module'].id;
 						$('#D'+id).remove();
 					}
-					$vm.module_list['_test_module']={url:url+"?_"+new Date().getTime()}
+					$vm.module_list['_test_module']={url:url+"?_"+new Date().getTime(),module_only:"1"}
+					$vm.nav_load_module('_test_module');
+				}
+				else if(method=="DIV (with script filter)"){
+                    if($vm.module_list['_test_module']!=undefined && $vm.module_list['_test_module']!=''){
+						var id=$vm.module_list['_test_module'].id;
+						$('#D'+id).remove();
+					}
+					$vm.module_list['_test_module']={url:url+"?_"+new Date().getTime(),html_filter:$vm.html_filter}
 					$vm.nav_load_module('_test_module');
 				}
 				else if(method=="Shadow DOM"){
@@ -120,20 +128,22 @@
 					}
 					$vm.nav_load_module('panel_main_shadow-dom-test',undefined,{url:url});
 				}
+				/*
+				else if(method=="Shadow DOM (with script filter)"){
+					if($vm.module_list['panel_main_shadow-dom-test']!=undefined && $vm.module_list['panel_main_shadow-dom-host']!=''){
+						var id=$vm.module_list['panel_main_shadow-dom-test'].id;
+						$('#D'+id).remove();
+					}
+					$vm.module_list['panel_main_shadow-dom-test'].html_filter=$vm.html_filter
+					$vm.nav_load_module('panel_main_shadow-dom-test',undefined,{url:url});
+				}
+				*/
 				else if(method=="iFrame"){
 					if($vm.module_list['panel_main_iframe-test']!=undefined && $vm.module_list['panel_main_iframe-test']!=''){
 						var id=$vm.module_list['panel_main_iframe-test'].id;
 						$('#D'+id).remove();
 					}
 					$vm.nav_load_module('panel_main_iframe-test',undefined,{url:url});
-				}
-                else if(method=="DIV (with script filter)"){
-                    if($vm.module_list['_test_module']!=undefined && $vm.module_list['_test_module']!=''){
-						var id=$vm.module_list['_test_module'].id;
-						$('#D'+id).remove();
-					}
-					$vm.module_list['_test_module']={url:url+"?_"+new Date().getTime(),html_filter:$vm.html_filter}
-					$vm.nav_load_module('_test_module');
 				}
 			}
 		})
@@ -153,16 +163,18 @@
             tags.each(function(){
                 var element=$(this);
                 $.each(this.attributes, function(i, attrib){
-                   var name = attrib.name;
-                   if($vm.allowed_attrs.includes(name)==false){
-                       element.removeAttr(name);
-                   }
+					if(attrib!=undefined){
+                   		var name = attrib.name;
+                   		if($vm.allowed_attrs.includes(name)==false){
+                       		element.removeAttr(name);
+                   		}
+					}
                 });
             })
             return $code.html();
         }
         //--------------------------------------------------------
-        $vm.allowed_tags=['div','name','span','h1','style','p','hr','button','a','ur','li'];
+        $vm.allowed_tags=['style','div','name','span','h1','h2','h3','h4','p','hr','button','a','b','ul','li','br'];
         $vm.allowed_attrs=['class','type','style','id'];
         //--------------------------------------------------------
         //$vm.allowed_css=['color','font-size'];

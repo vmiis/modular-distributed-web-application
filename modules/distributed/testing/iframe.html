@@ -1,13 +1,14 @@
-<iframe id=sandbox__ID sandbox="allow-scripts allow-same-origin" frameborder="0"></iframe>
+<iframe id=sandbox__ID sandbox="allow-scripts" frameborder="0"></iframe>
 <script>
 	function F__ID(){
 		$('#D__ID').on('load',function(){
-			var url=$vm.url($vm.vm['__ID'].op.sys.config.url);
-			var fm=url.split('|')[0];
-			var path=fm.replace(fm.split('/').pop(),'');
-			var pg=url.split('|').pop();
+			var url=$vm.url($vm.vm['__ID'].op.sys.config.url)+"?_="+new Date().getTime();
 			//--------------------------------------------------------
-			$('#sandbox__ID').attr('src',fm+"?id=__ID&page="+pg);
+			$.get(url, function(data){
+				$('#sandbox__ID').attr('srcdoc',data);
+			}).fail(function() {
+				alert( "The file '"+url+"' doesn't exist!" );
+			});
 	        //--------------------------------------------------------
 			window.addEventListener('message', function(e) {
 				if(e.data.sandbox_id=='sandbox__ID'){
@@ -15,8 +16,7 @@
 						$vm.nav_load_module(e.data.module_name);
 					}
 					else if(e.data.cmd=='source'){
-			            var url_content=path+"/"+pg;
-						$vm.url_source(url_content);
+						$vm.url_source(url);
 					}
 				}
 			}, false)

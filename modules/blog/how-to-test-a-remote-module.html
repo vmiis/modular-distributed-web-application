@@ -2,7 +2,7 @@
 <div id=page__ID>
   <a style='font-size:80%' target=_blank href=https://codepen.io/vmiis/pen/xPgbgM>Source Code</a>
 	<div class="container-fluid" style='max-width:800px;padding-top:20px'>
-		<div _class="text-center">
+		<div>
 		  <h3>How to test a remote module?</h3>
 	  	  <hr style='border-top:1px solid #f05f40;'></hr>
       <ul>
@@ -10,7 +10,7 @@
 <li>step 2: click modules</li>
 <li>step 3: type in remote module's url, then click 'Go'</li>
     </ul>
-There are 5 types of module integrations that are described as follow.
+There are 4 types of module integrations that are described as follow.
     <br><br>
 
 
@@ -24,19 +24,14 @@ There are 5 types of module integrations that are described as follow.
     </ul>
             <b>Shadow DOM</b>
     <ul>
-    Shadow DOM is a new technology which allows a completed HTML module be loaded into the main content container, but it has its own CSS scope. That is the module’s owner can free apply any CSS rules without affect any other modules in the system. The CSS scope is completed isolated from other parts. This makes the module’s owner be able to style the module in any ways. So far the JavaScript in the shadow module is not isolated, so the module’s owner should be fully trusted.
-            </ul>
-            <b>Shadow DOM with script filter</b>
-            <ul>
-            	Same as Shadow DOM but any script and some unsafe tags and attributes will be removed.
+Shadow DOM is a new technology which allows a completed HTML module be loaded into the main content container, but it has its own CSS scope. That is the module’s owner can freely apply any CSS rules without affect any other modules in the system. The CSS scope is completed isolated from other parts. This makes the module’s owner be able to style the module in any ways. So far the JavaScript in the shadow module is not isolated, so the module’s owner should be fully trusted.
             </ul>
             <b>iFrame</b>
             <ul>
-            	iFrame is used to fully isolate the module from the system. The module’s owner can do what they want. If the module need to exchange data with the system we will postMessage method for communication between the system and the module.
+iFrame is used to fully isolate the module from the system. The module’s owner can do what they want. If the module need to exchange data with the system we will use postMessage method for communication between the system and the module.
             </ul>
 		</div>
 	</div>
-</div>
 </div>
 <style>
 	#D__ID{
@@ -54,3 +49,4 @@ There are 5 types of module integrations that are described as follow.
         color:#333;
 	  }
 </style>
+</div>
