@@ -3,6 +3,7 @@
 	{
 		"how-to-test-a-remote-module":	{"url":"/modules/blog/how-to-test-a-remote-module.html","name_for_search":"How to test a remote module?"},
 		"how-to-create-a-modular-distributed-web-application":	{"url":"/modules/blog/how-to-create-a-modular-distributed-web-application.html","name_for_search":"How to create a modular distributed web application?"},
-		"what-is-a-module":	{"url":"/modules/blog/what-is-a-module.html","name_for_search":"What is a module?"}
+		"what-is-a-module":	{"url":"/modules/blog/what-is-a-module.html","name_for_search":"What is a module?"},
+        "how-to-add-a-module-to-an-application":	{"url":"/modules/blog/how-to-add-a-module-to-an-application.html","name_for_search":"How to add a module to an application?"}
 	}
 }

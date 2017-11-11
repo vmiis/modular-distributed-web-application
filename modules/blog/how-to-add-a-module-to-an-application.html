@@ -4,40 +4,44 @@
 			<div>
 				<h3>How to add a module to an application?</h3>
 				<hr style='border-top:1px solid #f05f40;'></hr>
-				First let have a look at the application we want to have and then I will expaln how to get there.
-				<u><a target=_blank href="https://codepen.io/vmiis/pen/ZaezeP">Click here to see the live application</a></u>
-<!--
-				A module is a file (or group of files) that contains Html, JavaScript and CSS.
-				It could be just a static page for showing information or it could be a data
-				collection form. It can be hosted on any static web server and loaded into a
-				content container when needed.
-				<u><a style='cursor:pointer' onclick="$vm.nav_load_module('panel_main_a-simple-module')">Click here</a></u>
-				to see an example of a very simple module (a simple home page), and
-				<u><a target=_blank href="https://codepen.io/vmiis/pen/ZaezeP">Click here</a></u>
-				to see the source con on CodePen. A module should starts with tag <span id=a__ID>&lt;div id=D__IIDD&gt;</span> and ends with &lt;/div&gt;.
-				In side the div, you can put any html elements, script and style for this module. A module can also be a complete web
-				page (with html, head and body) that will be loaded into a shadow-dom or
-				an iFrame. A module should be a bit of independent so that it can be responsible
-				and maintained by a individual person.
--->
+				First let have a look at the application we want to have and then I will explain how to get there.
+				<br><u><a target=_blank href="https://vmiis.github.io/my-first-hello-world-module-in-an-application/">Click here to see the live application</a></u><br>
+                <br>We need to do 3 things.
+                <br><br>
+                <ul>
+                    <li>
+                        Create a module to have functions we want to have. In this module, we want to show "Hello World".
+                        <u><a style='cursor:pointer' onclick="$vm.url_source('https://vmiis.github.io/tutorials/my-first-hello-world-module-in-an-application/hello-world.html')">Click here to see the contents of this file</a></u><br>
+                        <!--<u><a style='cursor:pointer' onclick="$vm.url_source('http://127.0.0.1:8000/vmiis/tutorials/my-first-hello-world-module-in-an-application/hello-world.html')">Click here to see the contents of this file</a></u><br>-->
+                    </li>
+                    <li>
+                        Add the url of the module into the index.module.json to tell the system where the module is.<br>
+                        <u><a style='cursor:pointer' onclick="$vm.url_source('https://vmiis.github.io/tutorials/my-first-hello-world-module-in-an-application/index.modules.json')">Click here to see the contents of the index.module.json</a></u><br>
+                        <!--<u><a style='cursor:pointer' onclick="$vm.url_source('http://127.0.0.1:8000/vmiis/tutorials/my-first-hello-world-module-in-an-application/index.modules.json')">Click here to see the contents of the index.module.json</a></u><br>-->
+                    </li>
+                    <li>
+                        Add a link in the menu on the navigation bar, so that the module will be loaded in when user click this link.<br>
+                    </li>
+                </ul>
+                <br>
+                That's all. Now you can add your second, third… modules.
 			</div>
 		</div>
 	</div>
 	<script>$('#a__ID').text($('#a__ID').text().replace('IIDD','ID'))</script>
 	<style>
-		#D__ID{
-			height:100%;
-	    overflow:auto;
-			animation: vm_module_fadein 1.0s;
-	    background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0.3));
-		}
-		#page__ID{
-	    color:#000;
-			height: 100%;
-		}
-	  #page__ID ul{
-			  /*padding-left:20px;*/
-	        color:#333;
-		  }
+        #D__ID{
+        	height:100%;
+            overflow:auto;
+        	animation: vm_module_fadein 1.0s;
+            background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0.3));
+        }
+        #page__ID{
+            color:#000;
+        	height: 100%;
+        }
+        #page__ID ul{
+            color:#333;
+        }
 	</style>
 </div>
