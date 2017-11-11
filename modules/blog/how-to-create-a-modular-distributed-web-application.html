@@ -5,7 +5,7 @@
 				<h3>How to create a modular distributed web application?</h3>
 				<hr style='border-top:1px solid #f05f40;'></hr>
 				The best way to start is to use an application template (a very simple
-				application that has minimum parts). First <u><a target=_blank href='templates/template-frame/index.html')>
+				application that has minimum parts). First <u><a target=_blank href='https://vmiis.github.io/a-basic-application-framework/')>
 				click here</a></u> to see what this simple application looks like.
 				This simple application has 3 parts.
 				<br><br>
@@ -17,10 +17,10 @@
 				We use bootstrap 4 to make the layout responsive.
 				<br><br>
 				In order to load modules into the content container, we need to know where the modules are.
-				All the modules url are stored in a file called main.json under the configuration folder.
-				When user click a navigation link (menu in the header), the system will load the module
+				All the modules url are stored in a file called module.json under.
+				When user click a navigation link (menu item in the header), the system will load the module
 				with its url into the content container.Each module can be hosted on any static web
-				server (the server should support cross-origin resource sharing, like GitHub, CodePen).
+				server (the server should support cross-origin resource sharing, like GitHub, CodePen, Glitch etc).
 				<br><br>
 				There are 2 JavaScript library used for the application.
 				<br><br>
@@ -28,7 +28,7 @@
 					<li>https://vmiis.github.io/api/distribution/vmapi.min.js</li>
 					<li>https://vmiis.github.io/framework/distribution/vmframework.min.js</li>
 				</ul>
-				The vmapi.min.js is used for connecting a database on a cloud server. (If no database function we do not need this)
+				The vmapi.min.js is used for connecting a database on a cloud server. (If no database function we do not need this).
 				The vmframework.min.js is used for some common functions.
 				<br><br>
 				We also put some most common used Html/CSS/JavaScript snippet into files for modules to include.
