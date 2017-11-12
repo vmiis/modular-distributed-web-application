@@ -4,11 +4,14 @@
 		$('#D__ID').on('load',function(){
 			var url=$vm.url($vm.vm['__ID'].op.sys.config.url)+"?_="+new Date().getTime();
 			//--------------------------------------------------------
-			$.get(url, function(data){
+            $('#sandbox__ID').attr('src',url);
+            /*
+            $.get(url, function(data){
 				$('#sandbox__ID').attr('srcdoc',data);
 			}).fail(function() {
 				alert( "The file '"+url+"' doesn't exist!" );
 			});
+            */
 	        //--------------------------------------------------------
 			window.addEventListener('message', function(e) {
 				if(e.data.sandbox_id=='sandbox__ID'){

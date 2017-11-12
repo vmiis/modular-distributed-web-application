@@ -13,6 +13,8 @@
 		"sandbox":						{"url":"/modules/static/basic/sandbox.html"},
 		"sandbox-content":				{"url":"/modules/static/basic/sandbox.content.html","name_for_search":""},
 
+        "codepen-lately":               {"url":"/modules/distributed/codepen/lately.html","name_for_search":"Lately from CodePen"},
+
         "particles-particles":			{"url":"/modules/distributed/github/VincentGarreau/particles-particles.html","name_for_search":"Particles"},
 		"particles-nasa":				{"url":"/modules/distributed/github/VincentGarreau/particles-nasa.html","name_for_search":"NASA"},
 		"particles-bubble":				{"url":"/modules/distributed/github/VincentGarreau/particles-bubble.html","name_for_search":"Bubble"},
