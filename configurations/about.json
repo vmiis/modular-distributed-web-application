@@ -4,8 +4,8 @@
 		"faq":							{"url":"/modules/about/faq.html","name_for_search":"FAQ"},
 		"myself":						{"url":"/modules/about/about-myself.html","name_for_search":"About myself"},
 		"proposals":					{"url":"/modules/about/proposals.html","name_for_search":"Proposals"},
-        "solutions":		            {"url":"/modules/about/solutions.html"},
-        "structure":		            {"url":"/modules/about/structure.html"},
+        "solutions":		            {"url":"/modules/about/solutions.html","name_for_search":"Solutions"},
+        "structure":		            {"url":"/modules/about/structure.html","name_for_search":"Structure"},
 
         "user-help":		            {"url":"/modules/help/help.html","table_id":"20010425","form_module":"panel_about_user_help_form","view":"panel_about_user_help_view"},
         "user_help_form":	            {"url":"/modules/help/help.form.html","table_id":"20010425"},
