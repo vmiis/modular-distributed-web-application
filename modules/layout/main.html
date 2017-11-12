@@ -84,12 +84,15 @@ VmInclude:/modules/layout/footer.html
 		}
 		var url_check=function(){
 			var N=0,E=0;
+            var txt=""
 			for(m in $vm.module_list){
 				var url=$vm.module_list[m].url;
 				if(url!=undefined){
-					url_exists($vm.url(url))
+					//url_exists($vm.url(url))
+                    if(url.indexOf('modules/about')!=-1) txt+=url+"\n";
 				}
 			}
+            console.log(txt);
 		}
 		//------------------------------------
 		var load_home_module=function(){
@@ -108,7 +111,7 @@ VmInclude:/modules/layout/footer.html
 				};
 				alert("The module "+name+" doesn't exist!");
 			}
-			//url_check();
+			url_check();
 		}
 		//********************************************************
 		var N=0;
