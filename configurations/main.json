@@ -47,6 +47,6 @@
 
 		"simple-dynamic-content-module":{"url":"/modules/dynamic/basic/simple-dynamic-content-module.html","table_id":"20008490"},
         "contact-us-record":	        {"url":"/modules/dynamic/basic/contact-us-record.html","table_id":"20011189"},
-		"fitness":	        			{"url":"https://vmiis.github.io/distributed-modules/bootstrap4/fitness/index.html"}
+		"fitness":	        			{"url":"https://distributed-modules.vmiis.com/bootstrap4/fitness/index.html"}
 	}
 }

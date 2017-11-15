@@ -120,7 +120,6 @@ var vm_init=function(){
 			text=text.replace(/https:\/\/vmiis.github.io\/api/g,host+'/vmiis/api');
 			text=text.replace(/https:\/\/vmiis.github.io\/framework/g,host+'/vmiis/framework');
 			text=text.replace(/https:\/\/vmiis.github.io\/component/g,host+'/vmiis/component');
-			text=text.replace(/https:\/\/vmiis.github.io\/distributed-modules/g,host+'/vmiis/distributed-modules');
             text=text.replace(/https:\/\/vmiis.github.io\//g,host+'/vmiis/applications/');
 		}
 		if(window.location.toString().indexOf('_d=2')!=-1){
