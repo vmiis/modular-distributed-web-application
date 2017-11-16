@@ -22,11 +22,10 @@
 		"particles-snow":				{"url":"/modules/distributed/github/VincentGarreau/particles-snow.html","name_for_search":"Snow"},
 		"particles-nyan-cat":			{"url":"/modules/distributed/github/VincentGarreau/particles-nyan-cat.html","name_for_search":"Nyan cat"},
 
-		"windfarm_home":					{"url":"/modules/static/wind-farm/home.html","name_for_search":"Windfarm home page"},
-		"windfarm_purpose-of-research":		{"url":"/modules/static/wind-farm/purpose-of-research.html","name_for_search":"Purpose of research"},
-		"windfarm_about-woolcock-research":	{"url":"/modules/static/wind-farm/about-woolcock-research.html","name_for_search":"Woolcock research"},
-		"windfarm_researcher":				{"url":"/modules/static/wind-farm/researcher.html","name_for_search":"Researcher"},
-
+		"windfarm_home":	          		{"url":"https://woolcock-imr.github.io/wind-farm-website-modules-by-garry/modules/home.html","name_for_search":"Windfarm Home page"},
+		"windfarm_purpose-of-research":		{"url":"https://woolcock-imr.github.io/wind-farm-website-modules-by-garry/modules/purpose-of-research.html","name_for_search":"Purpose of research"},
+		"windfarm_about-woolcock-research":	{"url":"https://woolcock-imr.github.io/wind-farm-website-modules-by-garry/modules/about-woolcock-research.html","name_for_search":"About woolcock research"},
+		"windfarm_researcher":				{"url":"https://woolcock-imr.github.io/wind-farm-website-modules-by-garry/modules/researchers.html","name_for_search":"Researchers"},
 
 
 		"enquiry-0003":					{"url":"/modules/dynamic/group-001/enquiry.0003.html","table_id":"20009702","name_for_search":"Enquiry"},

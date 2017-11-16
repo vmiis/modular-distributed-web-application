@@ -82,6 +82,15 @@
             $vm.facebook_signin_setup('360182794393427','facebook__ID',show_user);
         }
 		//---------------------------------------------
+		$(".navbar-nav").hide();
+		var navbars_loop=setInterval(function (){
+			if($vm.js_popper==1){
+				clearInterval(navbars_loop);
+				$(".navbar-nav").show();
+                console.log((new Date().getTime()-$vm.start_time).toString()+"---"+"********************** menu is ready ************************");
+			}
+		},100);
+		//------------------------------------
     </script>
     <style>
         #header__ID{
