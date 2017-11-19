@@ -10,6 +10,7 @@
 		"woolcock-app-template":{"url":"/modules/blog/woolcock-app-template.html","name_for_search":"Woolcock app template"},
 		"template-001":{"url":"/modules/blog/template-001.html","name_for_search":"Template 001"},
 		"template-002":{"url":"/modules/blog/template-002.html","name_for_search":"Template 002"},
-        "template-003":{"url":"/modules/blog/template-003.html","name_for_search":"Template 003"}
+        "template-003":{"url":"/modules/blog/template-003.html","name_for_search":"Template 003"},
+		"template-004":{"url":"/modules/blog/template-004.html","name_for_search":"Template 004"}
 	}
 }
