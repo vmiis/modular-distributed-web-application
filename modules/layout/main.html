@@ -57,7 +57,7 @@ VmInclude:/modules/layout/footer.html
 			$("#vm_system_search").autocomplete({
 				minLength:0,
 				source: function(request, response) {
-					var results=$.ui.autocomplete.filter(website_item_list_for_search, request.term);
+					var results=$.ui.autocomplete.filter(website_item_list_for_search,request.term);
 					response(results.slice(0, 10));
 				},
 				select: function(event,ui) {
@@ -129,7 +129,7 @@ VmInclude:/modules/layout/footer.html
 					var nm=$vm.module_list[prefix+property]['name_for_search'];
 					if(nm!=""){
 						if(nm==undefined) nm=property;
-						website_item_list_for_search.push({label:nm,value:prefix+property})
+						website_item_list_for_search.push({label:nm,value:prefix+property,text:"Hello"})
 					}
 					var m_url=$vm.module_list[prefix+property].url;
 					if(m_url!=undefined) m_url=$vm.url(m_url);
